@@ -56,8 +56,7 @@
 		16776434256879EA00DFB371 /* InstaCOVID */ = {
 			isa = PBXGroup;
 			children = (
-				16776435256879EA00DFB371 /* AppDelegate.swift */,
-				16776437256879EA00DFB371 /* SceneDelegate.swift */,
+				1677644A25687D9100DFB371 /* Delegate */,
 				16776439256879EA00DFB371 /* ContentView.swift */,
 				1677643B256879EB00DFB371 /* Assets.xcassets */,
 				16776440256879EB00DFB371 /* LaunchScreen.storyboard */,
@@ -73,6 +72,15 @@
 				1677643E256879EB00DFB371 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1677644A25687D9100DFB371 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				16776437256879EA00DFB371 /* SceneDelegate.swift */,
+				16776435256879EA00DFB371 /* AppDelegate.swift */,
+			);
+			name = Delegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -103,6 +111,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1220;
+				ORGANIZATIONNAME = team2;
 				TargetAttributes = {
 					16776431256879EA00DFB371 = {
 						CreatedOnToolsVersion = 12.2;
@@ -295,6 +304,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -316,6 +326,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
