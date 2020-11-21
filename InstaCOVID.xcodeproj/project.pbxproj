@@ -209,7 +209,7 @@
 		167764B62568B16A00DFB371 /* Tab Bar Views */ = {
 			isa = PBXGroup;
 			children = (
-				167764BA2568B19100DFB371 /* Settungs */,
+				167764BA2568B19100DFB371 /* Settings */,
 				167764B92568B18600DFB371 /* Monitor */,
 				167764B82568B17F00DFB371 /* Data */,
 				167764B72568B17700DFB371 /* Home */,
@@ -239,11 +239,11 @@
 			name = Monitor;
 			sourceTree = "<group>";
 		};
-		167764BA2568B19100DFB371 /* Settungs */ = {
+		167764BA2568B19100DFB371 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Settungs;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
