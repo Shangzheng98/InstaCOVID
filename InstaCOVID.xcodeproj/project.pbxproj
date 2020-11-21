@@ -13,6 +13,11 @@
 		1677643C256879EB00DFB371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1677643B256879EB00DFB371 /* Assets.xcassets */; };
 		1677643F256879EB00DFB371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1677643E256879EB00DFB371 /* Preview Assets.xcassets */; };
 		16776442256879EB00DFB371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16776440256879EB00DFB371 /* LaunchScreen.storyboard */; };
+		1677649B2568A97A00DFB371 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
+		1677649D2568A97A00DFB371 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; };
+		167764A02568A97A00DFB371 /* Widgwt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1677649F2568A97A00DFB371 /* Widgwt.swift */; };
+		167764A22568A97B00DFB371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167764A12568A97B00DFB371 /* Assets.xcassets */; };
+		167764A62568A97B00DFB371 /* WidgwtExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 167764982568A97A00DFB371 /* WidgwtExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
 		ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C48256880EF0091D139 /* StateDataStruct.swift */; };
 		ADB38C4C256880F10091D139 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C4B256880F10091D139 /* UserData.swift */; };
@@ -26,6 +31,30 @@
 		ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C7B256893F20091D139 /* StateDBAPI.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		167764A42568A97B00DFB371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1677642A256879EA00DFB371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 167764972568A97A00DFB371;
+			remoteInfo = WidgwtExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		167764AA2568A97B00DFB371 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				167764A62568A97B00DFB371 /* WidgwtExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		16776432256879EA00DFB371 /* InstaCOVID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCOVID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16776435256879EA00DFB371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +64,12 @@
 		1677643E256879EB00DFB371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16776441256879EB00DFB371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16776443256879EB00DFB371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		167764982568A97A00DFB371 /* WidgwtExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgwtExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1677649A2568A97A00DFB371 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1677649C2568A97A00DFB371 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1677649F2568A97A00DFB371 /* Widgwt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgwt.swift; sourceTree = "<group>"; };
+		167764A12568A97B00DFB371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		167764A32568A97B00DFB371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADB38C45256880EC0091D139 /* WorldDataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldDataStruct.swift; sourceTree = "<group>"; };
 		ADB38C48256880EF0091D139 /* StateDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDataStruct.swift; sourceTree = "<group>"; };
 		ADB38C4B256880F10091D139 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -56,6 +91,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		167764952568A97A00DFB371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1677649D2568A97A00DFB371 /* SwiftUI.framework in Frameworks */,
+				1677649B2568A97A00DFB371 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -63,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				16776434256879EA00DFB371 /* InstaCOVID */,
+				1677649E2568A97A00DFB371 /* Widgwt */,
+				167764992568A97A00DFB371 /* Frameworks */,
 				16776433256879EA00DFB371 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				16776432256879EA00DFB371 /* InstaCOVID.app */,
+				167764982568A97A00DFB371 /* WidgwtExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -107,6 +154,25 @@
 				16776437256879EA00DFB371 /* SceneDelegate.swift */,
 			);
 			name = Delegate;
+			sourceTree = "<group>";
+		};
+		167764992568A97A00DFB371 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1677649A2568A97A00DFB371 /* WidgetKit.framework */,
+				1677649C2568A97A00DFB371 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1677649E2568A97A00DFB371 /* Widgwt */ = {
+			isa = PBXGroup;
+			children = (
+				1677649F2568A97A00DFB371 /* Widgwt.swift */,
+				167764A12568A97B00DFB371 /* Assets.xcassets */,
+				167764A32568A97B00DFB371 /* Info.plist */,
+			);
+			path = Widgwt;
 			sourceTree = "<group>";
 		};
 		ADB38C44256880E20091D139 /* Data Models */ = {
@@ -198,15 +264,34 @@
 				1677642E256879EA00DFB371 /* Sources */,
 				1677642F256879EA00DFB371 /* Frameworks */,
 				16776430256879EA00DFB371 /* Resources */,
+				167764AA2568A97B00DFB371 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				167764A52568A97B00DFB371 /* PBXTargetDependency */,
 			);
 			name = InstaCOVID;
 			productName = InstaCOVID;
 			productReference = 16776432256879EA00DFB371 /* InstaCOVID.app */;
 			productType = "com.apple.product-type.application";
+		};
+		167764972568A97A00DFB371 /* WidgwtExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 167764A72568A97B00DFB371 /* Build configuration list for PBXNativeTarget "WidgwtExtension" */;
+			buildPhases = (
+				167764942568A97A00DFB371 /* Sources */,
+				167764952568A97A00DFB371 /* Frameworks */,
+				167764962568A97A00DFB371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgwtExtension;
+			productName = WidgwtExtension;
+			productReference = 167764982568A97A00DFB371 /* WidgwtExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -219,6 +304,9 @@
 				ORGANIZATIONNAME = team2;
 				TargetAttributes = {
 					16776431256879EA00DFB371 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					167764972568A97A00DFB371 = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -237,6 +325,7 @@
 			projectRoot = "";
 			targets = (
 				16776431256879EA00DFB371 /* InstaCOVID */,
+				167764972568A97A00DFB371 /* WidgwtExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +338,14 @@
 				16776442256879EB00DFB371 /* LaunchScreen.storyboard in Resources */,
 				1677643F256879EB00DFB371 /* Preview Assets.xcassets in Resources */,
 				1677643C256879EB00DFB371 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		167764962568A97A00DFB371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167764A22568A97B00DFB371 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +373,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		167764942568A97A00DFB371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				167764A02568A97A00DFB371 /* Widgwt.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		167764A52568A97B00DFB371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 167764972568A97A00DFB371 /* WidgwtExtension */;
+			targetProxy = 167764A42568A97B00DFB371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		16776440256879EB00DFB371 /* LaunchScreen.storyboard */ = {
@@ -409,6 +522,7 @@
 		16776447256879EB00DFB371 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -431,6 +545,7 @@
 		16776448256879EB00DFB371 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -445,6 +560,48 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		167764A82568A97B00DFB371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P4HRUWL6NU;
+				INFOPLIST_FILE = Widgwt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.Widgwt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		167764A92568A97B00DFB371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P4HRUWL6NU;
+				INFOPLIST_FILE = Widgwt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.Widgwt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -467,6 +624,15 @@
 			buildConfigurations = (
 				16776447256879EB00DFB371 /* Debug */,
 				16776448256879EB00DFB371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		167764A72568A97B00DFB371 /* Build configuration list for PBXNativeTarget "WidgwtExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				167764A82568A97B00DFB371 /* Debug */,
+				167764A92568A97B00DFB371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
