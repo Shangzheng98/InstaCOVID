@@ -43,7 +43,7 @@ final class UserData: ObservableObject {
      */
    
     // Publish countriesList with initial value of countryStructList obtained in CountriesData.swift
-//    @Published var countriesList = countryStructList
+   //@Published var countriesList = countryStructList
    
     /*
      Publish searchableOrderedCountriesList with initial value of
