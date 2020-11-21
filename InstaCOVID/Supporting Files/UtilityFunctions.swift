@@ -3,7 +3,7 @@
 //  InstaCOVID
 //
 //  Created by Nicole Lyu on 11/20/20.
-//  Copyright © 2020 team2. All rights reserved.
+//  Copyright Â© 2020 team2. All rights reserved.
 //
 
 import Foundation
