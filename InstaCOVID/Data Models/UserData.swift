@@ -43,13 +43,13 @@ final class UserData: ObservableObject {
      */
    
     // Publish countriesList with initial value of countryStructList obtained in CountriesData.swift
-    @Published var countriesList = countryStructList
+//    @Published var countriesList = countryStructList
    
     /*
      Publish searchableOrderedCountriesList with initial value of
      orderedSearchableCountriesList obtained in CountriesData.swift
      */
-    @Published var searchableOrderedCountriesList = orderedSearchableCountriesList
+//    @Published var searchableOrderedCountriesList = orderedSearchableCountriesList
    
     // Publish imageNumber to refresh the View body in Home.swift when it is changed in the slide show
     @Published var imageNumber = 0
