@@ -79,8 +79,8 @@
 		ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityFunctions.swift; sourceTree = "<group>"; };
 		ADB38C71256893030091D139 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		ADB38C742568930D0091D139 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		ADB38C77256893E80091D139 /* WorldDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorldDBAPI.swift; path = "InstaCOVID/Supporting Files/WorldDBAPI.swift"; sourceTree = SOURCE_ROOT; };
-		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = "InstaCOVID/Supporting Files/StateDBAPI.swift"; sourceTree = SOURCE_ROOT; };
+		ADB38C77256893E80091D139 /* WorldDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorldDBAPI.swift; path = InstaCOVID/WorldDBAPI.swift; sourceTree = SOURCE_ROOT; };
+		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = InstaCOVID/StateDBAPI.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,12 +125,12 @@
 		16776434256879EA00DFB371 /* InstaCOVID */ = {
 			isa = PBXGroup;
 			children = (
+				167764B62568B16A00DFB371 /* Tab Bar Views */,
+				167764B42568B13500DFB371 /* Supporting Files */,
+				167764B32568B11E00DFB371 /* API Data */,
+				167764AF2568B0EA00DFB371 /* Data Models */,
 				1677644A25687D9100DFB371 /* Delegate */,
-				ADB38C44256880E20091D139 /* Data Models */,
-				ADB38C5D2568830E0091D139 /* API Data */,
-				ADB38C5C2568824A0091D139 /* Supporting Files */,
 				16776439256879EA00DFB371 /* ContentView.swift */,
-				ADB38C51256881D30091D139 /* Tab Bar Views */,
 				1677643B256879EB00DFB371 /* Assets.xcassets */,
 				16776440256879EB00DFB371 /* LaunchScreen.storyboard */,
 				16776443256879EB00DFB371 /* Info.plist */,
@@ -175,65 +175,26 @@
 			path = Widgwt;
 			sourceTree = "<group>";
 		};
-		ADB38C44256880E20091D139 /* Data Models */ = {
+		167764AF2568B0EA00DFB371 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
 				ADB38C45256880EC0091D139 /* WorldDataStruct.swift */,
 				ADB38C48256880EF0091D139 /* StateDataStruct.swift */,
 				ADB38C4B256880F10091D139 /* UserData.swift */,
 			);
-			path = "Data Models";
+			name = "Data Models";
 			sourceTree = "<group>";
 		};
-		ADB38C51256881D30091D139 /* Tab Bar Views */ = {
+		167764B32568B11E00DFB371 /* API Data */ = {
 			isa = PBXGroup;
 			children = (
-				ADB38C53256881FF0091D139 /* Home */,
-				ADB38C552568820D0091D139 /* Data */,
-				ADB38C54256882030091D139 /* Diagnosis */,
-				ADB38C572568821F0091D139 /* Monitor */,
-				ADB38C56256882180091D139 /* Settings */,
+				ADB38C77256893E80091D139 /* WorldDBAPI.swift */,
+				ADB38C7B256893F20091D139 /* StateDBAPI.swift */,
 			);
-			path = "Tab Bar Views";
+			name = "API Data";
 			sourceTree = "<group>";
 		};
-		ADB38C53256881FF0091D139 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				ADB38C592568823E0091D139 /* Home.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		ADB38C54256882030091D139 /* Diagnosis */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Diagnosis;
-			sourceTree = "<group>";
-		};
-		ADB38C552568820D0091D139 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		ADB38C56256882180091D139 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		ADB38C572568821F0091D139 /* Monitor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Monitor;
-			sourceTree = "<group>";
-		};
-		ADB38C5C2568824A0091D139 /* Supporting Files */ = {
+		167764B42568B13500DFB371 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				ADB38C71256893030091D139 /* MapView.swift */,
@@ -242,16 +203,47 @@
 				ADB38C6B256892BC0091D139 /* SearchBar.swift */,
 				ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */,
 			);
-			path = "Supporting Files";
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		ADB38C5D2568830E0091D139 /* API Data */ = {
+		167764B62568B16A00DFB371 /* Tab Bar Views */ = {
 			isa = PBXGroup;
 			children = (
-				ADB38C77256893E80091D139 /* WorldDBAPI.swift */,
-				ADB38C7B256893F20091D139 /* StateDBAPI.swift */,
+				167764BA2568B19100DFB371 /* Settungs */,
+				167764B92568B18600DFB371 /* Monitor */,
+				167764B82568B17F00DFB371 /* Data */,
+				167764B72568B17700DFB371 /* Home */,
 			);
-			path = "API Data";
+			name = "Tab Bar Views";
+			sourceTree = "<group>";
+		};
+		167764B72568B17700DFB371 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ADB38C592568823E0091D139 /* Home.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		167764B82568B17F00DFB371 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		167764B92568B18600DFB371 /* Monitor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Monitor;
+			sourceTree = "<group>";
+		};
+		167764BA2568B19100DFB371 /* Settungs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Settungs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
