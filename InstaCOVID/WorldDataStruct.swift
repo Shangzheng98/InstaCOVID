@@ -24,3 +24,12 @@ struct WorldDataStruct: Hashable, Codable, Identifiable {
     var tests_per_1m_population: String
 }
 
+
+struct WorldStatStruct: Hashable, Codable {
+    var totalCases: String
+    var newCases: String
+    var totalDeaths:String
+    var newDeaths: String
+    var totalRecovered:String
+    
+}
