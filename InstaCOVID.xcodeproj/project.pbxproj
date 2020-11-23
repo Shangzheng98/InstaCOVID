@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06955641256AFE8C00A6882F /* SettingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955640256AFE8C00A6882F /* SettingMain.swift */; };
 		16776436256879EA00DFB371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16776435256879EA00DFB371 /* AppDelegate.swift */; };
 		16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16776437256879EA00DFB371 /* SceneDelegate.swift */; };
 		1677643A256879EA00DFB371 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16776439256879EA00DFB371 /* ContentView.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		06955640256AFE8C00A6882F /* SettingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMain.swift; sourceTree = "<group>"; };
 		16776432256879EA00DFB371 /* InstaCOVID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCOVID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16776435256879EA00DFB371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16776437256879EA00DFB371 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		167764BA2568B19100DFB371 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				06955640256AFE8C00A6882F /* SettingMain.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				1677643A256879EA00DFB371 /* ContentView.swift in Sources */,
 				ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */,
 				ADB38C752568930D0091D139 /* WebView.swift in Sources */,
+				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,
 			);

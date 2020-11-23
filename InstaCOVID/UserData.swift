@@ -9,6 +9,8 @@ import Combine
 import SwiftUI
  
 final class UserData: ObservableObject {
+    // Publish if the user is authenticated or not
+    @Published var userAuthenticated = false
     /*
      -------------------------------
      MARK: - Slide Show Declarations
