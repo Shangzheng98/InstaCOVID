@@ -148,7 +148,10 @@ public func getTotalWorldStatFromAPI () {
     _ = semaphore.wait(timeout: .now() + 10)
 }
 
-
+/*
+ https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
+ Data from Worldometers
+ */
 public func getEveryContriesDataFromAPI(){
     
     orderedSearchableWorldDataList = [String]()
@@ -156,7 +159,7 @@ public func getEveryContriesDataFromAPI(){
     
     var apiUrl = ""
     
-    apiUrl = "https://coronavirus-monitor-v2.p.rapidapi.com/coronavirus/cases_by_country.php"
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort"
     
     var apiQueryUrlStruct: URL?
    
@@ -167,17 +170,12 @@ public func getEveryContriesDataFromAPI(){
         return
     }
     
-    let headers = [
-        "x-rapidapi-key": APIKey,
-        "x-rapidapi-host": "coronavirus-monitor-v2.p.rapidapi.com"
-    ]
     
     let request = NSMutableURLRequest(url: apiQueryUrlStruct!,
                                       cachePolicy: .useProtocolCachePolicy,
                                       timeoutInterval: 10.0)
  
     request.httpMethod = "GET"
-    request.allHTTPHeaderFields = headers
     
     let semaphore = DispatchSemaphore(value: 0)
     
@@ -214,7 +212,59 @@ public func getEveryContriesDataFromAPI(){
              */
             let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi,
                                options: JSONSerialization.ReadingOptions.mutableContainers)
- 
+
+            if let array = jsonResponse as? [Any] {
+                for object in array  {
+                    var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                    if let info = object as? [String : Any]{
+                        if let name = info["country"] as? String {
+                            countryName = name
+                        }
+                        
+                        if let cases = info["cases"] as? Int {
+                            totalCases = cases
+                        }
+                        
+                        if let todayCases = info["todayCases"] as? Int {
+                            newCases = todayCases
+                        }
+                        
+                        if let deaths = info["deaths"] as? Int {
+                            totalDeaths = deaths
+                        }
+                        
+                        if let todayDeaths = info["todayDeaths"] as? Int {
+                            newDeaths = todayDeaths
+                        }
+                        
+                        if let recovered = info["recovered"] as? Int {
+                            totalrecovered = recovered
+                        }
+                        
+                        if let countryInfo = info["countryInfo"] as? [String: Any] {
+                            if let la = countryInfo["lat"] as? Double {
+                                lat = la
+                            }
+                            
+                            if let lo = countryInfo["long"] as? Double {
+                                long = lo
+                            }
+                            
+                            if let flag = countryInfo["flag"] as? String {
+                                flagURL = flag
+                            }
+                        }
+                    }
+                    let id = UUID()
+                    let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                    everyContriesDataList.append(entry)
+                    
+                    let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
+                    orderedSearchableWorldDataList.append(searchableListEntry)
+                }
+                
+                print(everyContriesDataList.description)
+            }
             
  
         } catch {
