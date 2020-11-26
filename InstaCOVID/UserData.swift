@@ -45,10 +45,10 @@ final class UserData: ObservableObject {
      */
    
     // Publish countriesList with initial value of countryStructList obtained in CountriesData.swift
-    @Published var countriesDataList = everyContriesDataList
+    @Published var countriesDataList = everyContriesDataListCases
    
 
-    @Published var searchableOrderedWorldDataList = orderedSearchableWorldDataList
+    @Published var searchableOrderedWorldDataList = orderedSearchableWorldDataListCases
     
     @Published var stateInfoList = stateDataList
    
@@ -90,6 +90,11 @@ final class UserData: ObservableObject {
          reflect the change since it subscribes to changes in imageNumber as specified above.
          */
         imageNumber = counter
+    }
+    
+    @objc func reorderList() {
+        countriesDataList = everyContriesDataListCases
+        searchableOrderedWorldDataList = orderedSearchableWorldDataListCases
     }
  
 }
