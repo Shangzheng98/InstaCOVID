@@ -152,14 +152,27 @@ public func getTotalWorldStatFromAPI () {
  https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
  Data from Worldometers
  */
-public func getEveryContriesDataFromAPI(){
-    
+var privousType = ""
+public func getEveryContriesDataFromAPI(sortType:String){
+    if sortType == privousType {
+        return
+    }
+    else {
+        privousType = sortType
+    }
     orderedSearchableWorldDataList = [String]()
     everyContriesDataList = [WorldDataStruct]()
-    
+    var sort = sortType
+    if sortType == "New Cases" {
+        sort = "todayCases"
+    }
+    else if sortType == "New Deaths" {
+        sort = "todayDeaths"
+    }
+
     var apiUrl = ""
     
-    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort"
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=\(sort.lowercased())"
     
     var apiQueryUrlStruct: URL?
    
@@ -252,6 +265,7 @@ public func getEveryContriesDataFromAPI(){
                             
                             if let flag = countryInfo["flag"] as? String {
                                 flagURL = flag
+                                flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
                             }
                         }
                     }

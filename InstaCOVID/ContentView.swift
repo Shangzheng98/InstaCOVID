@@ -10,36 +10,17 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            Home()
+//            Home()
+//                .tabItem {
+//                    Image(systemName: "house.fill")
+//                    Text("Home")
+//                }
+            DataView()
                 .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
+                    Text("Data")
                 }
-//            FavoritesList()
-//                .tabItem {
-//                    Image(systemName: "star.fill")
-//                    Text("Favorites")
-//                }
-//            NowPlayingsList()
-//                .tabItem {
-//                    Image(systemName: "rectangle.stack.fill")
-//                    Text("Now Playing")
-//                }
-//            MovieSearch()
-//                .tabItem {
-//                    Image(systemName: "magnifyingglass.circle.fill")
-//                    Text("Movie Search")
-//
-//                }
-//            GenresList()
-//                .tabItem {
-//                    Image(systemName: "list.and.film")
-//                    Text("Genres")
-//                }
         }   // End of TabView
-            .font(.headline)
-            .imageScale(.medium)
-            .font(Font.title.weight(.regular))
+            
     }
 }
  
