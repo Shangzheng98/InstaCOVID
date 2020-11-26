@@ -12,7 +12,7 @@ struct DataView: View {
     @EnvironmentObject var userData:UserData
     
     @State private var searchItem = ""
-    @State private var index = 0
+    @State private var styleIndex = 0
     @State private var filterIndex = 0
     let filterlist = ["Cases", "New Cases", "Deaths", "New Deaths", "Recovered"]
     let styleList = ["list.bullet","square.grid.3x3.fill"]
@@ -23,7 +23,7 @@ struct DataView: View {
                 List{
                     
                     HStack{
-                        Picker("", selection: $index){
+                        Picker("", selection: $styleIndex){
                             ForEach(0..<styleList.count,id: \.self) {
                                 
                                 Image(systemName: styleList[$0])
@@ -48,12 +48,18 @@ struct DataView: View {
                         .pickerStyle(MenuPickerStyle())
                     }
                     
-                    ForEach(userData.searchableOrderedWorldDataList.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                        item in DataListItem(country: self.searchItemCountry(searchListItem: item))
+//                    ListData(searchItem: self.searchItem)
+//                    changelist
+                    if styleIndex == 0 {
+                        ListData(searchItem: self.searchItem,filterIndex: self.filterIndex)
+                        //ListData(searchItem: self.searchItem)
+                    } else {
+                        ListGrid(searchItem: self.searchItem, filterIndex: self.filterIndex)
                     }
-                    
+                
                     
                 }
+                
                 .navigationBarTitle(Text("COVID-19 Case Status"),displayMode: .inline)
             }
             
@@ -61,22 +67,10 @@ struct DataView: View {
         }
         .customNavigationViewStyle()
     }
-    
-    func searchItemCountry(searchListItem: String) -> WorldDataStruct {
-        let index = userData.countriesDataList.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
-        return userData.countriesDataList[index]
-    }
-    var changelist:some View {
-        getEveryContriesDataFromAPI(sortType: filterlist[filterIndex])
-        userData.countriesDataList = everyContriesDataList
-        userData.searchableOrderedWorldDataList = orderedSearchableWorldDataList
-        return AnyView(ForEach(userData.searchableOrderedWorldDataList.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-            item in DataListItem(country: self.searchItemCountry(searchListItem: item))})
-    }
 }
 
 struct DataView_Previews: PreviewProvider {
     static var previews: some View {
-        DataView()
+        DataView().environmentObject(UserData())
     }
 }

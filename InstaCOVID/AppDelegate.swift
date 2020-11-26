@@ -18,7 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          */
         //readCountriesDataFiles()
         //getTotalWorldStatFromAPI()
-        getEveryContriesDataFromAPI(sortType: "cases")
+        getEveryContriesDataFromAPISortByCases()
+        getEveryContriesDataFromAPISortByNewCases()
+        getEveryContriesDataFromAPISortByDeaths()
+        getEveryContriesDataFromAPISortByNewDeaths()
+        getEveryContriesDataFromAPISortByRecovered()
 //        gerStateDataFromAPI()
         return true
     }

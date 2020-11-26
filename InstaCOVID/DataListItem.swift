@@ -71,10 +71,10 @@ struct DataListItem: View {
                             Image(systemName: "arrow.up")
                                 .foregroundColor(.red)
                                 .imageScale(.small)
-                            Text("\(country.cases)")
+                            Text("\(country.deaths)")
                         }
                         
-                        Text("+ \(country.newCases)")
+                        Text("+ \(country.newDeaths)")
                             .font(.system(size: 11))
                             .foregroundColor(.gray)
                     }

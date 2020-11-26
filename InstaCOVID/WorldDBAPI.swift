@@ -11,8 +11,21 @@ import Foundation
 
 
 var worldStatInfo = WorldStatStruct(totalCases: "0", newCases: "0", totalDeaths: "0", newDeaths: "0",totalRecovered: "0")
-var everyContriesDataList = [WorldDataStruct]()
-var orderedSearchableWorldDataList = [String]()
+var everyContriesDataListCases = [WorldDataStruct]()
+var orderedSearchableWorldDataListCases = [String]()
+
+var everyContriesDataListNewCases = [WorldDataStruct]()
+var orderedSearchableWorldDataListNewCases = [String]()
+
+var everyContriesDataListDeaths = [WorldDataStruct]()
+var orderedSearchableWorldDataListDeaths = [String]()
+
+var everyContriesDataListNewDeaths = [WorldDataStruct]()
+var orderedSearchableWorldDataListNewDeaths = [String]()
+
+var everyContriesDataListRecovered = [WorldDataStruct]()
+var orderedSearchableWorldDataListRecovered = [String]()
+
 
 let APIKey = "889af3ca3fmshd882371958ac448p100118jsn58444a268212"
 
@@ -152,152 +165,421 @@ public func getTotalWorldStatFromAPI () {
  https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
  Data from Worldometers
  */
-var privousType = ""
-public func getEveryContriesDataFromAPI(sortType:String){
-    if sortType == privousType {
-        return
-    }
-    else {
-        privousType = sortType
-    }
-    orderedSearchableWorldDataList = [String]()
-    everyContriesDataList = [WorldDataStruct]()
-    var sort = sortType
-    if sortType == "New Cases" {
-        sort = "todayCases"
-    }
-    else if sortType == "New Deaths" {
-        sort = "todayDeaths"
-    }
 
+public func getEveryContriesDataFromAPISortByCases(){
+    
+    orderedSearchableWorldDataListCases = [String]()
+    everyContriesDataListCases = [WorldDataStruct]()
+    
     var apiUrl = ""
     
-    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=\(sort.lowercased())"
-    
-    var apiQueryUrlStruct: URL?
-   
-    if let urlStruct = URL(string: apiUrl) {
-        apiQueryUrlStruct = urlStruct
-    } else {
-        // worldStatInfo will have the initial values set as above
-        return
-    }
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=cases"
     
     
-    let request = NSMutableURLRequest(url: apiQueryUrlStruct!,
-                                      cachePolicy: .useProtocolCachePolicy,
-                                      timeoutInterval: 10.0)
- 
-    request.httpMethod = "GET"
+    let jsonDataFromApi = getJsonDataFromApi(apiUrl: apiUrl)
     
-    let semaphore = DispatchSemaphore(value: 0)
     
-    URLSession.shared.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
- 
-        // Process input parameter 'error'
-        guard error == nil else {
-            // countryFound will have the initial values set as above
-            semaphore.signal()
-            return
-        }
-       
-        // Process input parameter 'response'. HTTP response status codes from 200 to 299 indicate success.
-        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-            // countryFound will have the initial values set as above
-            semaphore.signal()
-            return
-        }
- 
-        // Process input parameter 'data'. Unwrap Optional 'data' if it has a value.
-        guard let jsonDataFromApi = data else {
-            // countryFound will have the initial values set as above
-            semaphore.signal()
-            return
-        }
- 
-        //------------------------------------------------
-        // JSON data is obtained from the API. Process it.
-        //------------------------------------------------
-        do {
-            /*
-             Foundation framework’s JSONSerialization class is used to convert JSON data
-             into Swift data types such as Dictionary, Array, String, Number, or Bool.
-             */
-            let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi,
-                               options: JSONSerialization.ReadingOptions.mutableContainers)
+    //------------------------------------------------
+    // JSON data is obtained from the API. Process it.
+    //------------------------------------------------
+    do {
+        /*
+         Foundation framework’s JSONSerialization class is used to convert JSON data
+         into Swift data types such as Dictionary, Array, String, Number, or Bool.
+         */
+        let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi!,
+                           options: JSONSerialization.ReadingOptions.mutableContainers)
 
-            if let array = jsonResponse as? [Any] {
-                for object in array  {
-                    var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
-                    if let info = object as? [String : Any]{
-                        if let name = info["country"] as? String {
-                            countryName = name
+        if let array = jsonResponse as? [Any] {
+            for object in array  {
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                if let info = object as? [String : Any]{
+                    if let name = info["country"] as? String {
+                        countryName = name
+                    }
+                    
+                    if let cases = info["cases"] as? Int {
+                        totalCases = cases
+                    }
+                    
+                    if let todayCases = info["todayCases"] as? Int {
+                        newCases = todayCases
+                    }
+                    
+                    if let deaths = info["deaths"] as? Int {
+                        totalDeaths = deaths
+                    }
+                    
+                    if let todayDeaths = info["todayDeaths"] as? Int {
+                        newDeaths = todayDeaths
+                    }
+                    
+                    if let recovered = info["recovered"] as? Int {
+                        totalrecovered = recovered
+                    }
+                    
+                    if let countryInfo = info["countryInfo"] as? [String: Any] {
+                        if let la = countryInfo["lat"] as? Double {
+                            lat = la
                         }
                         
-                        if let cases = info["cases"] as? Int {
-                            totalCases = cases
+                        if let lo = countryInfo["long"] as? Double {
+                            long = lo
                         }
                         
-                        if let todayCases = info["todayCases"] as? Int {
-                            newCases = todayCases
-                        }
-                        
-                        if let deaths = info["deaths"] as? Int {
-                            totalDeaths = deaths
-                        }
-                        
-                        if let todayDeaths = info["todayDeaths"] as? Int {
-                            newDeaths = todayDeaths
-                        }
-                        
-                        if let recovered = info["recovered"] as? Int {
-                            totalrecovered = recovered
-                        }
-                        
-                        if let countryInfo = info["countryInfo"] as? [String: Any] {
-                            if let la = countryInfo["lat"] as? Double {
-                                lat = la
-                            }
-                            
-                            if let lo = countryInfo["long"] as? Double {
-                                long = lo
-                            }
-                            
-                            if let flag = countryInfo["flag"] as? String {
-                                flagURL = flag
-                                flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
-                            }
+                        if let flag = countryInfo["flag"] as? String {
+                            flagURL = flag
+                            flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
                         }
                     }
-                    let id = UUID()
-                    let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
-                    everyContriesDataList.append(entry)
-                    
-                    let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
-                    orderedSearchableWorldDataList.append(searchableListEntry)
                 }
+                let id = UUID()
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                everyContriesDataListCases.append(entry)
                 
-                print(everyContriesDataList.description)
+                let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
+                orderedSearchableWorldDataListCases.append(searchableListEntry)
             }
             
- 
-        } catch {
-            // countryFound will have the initial values set as above
-            semaphore.signal()
-            return
+            print(everyContriesDataListCases.description)
         }
+        
+
+    } catch {
+
+        
+        return
+    }
+
+    
+}
  
-        semaphore.signal()
-    }).resume()
  
-    /*
-     The URLSession task above is set up. It begins in a suspended state.
-     The resume() method starts processing the task in an execution thread.
- 
-     The semaphore.wait blocks the execution thread and starts waiting.
-     Upon completion of the task, the Completion Handler code is executed.
-     The waiting ends when .signal() fires or timeout period of 10 seconds expires.
-    */
- 
-    _ = semaphore.wait(timeout: .now() + 10)
+public func getEveryContriesDataFromAPISortByNewCases(){
+    
+    orderedSearchableWorldDataListNewCases = [String]()
+    everyContriesDataListNewCases = [WorldDataStruct]()
+    
+    var apiUrl = ""
+    
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=todayCases"
+    
+    
+    let jsonDataFromApi = getJsonDataFromApi(apiUrl: apiUrl)
+    
+    
+    //------------------------------------------------
+    // JSON data is obtained from the API. Process it.
+    //------------------------------------------------
+    do {
+        /*
+         Foundation framework’s JSONSerialization class is used to convert JSON data
+         into Swift data types such as Dictionary, Array, String, Number, or Bool.
+         */
+        let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi!,
+                           options: JSONSerialization.ReadingOptions.mutableContainers)
+
+        if let array = jsonResponse as? [Any] {
+            for object in array  {
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                if let info = object as? [String : Any]{
+                    if let name = info["country"] as? String {
+                        countryName = name
+                    }
+                    
+                    if let cases = info["cases"] as? Int {
+                        totalCases = cases
+                    }
+                    
+                    if let todayCases = info["todayCases"] as? Int {
+                        newCases = todayCases
+                    }
+                    
+                    if let deaths = info["deaths"] as? Int {
+                        totalDeaths = deaths
+                    }
+                    
+                    if let todayDeaths = info["todayDeaths"] as? Int {
+                        newDeaths = todayDeaths
+                    }
+                    
+                    if let recovered = info["recovered"] as? Int {
+                        totalrecovered = recovered
+                    }
+                    
+                    if let countryInfo = info["countryInfo"] as? [String: Any] {
+                        if let la = countryInfo["lat"] as? Double {
+                            lat = la
+                        }
+                        
+                        if let lo = countryInfo["long"] as? Double {
+                            long = lo
+                        }
+                        
+                        if let flag = countryInfo["flag"] as? String {
+                            flagURL = flag
+                            flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                        }
+                    }
+                }
+                let id = UUID()
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                everyContriesDataListNewCases.append(entry)
+                
+                let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
+                orderedSearchableWorldDataListNewCases.append(searchableListEntry)
+            }
+            
+        }
+    } catch {
+
+        return
+    }
+}
+
+public func getEveryContriesDataFromAPISortByDeaths(){
+    
+    orderedSearchableWorldDataListDeaths = [String]()
+    everyContriesDataListDeaths = [WorldDataStruct]()
+    
+    var apiUrl = ""
+    
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=deaths"
+    
+    
+    let jsonDataFromApi = getJsonDataFromApi(apiUrl: apiUrl)
+    
+    
+    //------------------------------------------------
+    // JSON data is obtained from the API. Process it.
+    //------------------------------------------------
+    do {
+        /*
+         Foundation framework’s JSONSerialization class is used to convert JSON data
+         into Swift data types such as Dictionary, Array, String, Number, or Bool.
+         */
+        let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi!,
+                           options: JSONSerialization.ReadingOptions.mutableContainers)
+
+        if let array = jsonResponse as? [Any] {
+            for object in array  {
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                if let info = object as? [String : Any]{
+                    if let name = info["country"] as? String {
+                        countryName = name
+                    }
+                    
+                    if let cases = info["cases"] as? Int {
+                        totalCases = cases
+                    }
+                    
+                    if let todayCases = info["todayCases"] as? Int {
+                        newCases = todayCases
+                    }
+                    
+                    if let deaths = info["deaths"] as? Int {
+                        totalDeaths = deaths
+                    }
+                    
+                    if let todayDeaths = info["todayDeaths"] as? Int {
+                        newDeaths = todayDeaths
+                    }
+                    
+                    if let recovered = info["recovered"] as? Int {
+                        totalrecovered = recovered
+                    }
+                    
+                    if let countryInfo = info["countryInfo"] as? [String: Any] {
+                        if let la = countryInfo["lat"] as? Double {
+                            lat = la
+                        }
+                        
+                        if let lo = countryInfo["long"] as? Double {
+                            long = lo
+                        }
+                        
+                        if let flag = countryInfo["flag"] as? String {
+                            flagURL = flag
+                            flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                        }
+                    }
+                }
+                let id = UUID()
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                everyContriesDataListDeaths.append(entry)
+                
+                let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
+                orderedSearchableWorldDataListDeaths.append(searchableListEntry)
+            }
+            
+        }
+    } catch {
+
+        return
+    }
+}
+
+
+public func getEveryContriesDataFromAPISortByNewDeaths(){
+    
+    orderedSearchableWorldDataListNewDeaths = [String]()
+    everyContriesDataListNewDeaths = [WorldDataStruct]()
+    
+    var apiUrl = ""
+    
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=todayDeaths"
+    
+    
+    let jsonDataFromApi = getJsonDataFromApi(apiUrl: apiUrl)
+    
+    
+    //------------------------------------------------
+    // JSON data is obtained from the API. Process it.
+    //------------------------------------------------
+    do {
+        /*
+         Foundation framework’s JSONSerialization class is used to convert JSON data
+         into Swift data types such as Dictionary, Array, String, Number, or Bool.
+         */
+        let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi!,
+                           options: JSONSerialization.ReadingOptions.mutableContainers)
+
+        if let array = jsonResponse as? [Any] {
+            for object in array  {
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                if let info = object as? [String : Any]{
+                    if let name = info["country"] as? String {
+                        countryName = name
+                    }
+                    
+                    if let cases = info["cases"] as? Int {
+                        totalCases = cases
+                    }
+                    
+                    if let todayCases = info["todayCases"] as? Int {
+                        newCases = todayCases
+                    }
+                    
+                    if let deaths = info["deaths"] as? Int {
+                        totalDeaths = deaths
+                    }
+                    
+                    if let todayDeaths = info["todayDeaths"] as? Int {
+                        newDeaths = todayDeaths
+                    }
+                    
+                    if let recovered = info["recovered"] as? Int {
+                        totalrecovered = recovered
+                    }
+                    
+                    if let countryInfo = info["countryInfo"] as? [String: Any] {
+                        if let la = countryInfo["lat"] as? Double {
+                            lat = la
+                        }
+                        
+                        if let lo = countryInfo["long"] as? Double {
+                            long = lo
+                        }
+                        
+                        if let flag = countryInfo["flag"] as? String {
+                            flagURL = flag
+                            flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                        }
+                    }
+                }
+                let id = UUID()
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                everyContriesDataListNewDeaths.append(entry)
+                
+                let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
+                orderedSearchableWorldDataListNewDeaths.append(searchableListEntry)
+            }
+            
+        }
+    } catch {
+
+        return
+    }
+}
+
+public func getEveryContriesDataFromAPISortByRecovered(){
+    
+    orderedSearchableWorldDataListRecovered = [String]()
+    everyContriesDataListRecovered = [WorldDataStruct]()
+    
+    var apiUrl = ""
+    
+    apiUrl = "https://corona.lmao.ninja/v2/countries?yesterday=true&sort=recovered"
+    
+    
+    let jsonDataFromApi = getJsonDataFromApi(apiUrl: apiUrl)
+    
+    
+    //------------------------------------------------
+    // JSON data is obtained from the API. Process it.
+    //------------------------------------------------
+    do {
+        /*
+         Foundation framework’s JSONSerialization class is used to convert JSON data
+         into Swift data types such as Dictionary, Array, String, Number, or Bool.
+         */
+        let jsonResponse = try JSONSerialization.jsonObject(with: jsonDataFromApi!,
+                           options: JSONSerialization.ReadingOptions.mutableContainers)
+
+        if let array = jsonResponse as? [Any] {
+            for object in array  {
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                if let info = object as? [String : Any]{
+                    if let name = info["country"] as? String {
+                        countryName = name
+                    }
+                    
+                    if let cases = info["cases"] as? Int {
+                        totalCases = cases
+                    }
+                    
+                    if let todayCases = info["todayCases"] as? Int {
+                        newCases = todayCases
+                    }
+                    
+                    if let deaths = info["deaths"] as? Int {
+                        totalDeaths = deaths
+                    }
+                    
+                    if let todayDeaths = info["todayDeaths"] as? Int {
+                        newDeaths = todayDeaths
+                    }
+                    
+                    if let recovered = info["recovered"] as? Int {
+                        totalrecovered = recovered
+                    }
+                    
+                    if let countryInfo = info["countryInfo"] as? [String: Any] {
+                        if let la = countryInfo["lat"] as? Double {
+                            lat = la
+                        }
+                        
+                        if let lo = countryInfo["long"] as? Double {
+                            long = lo
+                        }
+                        
+                        if let flag = countryInfo["flag"] as? String {
+                            flagURL = flag
+                            flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                        }
+                    }
+                }
+                let id = UUID()
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                everyContriesDataListRecovered.append(entry)
+                
+                let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
+                orderedSearchableWorldDataListRecovered.append(searchableListEntry)
+            }
+            
+        }
+    } catch {
+
+        return
+    }
 }
