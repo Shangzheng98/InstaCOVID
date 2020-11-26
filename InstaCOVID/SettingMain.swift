@@ -15,7 +15,6 @@ struct SettingMain: View {
     @State private var enteredPassword = ""
     @State private var showInvalidPasswordAlert = false
     @State private var enteredUsername = ""
-    @State private var showInvalidUsernameAlert = false
     
     var body: some View {
         NavigationView{
@@ -39,6 +38,56 @@ struct SettingMain: View {
                             .frame(width: 300, height: 36)
                             .padding()
                         
+                        Button(action: {
+                            /*
+                             UserDefaults provides an interface to the user’s defaults database,
+                             where you store key-value pairs persistently across launches of your app.
+                             */
+                            // Retrieve the password from the user’s defaults database under the key "Password"
+                            let validPassword = UserDefaults.standard.string(forKey: "Password")
+                            
+                            let validUsername = UserDefaults.standard.string(forKey: "Username")
+                            
+                            /*
+                             If the user has not yet set a password, validPassword = nil
+                             In this case, allow the user to login.
+                             */
+                            
+                            if  self.enteredPassword == validPassword || self.enteredUsername == validUsername {
+                                userData.userAuthenticated = true
+                                self.showInvalidPasswordAlert = false
+                            } else {
+                                self.showInvalidPasswordAlert = true
+                            }
+                            
+                        }) {
+                            Text("Login")
+                                .frame(width: 100, height: 36, alignment: .center)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 16)
+                                        .strokeBorder(Color.black, lineWidth: 1))
+                                .padding()
+                        }
+                        .alert(isPresented: $showInvalidPasswordAlert, content: { self.invalidPasswordAlert })
+                        
+                        //The navigation link for the forget password and username
+                        NavigationLink(destination: Settings()) {
+                            HStack {
+                                Text("Forget Password / Username")
+                                    .font(.system(size: 18))
+                            }
+                        }
+                        .frame(minWidth: 400, maxWidth: 600, alignment: .center)
+                        //The navigation link for the first time set up
+                        NavigationLink(destination: FirstTimeSetting()) {
+                            HStack {
+                                Text("Haven't sign up yet? Click here")
+                                    .font(.system(size: 18))
+                            }
+                        }
+                        .frame(minWidth: 400, maxWidth: 500, alignment: .center)
+                        
+                        
                         
                         
                     }//end of vstack
@@ -46,18 +95,6 @@ struct SettingMain: View {
             }//end of zStack
         }//end of navigation view
     }//end of body
-    /*
-     ------------------------------
-     MARK: - Invalid Username Alert
-     ------------------------------
-     */
-    var invalidUsernameAlert: Alert {
-        Alert(title: Text("Invalid Username!"),
-              message: Text("Please enter a valid username to unlock the app!"),
-              dismissButton: .default(Text("OK")) )
-        
-        // Tapping OK resets @State var showInvalidPasswordAlert to false.
-    }
     
     /*
      ------------------------------
@@ -66,7 +103,7 @@ struct SettingMain: View {
      */
     var invalidPasswordAlert: Alert {
         Alert(title: Text("Invalid Password!"),
-              message: Text("Please enter a valid password to unlock the app!"),
+              message: Text("Please enter a valid Username / password to unlock the app!"),
               dismissButton: .default(Text("OK")) )
         
         // Tapping OK resets @State var showInvalidPasswordAlert to false.
@@ -80,3 +117,4 @@ struct SettingMain_Previews: PreviewProvider {
         SettingMain()
     }
 }
+
