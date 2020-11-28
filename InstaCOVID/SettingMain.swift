@@ -28,7 +28,7 @@ struct SettingMain: View {
                             .frame(width: 200, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
                         //Username section
-                        SecureField("Username", text: $enteredUsername)
+                        TextField("Username", text: $enteredUsername)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 300, height: 36)
                             .padding()
@@ -53,9 +53,10 @@ struct SettingMain: View {
                              In this case, allow the user to login.
                              */
                             
-                            if  self.enteredPassword == validPassword || self.enteredUsername == validUsername {
+                            if  self.enteredPassword == validPassword && self.enteredUsername == validUsername {
                                 userData.userAuthenticated = true
                                 self.showInvalidPasswordAlert = false
+                                
                             } else {
                                 self.showInvalidPasswordAlert = true
                             }

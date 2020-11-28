@@ -10,6 +10,8 @@
 		065AE180256F59B300067B7A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE17F256F59B200067B7A /* Settings.swift */; };
 		065AE184256F59F100067B7A /* FirstTimeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE183256F59F100067B7A /* FirstTimeSetting.swift */; };
 		065AE188256F5A2B00067B7A /* PersonalInformationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE187256F5A2B00067B7A /* PersonalInformationStruct.swift */; };
+		065AE18C25700E7A00067B7A /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE18B25700E7A00067B7A /* PhotoCaptureView.swift */; };
+		065AE19025700FFB00067B7A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065AE18F25700FFB00067B7A /* ImagePicker.swift */; };
 		06955641256AFE8C00A6882F /* SettingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955640256AFE8C00A6882F /* SettingMain.swift */; };
 		16776436256879EA00DFB371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16776435256879EA00DFB371 /* AppDelegate.swift */; };
 		16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16776437256879EA00DFB371 /* SceneDelegate.swift */; };
@@ -63,6 +65,8 @@
 		065AE17F256F59B200067B7A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		065AE183256F59F100067B7A /* FirstTimeSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTimeSetting.swift; sourceTree = "<group>"; };
 		065AE187256F5A2B00067B7A /* PersonalInformationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationStruct.swift; sourceTree = "<group>"; };
+		065AE18B25700E7A00067B7A /* PhotoCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
+		065AE18F25700FFB00067B7A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		06955640256AFE8C00A6882F /* SettingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMain.swift; sourceTree = "<group>"; };
 		16776432256879EA00DFB371 /* InstaCOVID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCOVID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16776435256879EA00DFB371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				ADB38C6A256892BC0091D139 /* NavigationStyle.swift */,
 				ADB38C6B256892BC0091D139 /* SearchBar.swift */,
 				ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */,
+				065AE18B25700E7A00067B7A /* PhotoCaptureView.swift */,
+				065AE18F25700FFB00067B7A /* ImagePicker.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB38C4C256880F10091D139 /* UserData.swift in Sources */,
+				065AE18C25700E7A00067B7A /* PhotoCaptureView.swift in Sources */,
 				ADB38C6D256892BC0091D139 /* NavigationStyle.swift in Sources */,
 				ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */,
 				16776436256879EA00DFB371 /* AppDelegate.swift in Sources */,
@@ -376,6 +383,7 @@
 				ADB38C752568930D0091D139 /* WebView.swift in Sources */,
 				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
+				065AE19025700FFB00067B7A /* ImagePicker.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,
 				065AE188256F5A2B00067B7A /* PersonalInformationStruct.swift in Sources */,
 			);
