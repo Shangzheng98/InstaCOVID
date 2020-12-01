@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
- 
+import Combine
+
 struct ContentView: View {
-    
+    @EnvironmentObject var userData: UserData
     var body: some View {
         TabView {
             Home()
@@ -21,6 +22,19 @@ struct ContentView: View {
                     Image(systemName: "chart.bar.xaxis")
                     Text("Data")
                 }
+            
+            if userData.userAuthenticated {
+                DisplayPersonalInfo().tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+            }
+            else{
+                SettingMain().tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+            }
         }   // End of TabView
             
     }
