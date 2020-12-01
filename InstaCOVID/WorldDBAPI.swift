@@ -9,7 +9,7 @@
 import Foundation
 
 var followedUpDataList = [WorldDataStruct]()
-let testFollowUp = WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png")
+let testFollowUp = WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af")
 
 var worldStatInfo = WorldStatStruct(totalCases: "0", newCases: "0", totalDeaths: "0", newDeaths: "0",totalRecovered: "0")
 var everyContriesDataListCases = [WorldDataStruct]()

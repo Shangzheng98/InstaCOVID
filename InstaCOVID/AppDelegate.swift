@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          *****************************************
          */
         //readCountriesDataFiles()
-        //getTotalWorldStatFromAPI()
+        getTotalWorldStatFromAPI()
         getEveryContriesDataFromAPISortByCases()
         getEveryContriesDataFromAPISortByNewCases()
         getEveryContriesDataFromAPISortByDeaths()
