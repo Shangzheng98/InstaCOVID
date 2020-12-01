@@ -17,55 +17,57 @@ struct DataView: View {
     let filterlist = ["Cases", "New Cases", "Deaths", "New Deaths", "Recovered"]
     let styleList = ["list.bullet","square.grid.3x3.fill"]
     var body: some View {
-        NavigationView {
-            VStack {
-                SearchBar(searchItem: $searchItem, placeholder: "Search")
-                List{
-                    
-                    HStack{
-                        Picker("", selection: $styleIndex){
-                            ForEach(0..<styleList.count,id: \.self) {
-                                
-                                Image(systemName: styleList[$0])
-
-                            }
-
-                        }
-//                        .frame(width: 260.0)
-                        .pickerStyle(SegmentedPickerStyle())
-                        Spacer()
-                        Picker(filterlist[filterIndex],selection: $filterIndex) {
-                            ForEach(0..<filterlist.count,id: \.self){
-                                Text(self.filterlist[$0])
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(1)
-                                    .frame(width: 100.0)
-                                    
-                            }
-                        }
-                        .padding(.horizontal, -1.0)
+        ZStack {
+            Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
+            NavigationView {
+                VStack {
+                    SearchBar(searchItem: $searchItem, placeholder: "Search")
+                    List{
                         
-                        .pickerStyle(MenuPickerStyle())
+                        HStack{
+                            Picker("", selection: $styleIndex){
+                                ForEach(0..<styleList.count,id: \.self) {
+                                    
+                                    Image(systemName: styleList[$0])
+
+                                }
+
+                            }
+    //                        .frame(width: 260.0)
+                            .pickerStyle(SegmentedPickerStyle())
+                            Spacer()
+                            Picker(filterlist[filterIndex],selection: $filterIndex) {
+                                ForEach(0..<filterlist.count,id: \.self){
+                                    Text(self.filterlist[$0])
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(1)
+                                        .frame(width: 100.0)
+                                        
+                                }
+                            }
+                            .padding(.horizontal, -1.0)
+                            
+                            .pickerStyle(MenuPickerStyle())
+                        }
+                        
+                        if styleIndex == 0 {
+                            ListData(searchItem: self.searchItem,filterIndex: self.filterIndex)
+                            //ListData(searchItem: self.searchItem)
+                        } else {
+                            ListGrid(searchItem: self.searchItem, filterIndex: self.filterIndex)
+                        }
+                    
+                        
                     }
                     
-//                    ListData(searchItem: self.searchItem)
-//                    changelist
-                    if styleIndex == 0 {
-                        ListData(searchItem: self.searchItem,filterIndex: self.filterIndex)
-                        //ListData(searchItem: self.searchItem)
-                    } else {
-                        ListGrid(searchItem: self.searchItem, filterIndex: self.filterIndex)
-                    }
-                
-                    
+                    .navigationBarTitle(Text("COVID-19 Case Status"),displayMode: .inline)
                 }
                 
-                .navigationBarTitle(Text("COVID-19 Case Status"),displayMode: .inline)
+                
             }
-            
-            
+            .customNavigationViewStyle()
         }
-        .customNavigationViewStyle()
+        
     }
 }
 
