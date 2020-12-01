@@ -55,31 +55,6 @@ struct Home: View {
                         }) {
                             self.imageForButton(buttonNumber: 3)
                         }
-                        //                        Button(action: {    // Button 5
-                        //                            self.userData.imageNumber = 4
-                        //                        }) {
-                        //                            self.imageForButton(buttonNumber: 4)
-                        //                        }
-                        //                        Button(action: {    // Button 6
-                        //                            self.userData.imageNumber = 5
-                        //                        }) {
-                        //                            self.imageForButton(buttonNumber: 5)
-                        //                        }
-                        //                        Button(action: {    // Button 7
-                        //                            self.userData.imageNumber = 6
-                        //                        }) {
-                        //                            self.imageForButton(buttonNumber: 6)
-                        //                        }
-                        //                        Button(action: {    // Button 8
-                        //                            self.userData.imageNumber = 7
-                        //                        }) {
-                        //                            self.imageForButton(buttonNumber: 7)
-                        //                        }
-                        //                        Button(action: {    // Button 9
-                        //                            self.userData.imageNumber = 8
-                        //                        }) {
-                        //                            self.imageForButton(buttonNumber: 8)
-                        //                        }
                         
                     }   // End of HStack
                     .imageScale(.medium)
@@ -100,21 +75,16 @@ struct Home: View {
             }
         }   // End of ZStack
         
-
-    }
-
-    
-
-        }   // End of body
+    }   // End of body
         
-        func imageForButton(buttonNumber: Int) -> Image {
+    func imageForButton(buttonNumber: Int) -> Image {
 
-            if self.userData.imageNumber == buttonNumber {
-                return Image(systemName: "\(buttonNumber+1).circle.fill")
-            } else {
-                return Image(systemName: "\(buttonNumber+1).circle")
-            }
+        if self.userData.imageNumber == buttonNumber {
+            return Image(systemName: "\(buttonNumber+1).circle.fill")
+        } else {
+            return Image(systemName: "\(buttonNumber+1).circle")
         }
+    }
 }
 struct FollowUp: View{
     
