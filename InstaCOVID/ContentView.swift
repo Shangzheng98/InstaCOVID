@@ -11,11 +11,11 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-//            Home()
-//                .tabItem {
-//                    Image(systemName: "house.fill")
-//                    Text("Home")
-//                }
+            Home()
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
             DataView()
                 .tabItem {
                     Image(systemName: "chart.bar.xaxis")
