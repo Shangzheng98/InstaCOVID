@@ -28,7 +28,7 @@ struct DisplayPersonalInfo: View {
                         Image("DefaultContactPhoto")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(minWidth: 135, maxWidth: 135, alignment: .center)
+                            .frame(maxWidth: 500, alignment: .center)
                     }
                     
                 }

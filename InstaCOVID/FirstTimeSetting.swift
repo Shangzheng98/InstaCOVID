@@ -126,7 +126,7 @@ struct FirstTimeSetting: View {
                             Image("DefaultContactPhoto")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(minWidth: 135, maxWidth: 135, alignment: .center)
+                                .frame(minWidth: 100, maxWidth: 100, alignment: .center)
                             
                         }
                     }
