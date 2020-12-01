@@ -13,7 +13,7 @@ struct DataListItem: View {
     var body: some View {
         
         HStack {
-            getImageFromUrl(url: country.flagImgURL, defaultFilename: "ImageUnavailable")
+            Image(country.flagImageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:80, height: 80)
@@ -85,7 +85,7 @@ struct DataListItem: View {
 
 struct DataListItem_Previews: PreviewProvider {
     static var previews: some View {
-        DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png"))
+        DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
         
         
     }
