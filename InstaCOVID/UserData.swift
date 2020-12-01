@@ -16,7 +16,7 @@ final class UserData: ObservableObject {
      MARK: - Slide Show Declarations
      -------------------------------
      */
-    let numberOfImagesInSlideShow = 9
+    let numberOfImagesInSlideShow = 4
     var counter = 0
     /*
      Create a Timer using initializer () and store its object reference into slideShowTimer.
