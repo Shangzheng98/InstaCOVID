@@ -24,7 +24,15 @@
 		167764A22568A97B00DFB371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167764A12568A97B00DFB371 /* Assets.xcassets */; };
 		167764A62568A97B00DFB371 /* WidgwtExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 167764982568A97A00DFB371 /* WidgwtExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA31C2575DF64008A45CA /* Diagnosis.swift */; };
-		16B2D3AB2570595B003D8856 /* ListGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B2D3AA2570595B003D8856 /* ListGrid.swift */; };
+		167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA3482575FFC8008A45CA /* GridListItem.swift */; };
+		167BA352257603C1008A45CA /* ListGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA351257603C1008A45CA /* ListGrid.swift */; };
+		16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */; };
+		16B0C5AE25760B760051AD4A /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AB25760B760051AD4A /* ForgetPassword.swift */; };
+		16B0C5AF25760B760051AD4A /* FirstTimeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */; };
+		16B0C5B025760B760051AD4A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AD25760B760051AD4A /* Settings.swift */; };
+		16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */; };
+		16B0C5B625760BCB0051AD4A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B425760BCB0051AD4A /* ImagePicker.swift */; };
+		16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */; };
 		ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
 		ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C48256880EF0091D139 /* StateDataStruct.swift */; };
 		ADB38C4C256880F10091D139 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C4B256880F10091D139 /* UserData.swift */; };
@@ -83,7 +91,15 @@
 		167764A12568A97B00DFB371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167764A32568A97B00DFB371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		167BA31C2575DF64008A45CA /* Diagnosis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
-		16B2D3AA2570595B003D8856 /* ListGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGrid.swift; sourceTree = "<group>"; };
+		167BA3482575FFC8008A45CA /* GridListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListItem.swift; sourceTree = "<group>"; };
+		167BA351257603C1008A45CA /* ListGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGrid.swift; sourceTree = "<group>"; };
+		16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoSetting.swift; sourceTree = "<group>"; };
+		16B0C5AB25760B760051AD4A /* ForgetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
+		16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeSetting.swift; sourceTree = "<group>"; };
+		16B0C5AD25760B760051AD4A /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
+		16B0C5B425760BCB0051AD4A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayPersonalInfo.swift; sourceTree = "<group>"; };
 		ADB38C45256880EC0091D139 /* WorldDataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldDataStruct.swift; sourceTree = "<group>"; };
 		ADB38C48256880EF0091D139 /* StateDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDataStruct.swift; sourceTree = "<group>"; };
 		ADB38C4B256880F10091D139 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -211,6 +227,8 @@
 		167764B42568B13500DFB371 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				16B0C5B425760BCB0051AD4A /* ImagePicker.swift */,
+				16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */,
 				ADB38C71256893030091D139 /* MapView.swift */,
 				ADB38C742568930D0091D139 /* WebView.swift */,
 				ADB38C6A256892BC0091D139 /* NavigationStyle.swift */,
@@ -247,7 +265,8 @@
 				1658DCB6256F0A6000EA873F /* DataListItem.swift */,
 				1658DCBA256F0A7000EA873F /* DataListDetails.swift */,
 				1658DCC6256F576C00EA873F /* ListData.swift */,
-				16B2D3AA2570595B003D8856 /* ListGrid.swift */,
+				167BA3482575FFC8008A45CA /* GridListItem.swift */,
+				167BA351257603C1008A45CA /* ListGrid.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -262,6 +281,11 @@
 		167764BA2568B19100DFB371 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */,
+				16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */,
+				16B0C5AB25760B760051AD4A /* ForgetPassword.swift */,
+				16B0C5AD25760B760051AD4A /* Settings.swift */,
+				16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */,
 				06955640256AFE8C00A6882F /* SettingMain.swift */,
 			);
 			name = Settings;
@@ -379,8 +403,10 @@
 			files = (
 				ADB38C4C256880F10091D139 /* UserData.swift in Sources */,
 				ADB38C6D256892BC0091D139 /* NavigationStyle.swift in Sources */,
+				16B0C5B025760B760051AD4A /* Settings.swift in Sources */,
 				1658DCB7256F0A6000EA873F /* DataListItem.swift in Sources */,
 				ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */,
+				167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */,
 				16776436256879EA00DFB371 /* AppDelegate.swift in Sources */,
 				ADB38C72256893030091D139 /* MapView.swift in Sources */,
 				ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */,
@@ -390,10 +416,16 @@
 				ADB38C6E256892BC0091D139 /* SearchBar.swift in Sources */,
 				1658DCBB256F0A7000EA873F /* DataListDetails.swift in Sources */,
 				1677643A256879EA00DFB371 /* ContentView.swift in Sources */,
+				16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */,
+				16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */,
+				16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */,
+				16B0C5B625760BCB0051AD4A /* ImagePicker.swift in Sources */,
 				ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */,
+				167BA352257603C1008A45CA /* ListGrid.swift in Sources */,
+				16B0C5AE25760B760051AD4A /* ForgetPassword.swift in Sources */,
+				16B0C5AF25760B760051AD4A /* FirstTimeSetting.swift in Sources */,
 				ADB38C752568930D0091D139 /* WebView.swift in Sources */,
 				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
-				16B2D3AB2570595B003D8856 /* ListGrid.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
 				1658DCB3256F057200EA873F /* DataView.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,

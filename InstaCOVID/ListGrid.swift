@@ -12,7 +12,7 @@ struct ListGrid: View {
     @EnvironmentObject var userData:UserData
     let searchItem:String
     let filterIndex: Int
-    let columns = [GridItem(.adaptive(minimum: 100), spacing: 10)]
+    let columns = [ GridItem(.adaptive(minimum: 150), spacing: 10) ]
     var body: some View {
         ZStack {
             Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all)
@@ -20,8 +20,7 @@ struct ListGrid: View {
                 LazyVGrid(columns: columns,spacing:10) {
                     if filterIndex == 0 {
                         ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                            contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
-                                .resizable()
+                            contry in GridListItem(country: self.searchItemCountry(searchListItem: contry))
                                 .scaledToFit()
                                 
                         }
