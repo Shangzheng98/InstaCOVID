@@ -14,43 +14,49 @@ struct ListGrid: View {
     let filterIndex: Int
     let columns = [GridItem(.adaptive(minimum: 100), spacing: 10)]
     var body: some View {
-        ScrollView {
-            LazyVGrid(columns: columns,spacing:10) {
-                if filterIndex == 0 {
-                    ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                        contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
-                            .resizable()
-                            .scaledToFit()
+        ZStack {
+            Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all)
+            ScrollView {
+                LazyVGrid(columns: columns,spacing:10) {
+                    if filterIndex == 0 {
+                        ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
+                            contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
+                                .resizable()
+                                .scaledToFit()
+                                
+                        }
+                    } else if filterIndex == 1 {
+                        ForEach(orderedSearchableWorldDataListNewCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
+                            contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                    } else if filterIndex == 2 {
+                        ForEach(orderedSearchableWorldDataListDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
+                            contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                    } else if filterIndex == 3 {
+                        ForEach(orderedSearchableWorldDataListNewDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
+                            contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
+                                .resizable()
+                                .scaledToFit()
+                        }
+                    } else {
+                        ForEach(orderedSearchableWorldDataListRecovered.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
+                            contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
+                                .resizable()
+                                .scaledToFit()
+                        }
                     }
-                } else if filterIndex == 1 {
-                    ForEach(orderedSearchableWorldDataListNewCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                        contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
-                            .resizable()
-                            .scaledToFit()
-                    }
-                } else if filterIndex == 2 {
-                    ForEach(orderedSearchableWorldDataListDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                        contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
-                            .resizable()
-                            .scaledToFit()
-                    }
-                } else if filterIndex == 3 {
-                    ForEach(orderedSearchableWorldDataListNewDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                        contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
-                            .resizable()
-                            .scaledToFit()
-                    }
-                } else {
-                    ForEach(orderedSearchableWorldDataListRecovered.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                        contry in getImageFromUrl(url: self.searchItemCountry(searchListItem: contry).flagImgURL,defaultFilename: "ImageUnavailable")
-                            .resizable()
-                            .scaledToFit()
-                    }
+                    
                 }
-                
             }
+            .padding()
         }
-        .padding()
+        
+        
     }
     
     func searchItemCountry(searchListItem: String) -> WorldDataStruct {

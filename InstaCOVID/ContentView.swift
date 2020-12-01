@@ -8,6 +8,7 @@
 import SwiftUI
  
 struct ContentView: View {
+    
     var body: some View {
         TabView {
 //            Home()
@@ -17,6 +18,7 @@ struct ContentView: View {
 //                }
             DataView()
                 .tabItem {
+                    Image(systemName: "chart.bar.xaxis")
                     Text("Data")
                 }
         }   // End of TabView
