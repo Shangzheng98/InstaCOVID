@@ -18,6 +18,7 @@ struct WorldDataStruct: Hashable, Codable, Identifiable {
     var lat: Double
     var long: Double
     var flagImgURL:String
+    var flagImageName:String
 }
 
 

@@ -102,18 +102,20 @@ struct Home: View {
         
 
     }
-    
-    func imageForButton(buttonNumber: Int) -> Image {
 
-        if self.userData.imageNumber == buttonNumber {
-            return Image(systemName: "\(buttonNumber+1).circle.fill")
-        } else {
-            return Image(systemName: "\(buttonNumber+1).circle")
+    
+
+        }   // End of body
+        
+        func imageForButton(buttonNumber: Int) -> Image {
+
+            if self.userData.imageNumber == buttonNumber {
+                return Image(systemName: "\(buttonNumber+1).circle.fill")
+            } else {
+                return Image(systemName: "\(buttonNumber+1).circle")
+            }
         }
-    }
-    
 }
-
 struct FollowUp: View{
     
     var wholeWorldData = WorldStatStruct(totalCases: worldStatInfo.totalCases, newCases: worldStatInfo.newCases, totalDeaths: worldStatInfo.totalDeaths, newDeaths: worldStatInfo.newDeaths, totalRecovered: worldStatInfo.totalRecovered)
@@ -246,6 +248,7 @@ struct FollowUp: View{
         .tabViewStyle(PageTabViewStyle())
     }
 }
+
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
         Home()
