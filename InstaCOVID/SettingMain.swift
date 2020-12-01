@@ -26,7 +26,7 @@ struct SettingMain: View {
                         Image("LoginImage")
                             .resizable()
                             .frame(width: 200, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
+                        
                         //Username section
                         TextField("Username", text: $enteredUsername)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -72,21 +72,41 @@ struct SettingMain: View {
                         .alert(isPresented: $showInvalidPasswordAlert, content: { self.invalidPasswordAlert })
                         
                         //The navigation link for the forget password and username
-                        NavigationLink(destination: Settings()) {
+                        NavigationLink(destination: ForgetPassword()) {
                             HStack {
                                 Text("Forget Password / Username")
                                     .font(.system(size: 18))
                             }
                         }
                         .frame(minWidth: 400, maxWidth: 600, alignment: .center)
-                        //The navigation link for the first time set up
-                        NavigationLink(destination: FirstTimeSetting()) {
-                            HStack {
-                                Text("Haven't sign up yet? Click here")
-                                    .font(.system(size: 18))
+                        
+                        
+                        let username = UserDefaults.standard.string(forKey: "Username")
+                        let password = UserDefaults.standard.string(forKey: "Password")
+                        
+                        if username != nil && password != nil{
+                            //The navigation link for the first time set up
+                            NavigationLink(destination: EditInfoSetting()) {
+                                HStack {
+                                    Text("Edit Personal Information")
+                                        .font(.system(size: 18))
+                                }
                             }
+                            .frame(minWidth: 400, maxWidth: 500, alignment: .center)
                         }
-                        .frame(minWidth: 400, maxWidth: 500, alignment: .center)
+                        else{
+                            
+                            //The navigation link for the first time set up
+                            NavigationLink(destination: FirstTimeSetting()) {
+                                HStack {
+                                    Text("Haven't sign up yet? Click here")
+                                        .font(.system(size: 18))
+                                }
+                            }
+                            .frame(minWidth: 400, maxWidth: 500, alignment: .center)
+                        }
+                        
+                        
                         
                         
                         
@@ -118,4 +138,5 @@ struct SettingMain_Previews: PreviewProvider {
         SettingMain()
     }
 }
+
 

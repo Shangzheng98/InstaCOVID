@@ -1,5 +1,5 @@
 //
-//  FirstTimeSetting.swift
+//  EditInfoSetting.swift
 //  InstaCOVID
 //
 //  Created by Tenghui Zhang on 11/25/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct FirstTimeSetting: View {
+struct EditInfoSetting: View {
     /*
      Display this view as a Modal View and enable it to dismiss itself
      to go back to the previous view in the navigation hierarchy.
@@ -186,111 +186,15 @@ struct FirstTimeSetting: View {
                         .autocapitalization(.words)
                 }.alert(isPresented: $showmissingInputDataAlert, content: { self.missingInputDataAlert })
                 
-                //Username section
-                Section(header: Text("Username")){
-                    HStack {
-                        TextField("Enter Username", text: $usernameTextFieldValue
-                        )
-                        .keyboardType(.numbersAndPunctuation)
-                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                        // Button to clear the text field
-                        Button(action: {
-                            self.usernameTextFieldValue = ""
-                        }) {
-                            Image(systemName: "clear")
-                                .imageScale(.medium)
-                                .font(Font.title.weight(.regular))
-                        }
-                    }   // End of HStack
-                    .frame(minWidth: 300, maxWidth: 500)
-                }
-                
-                //password section
-                Section(header: Text("Password")){
-                    HStack {
-                        TextField("Enter Password", text: $passwordTextFieldValue
-                        )
-                        .keyboardType(.numbersAndPunctuation)
-                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                        
-                        
-                        // Button to clear the text field
-                        Button(action: {
-                            self.passwordTextFieldValue = ""
-                        }) {
-                            Image(systemName: "clear")
-                                .imageScale(.medium)
-                                .font(Font.title.weight(.regular))
-                        }
-                    }   // End of HStack
-                    .frame(minWidth: 300, maxWidth: 500)
-                }
                 
                 
                 
             }//end of group
             
-            //Check the value for the password is the same
-            Section(header: Text("Verify Password")){
-                HStack {
-                    TextField("Verify Password", text: $verifyTextField
-                              
-                    )
-                    .keyboardType(.numbersAndPunctuation)
-                    .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                    
-                    // Button to clear the text field
-                    Button(action: {
-                        self.verifyTextField = ""
-                    }) {
-                        Image(systemName: "clear")
-                            .imageScale(.medium)
-                            .font(Font.title.weight(.regular))
-                    }
-                }   // End of HStack
-                .frame(minWidth: 300, maxWidth: 500)
-            }
-            
-            //Choosing the different questions for the security
-            Section(header: Text("Select a Security Question")){
-                Picker("Selected:", selection: $selectedIndexForQuestion) {
-                    ForEach(0 ..< searchCategories.count, id: \.self) {
-                        Text(searchCategories[$0]).font(.system(size: 12))
-                    }
-                    
-                    
-                }
-                .frame(minWidth: 300, maxWidth: 500)
-                
-            }
-            
-            //Aswer the question and save it to the userdata
-            Section(header: Text("Enter answer to selected security question")){
-                HStack {
-                    TextField("Enter Answer", text: $textFieldValue
-                    )
-                    .keyboardType(.numbersAndPunctuation)
-                    .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
-                    // Button to clear the text field
-                    Button(action: {
-                        self.textFieldValue = ""
-                    }) {
-                        Image(systemName: "clear")
-                            .imageScale(.medium)
-                            .font(Font.title.weight(.regular))
-                    }
-                }   // End of HStack
-                .frame(minWidth: 300, maxWidth: 500)
-            }
-            
             //Save button
             Section(header: Text("Save profile")){
                 Button(action: {
-                    if (!usernameTextFieldValue.isEmpty || !passwordTextFieldValue.isEmpty) && (verifyTextField == passwordTextFieldValue) {
+                    if (!nameTextFieldValue.isEmpty || !nationalityTextFieldValue.isEmpty || !phoneTextFieldValue.isEmpty || !identityTextFieldValue.isEmpty || !currentLivingCountryTextFieldValue.isEmpty) {
                         /*
                          UserDefaults provides an interface to the user’s defaults database,
                          where you store key-value pairs persistently across launches of your app.
@@ -320,10 +224,6 @@ struct FirstTimeSetting: View {
                         UserDefaults.standard.set(phoneTextFieldValue, forKey: "Phone")
                         UserDefaults.standard.set(identityTextFieldValue, forKey: "Identity")
                         UserDefaults.standard.set(currentLivingCountryTextFieldValue, forKey: "LivingCountry")
-                        UserDefaults.standard.set(usernameTextFieldValue, forKey: "Username")
-                        UserDefaults.standard.set(passwordTextFieldValue, forKey: "Password")
-                        UserDefaults.standard.set(searchCategories[selectedIndexForQuestion], forKey: "Question")
-                        UserDefaults.standard.set(textFieldValue, forKey: "Answer")
                         // Dismiss this View and go back
                         self.presentationMode.wrappedValue.dismiss()
                         showSavingInputDataAlert = true
@@ -376,8 +276,9 @@ struct FirstTimeSetting: View {
     }
 }
 
-struct FirstTimeSetting_Previews: PreviewProvider {
+struct EditInfoSetting_Previews: PreviewProvider {
     static var previews: some View {
-        FirstTimeSetting()
+        EditInfoSetting()
     }
 }
+

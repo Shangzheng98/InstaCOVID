@@ -18,13 +18,13 @@ struct ContentView: View {
                     Text("Home")
                 }
             if userData.userAuthenticated {
-                SettingMain().tabItem {
+                DisplayPersonalInfo().tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
             }
             else{
-                FirstTimeSetting().tabItem {
+                SettingMain().tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
