@@ -30,7 +30,7 @@ struct GridListItem: View {
                                             }
                 }
         } else {
-            getImageFromUrl(url: country.flagImgURL, defaultFilename: "ImageUnavailable")
+            Image(country.flagImageName)
                 .resizable()
                 .scaledToFit()
                 .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
@@ -87,6 +87,6 @@ struct FlipEffect: GeometryEffect {
 }
 struct GridListItem_Previews: PreviewProvider {
     static var previews: some View {
-        GridListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png"))
+        GridListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png", flagImageName: "af"))
     }
 }

@@ -192,7 +192,7 @@ public func getEveryContriesDataFromAPISortByCases(){
 
         if let array = jsonResponse as? [Any] {
             for object in array  {
-                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = "",flagName = ""
                 if let info = object as? [String : Any]{
                     if let name = info["country"] as? String {
                         countryName = name
@@ -230,11 +230,12 @@ public func getEveryContriesDataFromAPISortByCases(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
                         }
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName:flagName)
                 everyContriesDataListCases.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -281,7 +282,7 @@ public func getEveryContriesDataFromAPISortByNewCases(){
 
         if let array = jsonResponse as? [Any] {
             for object in array  {
-                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = "",flagName = ""
                 if let info = object as? [String : Any]{
                     if let name = info["country"] as? String {
                         countryName = name
@@ -319,11 +320,12 @@ public func getEveryContriesDataFromAPISortByNewCases(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
                         }
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName)
                 everyContriesDataListNewCases.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -363,7 +365,7 @@ public func getEveryContriesDataFromAPISortByDeaths(){
 
         if let array = jsonResponse as? [Any] {
             for object in array  {
-                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = "",flagName = ""
                 if let info = object as? [String : Any]{
                     if let name = info["country"] as? String {
                         countryName = name
@@ -401,11 +403,12 @@ public func getEveryContriesDataFromAPISortByDeaths(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
                         }
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName)
                 everyContriesDataListDeaths.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -446,7 +449,7 @@ public func getEveryContriesDataFromAPISortByNewDeaths(){
 
         if let array = jsonResponse as? [Any] {
             for object in array  {
-                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = "",flagName = ""
                 if let info = object as? [String : Any]{
                     if let name = info["country"] as? String {
                         countryName = name
@@ -484,11 +487,12 @@ public func getEveryContriesDataFromAPISortByNewDeaths(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
                         }
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL, flagImageName: flagName)
                 everyContriesDataListNewDeaths.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -528,7 +532,7 @@ public func getEveryContriesDataFromAPISortByRecovered(){
 
         if let array = jsonResponse as? [Any] {
             for object in array  {
-                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = ""
+                var countryName = "", totalCases = 0, newCases = 0, totalDeaths = 0, newDeaths = 0, totalrecovered = 0, lat = 0.0, long = 0.0, flagURL = "", flagName = ""
                 if let info = object as? [String : Any]{
                     if let name = info["country"] as? String {
                         countryName = name
@@ -566,11 +570,13 @@ public func getEveryContriesDataFromAPISortByRecovered(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
+                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            print(flagName)
                         }
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName)
                 everyContriesDataListRecovered.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
