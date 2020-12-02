@@ -16,6 +16,7 @@ struct EditInfoSetting: View {
     @Environment(\.presentationMode) var presentationMode
     //The initialize of the variable
     let selectionList = ["Camera", "Library"]
+    @Binding var name : String
     @State private var nameTextFieldValue = ""
     @State private var verifyTextField = ""
     @State private var showmissingInputDataAlert = false
@@ -53,7 +54,8 @@ struct EditInfoSetting: View {
             Group{
                 //The name section
                 Section(header: Text("Name")){
-                    TextField("Enter your name", text: $nameTextFieldValue)
+//                    TextField("Enter your name", text: $nameTextFieldValue)
+                    TextField("Enter your name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.words)
@@ -194,7 +196,7 @@ struct EditInfoSetting: View {
             //Save button
             Section(header: Text("Save profile")){
                 Button(action: {
-                    if (!nameTextFieldValue.isEmpty || !nationalityTextFieldValue.isEmpty || !phoneTextFieldValue.isEmpty || !identityTextFieldValue.isEmpty || !currentLivingCountryTextFieldValue.isEmpty) {
+                    if (!name.isEmpty || !nationalityTextFieldValue.isEmpty || !phoneTextFieldValue.isEmpty || !identityTextFieldValue.isEmpty || !currentLivingCountryTextFieldValue.isEmpty) {
                         /*
                          UserDefaults provides an interface to the user’s defaults database,
                          where you store key-value pairs persistently across launches of your app.
@@ -224,8 +226,10 @@ struct EditInfoSetting: View {
                         UserDefaults.standard.set(phoneTextFieldValue, forKey: "Phone")
                         UserDefaults.standard.set(identityTextFieldValue, forKey: "Identity")
                         UserDefaults.standard.set(currentLivingCountryTextFieldValue, forKey: "LivingCountry")
+                        
                         // Dismiss this View and go back
                         self.presentationMode.wrappedValue.dismiss()
+                     //   self.updateInfo()
                         showSavingInputDataAlert = true
                         
                     }
@@ -274,11 +278,22 @@ struct EditInfoSetting: View {
          Tapping OK resets @State var showMissingInputDataAlert to false.
          */
     }
+    //Update personal infomation
+//    func updateInfo() {
+//        photo = UserDefaults.standard.data(forKey: "Photo")
+//        name = UserDefaults.standard.string(forKey: "Name")
+//        gender = UserDefaults.standard.string(forKey: "Gender")
+//        birth = UserDefaults.standard.string(forKey: "Birth")
+//        nationality = UserDefaults.standard.string(forKey: "Nationality")
+//        phone = UserDefaults.standard.string(forKey: "Phone")
+//        identity = UserDefaults.standard.string(forKey: "Identity")
+//        country = UserDefaults.standard.string(forKey: "LivingCountry")
+//    }
 }
 
-struct EditInfoSetting_Previews: PreviewProvider {
-    static var previews: some View {
-        EditInfoSetting()
-    }
-}
+//struct EditInfoSetting_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EditInfoSetting()
+//    }
+//}
 

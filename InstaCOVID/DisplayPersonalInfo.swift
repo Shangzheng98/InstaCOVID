@@ -9,20 +9,28 @@
 import SwiftUI
 
 struct DisplayPersonalInfo: View {
+    @State private var photo = UserDefaults.standard.data(forKey: "Photo")
+//    @State private var name = UserDefaults.standard.string(forKey: "Name")
+    @State private var name = ""
+    @State private var gender = UserDefaults.standard.string(forKey: "Gender")
+    @State private var birth = UserDefaults.standard.string(forKey: "Birth")
+    @State private var nationality = UserDefaults.standard.string(forKey: "Nationality")
+    @State private var phone = UserDefaults.standard.string(forKey: "Phone")
+    @State private var identity = UserDefaults.standard.string(forKey: "Identity")
+    @State private var country = UserDefaults.standard.string(forKey: "LivingCountry")
+    
     
     var body: some View {
         
         NavigationView{
             Form{
-                
                 //The picture section
                 Section(header: Text("")){
-                    let photo = UserDefaults.standard.data(forKey: "Photo")
                     if photo != nil{
-                    getImageFromBinaryData(binaryData: photo, defaultFilename: "DefaultContactPhoto")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(maxWidth: 500, alignment: .center)
+                        getImageFromBinaryData(binaryData: photo, defaultFilename: "DefaultContactPhoto")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 500, alignment: .center)
                     }
                     else{
                         Image("DefaultContactPhoto")
@@ -35,47 +43,52 @@ struct DisplayPersonalInfo: View {
                 
                 //The name section
                 Section(header: Text("Name")){
-                    let name = UserDefaults.standard.string(forKey: "Name")
-                    Text(name!)
+                    Text(name)
                 }
                 
                 
                 //The gender section
                 
                 Section(header: Text("Gender")){
-                    let gender = UserDefaults.standard.string(forKey: "Gender")
                     Text(gender!)
                 }
                 
                 //The date of birth
                 Section(header: Text("Date of Birth")){
-                    let birth = UserDefaults.standard.string(forKey: "Birth")
                     Text(birth!)
                     
                 }
                 
                 //Nationality section
                 Section(header: Text("Nationality")){
-                    let nationality = UserDefaults.standard.string(forKey: "Nationality")
                     Text(nationality!)
                 }
                 
                 //Phone number section
                 Section(header: Text("Phone Number")){
-                    let phone = UserDefaults.standard.string(forKey: "Phone")
-                    Text("+\(phone!)")
+                    Text("\(phone!)")
                 }
                 
                 //Identity section
                 Section(header: Text("Identity")){
-                    let identity = UserDefaults.standard.string(forKey: "Identity")
                     Text(identity!)
                 }
                 
                 //Current living country
                 Section(header: Text("Current living country")){
-                    let country = UserDefaults.standard.string(forKey: "LivingCountry")
                     Text(country!)
+                }
+                
+                //Edit information
+                Section(header: Text("Change profile")){
+                    //The navigation link for the first time set up
+                    NavigationLink(destination: EditInfoSetting(name: $name)) {
+                        HStack {
+                            Text("Edit Personal Information")
+                                .font(.system(size: 18))
+                        }
+                    }
+                    .frame(minWidth: 400, maxWidth: 500, alignment: .center)
                 }
                 
                 
@@ -83,7 +96,10 @@ struct DisplayPersonalInfo: View {
                 
                 
             }.navigationBarTitle(Text("Personal Account Information"), displayMode: .inline)//End of form
-        }//end of navigation view
+        }.onAppear {
+            name = UserDefaults.standard.string(forKey: "Name")!
+        }
+        //end of navigation view
     }//end of body
     
 }
