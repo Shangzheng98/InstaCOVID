@@ -15,23 +15,33 @@ struct ListData: View {
     var body: some View {
         if filterIndex == 0 {
             ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                item in DataListItem(country: self.searchItemCountry(searchListItem: item))
+                item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
+                    DataListItem(country: self.searchItemCountry(searchListItem: item))
+                }
             }
         } else if filterIndex == 1 {
             ForEach(orderedSearchableWorldDataListNewCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                item in DataListItem(country: self.searchItemCountry(searchListItem: item))
+                item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
+                    DataListItem(country: self.searchItemCountry(searchListItem: item))
+                }
             }
         } else if filterIndex == 2 {
             ForEach(orderedSearchableWorldDataListDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                item in DataListItem(country: self.searchItemCountry(searchListItem: item))
+                item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
+                    DataListItem(country: self.searchItemCountry(searchListItem: item))
+                }
             }
         } else if filterIndex == 3 {
             ForEach(orderedSearchableWorldDataListNewDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                item in DataListItem(country: self.searchItemCountry(searchListItem: item))
+                item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
+                    DataListItem(country: self.searchItemCountry(searchListItem: item))
+                }
             }
         } else {
             ForEach(orderedSearchableWorldDataListRecovered.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
-                item in DataListItem(country: self.searchItemCountry(searchListItem: item))
+                item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
+                    DataListItem(country: self.searchItemCountry(searchListItem: item))
+                }
             }
         }
         

@@ -15,17 +15,16 @@ struct Home: View {
     var body: some View {
         ZStack {        // Background
             Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack {    // Foreground
+            VStack {
+                VStack {
                     Image("Welcome")
                         .padding(.top, 50)
                     // Show IEX Cloud API provider's website in default web browser
-                    
+
                     Link(destination: URL(string: "https://www.cdc.gov/coronavirus/2019-ncov/")!) {
                         Text("CDC's Covid-19 News")
                     }
-                    
+
                     Image("photo\(userData.imageNumber + 1)")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -33,7 +32,7 @@ struct Home: View {
                         .padding(.top, 30)
                         .padding(.bottom, 5)
                         .padding(.horizontal)
-                    
+
                     HStack {
                         Button(action: {    // Button 1
                             self.userData.imageNumber = 0
@@ -55,25 +54,33 @@ struct Home: View {
                         }) {
                             self.imageForButton(buttonNumber: 3)
                         }
-                        
+
                     }   // End of HStack
                     .imageScale(.medium)
                     .font(Font.title.weight(.regular))
                     .padding(.bottom, 100)
-                    
-                    Text("Your Followed Country's Covid-19 Data")
-                    FollowUp()
-                    
+
                 }   // End of VStack
+                .onAppear() {
+                    self.userData.startTimer()
+                }
+                .onDisappear() {
+                    self.userData.stopTimer()
+                }
                 
-            }   // End of ScrollView
-            .onAppear() {
-                self.userData.startTimer()
+                
+                Text("Your Followed Country's Covid-19 Data")
+                    .padding(.top, -20)
+                FollowUp()
             }
-            .onDisappear() {
-                self.userData.stopTimer()
-            }
+            
+//            VStack {
+//
+//                FollowUp()
+//            }
+                
         }   // End of ZStack
+        .edgesIgnoringSafeArea(.all)
         
     }   // End of body
         
@@ -87,19 +94,18 @@ struct Home: View {
     }
 }
 struct FollowUp: View{
-    
-    var wholeWorldData = WorldStatStruct(totalCases: worldStatInfo.totalCases, newCases: worldStatInfo.newCases, totalDeaths: worldStatInfo.totalDeaths, newDeaths: worldStatInfo.newDeaths, totalRecovered: worldStatInfo.totalRecovered)
+    @EnvironmentObject var userData: UserData
     var body: some View{
-        TabView {
-            //followedUpDataList.append(testFollowUp)
-                VStack(alignment: .leading) {
+        ScrollView(.horizontal,showsIndicators: false) {
+            HStack {
+                VStack {
                     HStack {
                         Text("Whole World's Covid-19 Cases Status")
                     }
                     .font(.system(size: 13))
                     
                     HStack{
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .center) {
                             Text("Confirmed")
                                 .font(.system(size: 12.5))
                                 .foregroundColor(.red)
@@ -116,7 +122,7 @@ struct FollowUp: View{
                         }
                         Divider()
                         
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .center) {
                             Text("Recovered ")
                                 .font(.system(size: 12.5))
                                 .foregroundColor(.green)
@@ -129,7 +135,7 @@ struct FollowUp: View{
                             Text("")
                         }
                         Divider()
-                        VStack(alignment: .leading) {
+                        VStack(alignment: .center) {
                             Text("Deaths")
                                 .font(.system(size: 12.5))
                             Text("\(worldStatInfo.totalDeaths)")
@@ -145,77 +151,22 @@ struct FollowUp: View{
                             }
                         }
                     }
-                    .frame(width: 250.0)
+                    .frame(width: UIScreen.main.bounds.width, height: 100)
                     .font(.system(size: 12))
                     
                 }
-            ForEach(followedUpDataList) { followedUp in
-                HStack{
-                    getImageFromUrl(url: followedUp.flagImgURL, defaultFilename: "ImageUnavailable")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:80, height: 80)
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(followedUp.countryName)
-                        }
-                        .font(.system(size: 13))
-                        
-                        HStack{
-                            VStack(alignment: .leading) {
-                                Text("Confirmed")
-                                    .font(.system(size: 12.5))
-                                    .foregroundColor(.red)
-                                Text("\(followedUp.cases)")
-                                HStack {
-                                    Image(systemName: "arrow.up")
-                                        .imageScale(.small)
-                                        .foregroundColor(.gray)
-                                    
-                                    Text("\(followedUp.newCases)")
-                                        .foregroundColor(.gray)
-                                        .font(.system(size: 11))
-                                }
-                            }
-                            Divider()
-                            
-                            VStack(alignment: .leading) {
-                                Text("Recovered ")
-                                    .font(.system(size: 12.5))
-                                    .foregroundColor(.green)
-                                    .multilineTextAlignment(.leading)
-                                
-                                HStack {
-                                    Text("\(followedUp.totalRecovered)")
-                                }
-                                
-                                Text("")
-                            }
-                            Divider()
-                            VStack(alignment: .leading) {
-                                Text("Deaths")
-                                    .font(.system(size: 12.5))
-                                Text("\(followedUp.deaths)")
-                                
-                                HStack {
-                                    Image(systemName: "arrow.up")
-                                        .imageScale(.small)
-                                        .foregroundColor(.gray)
-                                    
-                                    Text("\(followedUp.newDeaths)")
-                                        .foregroundColor(.gray)
-                                        .font(.system(size: 11))
-                                }
-                            }
-                        }
-                        .frame(width: 250.0)
-                        .font(.system(size: 12))
-                        
-                    }
+                ForEach(userData.followedCountriesList) {
+                    followUp in DataListItem(country: followUp)
+                        .frame(width: UIScreen.main.bounds.width, height: 100)
                 }
             }
-        }   // End of TabView
-        .tabViewStyle(PageTabViewStyle())
+        }
+//                DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
+//                DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
+//                DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
+            
+            
+        
     }
 }
 
