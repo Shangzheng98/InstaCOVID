@@ -21,8 +21,8 @@ struct GridListItem: View {
         if self.flipped {
             Image("ImageUnavailable")
                 .resizable()
-                .scaledToFit()
-                .frame(width: 212, height: 320)
+                
+                .frame(width: 150, height: 100)
                 .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
                 .onTapGesture {
                     withAnimation(Animation.linear(duration: 0.8)) {
@@ -32,7 +32,8 @@ struct GridListItem: View {
         } else {
             Image(country.flagImageName)
                 .resizable()
-                .scaledToFit()
+                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                .frame(width: 150, height: 100)
                 .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
                 .onTapGesture {
                     withAnimation(Animation.linear(duration: 0.8)) {

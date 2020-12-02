@@ -30,32 +30,28 @@ struct DataListDetails: View {
                     .frame(minWidth: 300, maxWidth: 500, alignment: .center)
             }
             Section(header: Text("Country Confirmed Cases"), footer: Text("New Confirmed Cases: \(country.newCases)").italic()) {
-                Text(country.cases)
+                Text("\(country.cases)")
             }
             
             Section(header: Text("Country Deaths"), footer: Text("New Deaths: \(country.newDeaths)").italic()) {
-                Text(country.deaths)
+                Text("\(country.deaths)")
             }
             
             Section(header: Text("Country Recovered Cases")) {
-                Text(country.totalRecovered)
+                Text("\(country.totalRecovered)")
             }
             
             Section(header: Text("Follow up This Country's Status")) {
                 Button(action: {
                     userData.followedCountriesList.append(country)
-                    let newCountry = "\(country.id)|\(country.countryName)|\(country.totalCases)|\(country.totalDeaths)|\(country.totalrecovered)|\(country.newDeaths)|\(country.newCases)|\(country.lat)|\(country.long)|\(country.flagImgURL)|\(country.flagImageName)"
-                    
-                    userData.searchableOrderedWorldDataList.append(newCountry)
-                    everyContriesDataListCases = userData.countriesDataList
-                    orderedSearchableWorldDataList = userData.searchableOrderedWorldDataList
+                    followedUpDataList = userData.followedCountriesList
                     self.showCountryAddedAlert = true
                 }) {
                     HStack {
                         Image(systemName: "plus")
                             .imageScale(.large)
-                            .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                        Text("Add to Follow Up")
+                            .foregroundColor(.blue)
+                        Text("Follow Up")
                     }
                 }
                 .alert(isPresented: $showCountryAddedAlert, content: { self.countryAddedAlert })
@@ -77,7 +73,6 @@ struct DataListDetails: View {
             
         }   // End of Form
         .navigationBarTitle(Text("Country Details"), displayMode: .inline)
-        .font(.system(size: 14))
         
     }   // End of body
     
