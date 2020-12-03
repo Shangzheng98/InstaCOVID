@@ -18,16 +18,16 @@
 		1677643C256879EB00DFB371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1677643B256879EB00DFB371 /* Assets.xcassets */; };
 		1677643F256879EB00DFB371 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1677643E256879EB00DFB371 /* Preview Assets.xcassets */; };
 		16776442256879EB00DFB371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16776440256879EB00DFB371 /* LaunchScreen.storyboard */; };
-		1677649B2568A97A00DFB371 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
-		1677649D2568A97A00DFB371 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; };
-		167764A02568A97A00DFB371 /* Widgwt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1677649F2568A97A00DFB371 /* Widgwt.swift */; };
-		167764A22568A97B00DFB371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167764A12568A97B00DFB371 /* Assets.xcassets */; };
-		167764A62568A97B00DFB371 /* WidgwtExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 167764982568A97A00DFB371 /* WidgwtExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA31C2575DF64008A45CA /* Diagnosis.swift */; };
 		167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA3482575FFC8008A45CA /* GridListItem.swift */; };
 		167BA352257603C1008A45CA /* ListGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA351257603C1008A45CA /* ListGrid.swift */; };
 		1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697D4322578428600D02EF9 /* VisualEffectBlur.swift */; };
 		16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F2225787CDD007945DF /* LoadAndSave.swift */; };
+		16AC1F482579488B007945DF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
+		16AC1F492579488B007945DF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; };
+		16AC1F4C2579488B007945DF /* InstaCOVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */; };
+		16AC1F4E2579488C007945DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AC1F4D2579488C007945DF /* Assets.xcassets */; };
+		16AC1F522579488C007945DF /* InstaCOVIDWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */; };
 		16B0C5AE25760B760051AD4A /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AB25760B760051AD4A /* ForgetPassword.swift */; };
 		16B0C5AF25760B760051AD4A /* FirstTimeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */; };
@@ -56,12 +56,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		167764A42568A97B00DFB371 /* PBXContainerItemProxy */ = {
+		16AC1F502579488C007945DF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1677642A256879EA00DFB371 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 167764972568A97A00DFB371;
-			remoteInfo = WidgwtExtension;
+			remoteGlobalIDString = 16AC1F462579488B007945DF;
+			remoteInfo = InstaCOVIDWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -72,7 +72,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				167764A62568A97B00DFB371 /* WidgwtExtension.appex in Embed App Extensions */,
+				16AC1F522579488C007945DF /* InstaCOVIDWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,17 +93,17 @@
 		1677643E256879EB00DFB371 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		16776441256879EB00DFB371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		16776443256879EB00DFB371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		167764982568A97A00DFB371 /* WidgwtExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgwtExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1677649A2568A97A00DFB371 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1677649C2568A97A00DFB371 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		1677649F2568A97A00DFB371 /* Widgwt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgwt.swift; sourceTree = "<group>"; };
-		167764A12568A97B00DFB371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		167764A32568A97B00DFB371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		167BA31C2575DF64008A45CA /* Diagnosis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		167BA3482575FFC8008A45CA /* GridListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListItem.swift; sourceTree = "<group>"; };
 		167BA351257603C1008A45CA /* ListGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGrid.swift; sourceTree = "<group>"; };
 		1697D4322578428600D02EF9 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		16AC1F2225787CDD007945DF /* LoadAndSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndSave.swift; sourceTree = "<group>"; };
+		16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InstaCOVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCOVIDWidget.swift; sourceTree = "<group>"; };
+		16AC1F4D2579488C007945DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16AC1F4F2579488C007945DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoSetting.swift; sourceTree = "<group>"; };
 		16B0C5AB25760B760051AD4A /* ForgetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
 		16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeSetting.swift; sourceTree = "<group>"; };
@@ -146,12 +146,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		167764952568A97A00DFB371 /* Frameworks */ = {
+		16AC1F442579488B007945DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1677649D2568A97A00DFB371 /* SwiftUI.framework in Frameworks */,
-				1677649B2568A97A00DFB371 /* WidgetKit.framework in Frameworks */,
+				16AC1F492579488B007945DF /* SwiftUI.framework in Frameworks */,
+				16AC1F482579488B007945DF /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				16776434256879EA00DFB371 /* InstaCOVID */,
-				1677649E2568A97A00DFB371 /* Widgwt */,
+				16AC1F4A2579488B007945DF /* InstaCOVIDWidget */,
 				167764992568A97A00DFB371 /* Frameworks */,
 				16776433256879EA00DFB371 /* Products */,
 			);
@@ -172,7 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				16776432256879EA00DFB371 /* InstaCOVID.app */,
-				167764982568A97A00DFB371 /* WidgwtExtension.appex */,
+				16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,16 +219,6 @@
 				1677649C2568A97A00DFB371 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1677649E2568A97A00DFB371 /* Widgwt */ = {
-			isa = PBXGroup;
-			children = (
-				1677649F2568A97A00DFB371 /* Widgwt.swift */,
-				167764A12568A97B00DFB371 /* Assets.xcassets */,
-				167764A32568A97B00DFB371 /* Info.plist */,
-			);
-			path = Widgwt;
 			sourceTree = "<group>";
 		};
 		167764AF2568B0EA00DFB371 /* Data Models */ = {
@@ -334,6 +324,16 @@
 			name = Diagnosis;
 			sourceTree = "<group>";
 		};
+		16AC1F4A2579488B007945DF /* InstaCOVIDWidget */ = {
+			isa = PBXGroup;
+			children = (
+				16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */,
+				16AC1F4D2579488C007945DF /* Assets.xcassets */,
+				16AC1F4F2579488C007945DF /* Info.plist */,
+			);
+			path = InstaCOVIDWidget;
+			sourceTree = "<group>";
+		};
 		AD3C103F2578E1020080AC30 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,28 +363,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				167764A52568A97B00DFB371 /* PBXTargetDependency */,
+				16AC1F512579488C007945DF /* PBXTargetDependency */,
 			);
 			name = InstaCOVID;
 			productName = InstaCOVID;
 			productReference = 16776432256879EA00DFB371 /* InstaCOVID.app */;
 			productType = "com.apple.product-type.application";
 		};
-		167764972568A97A00DFB371 /* WidgwtExtension */ = {
+		16AC1F462579488B007945DF /* InstaCOVIDWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 167764A72568A97B00DFB371 /* Build configuration list for PBXNativeTarget "WidgwtExtension" */;
+			buildConfigurationList = 16AC1F532579488C007945DF /* Build configuration list for PBXNativeTarget "InstaCOVIDWidgetExtension" */;
 			buildPhases = (
-				167764942568A97A00DFB371 /* Sources */,
-				167764952568A97A00DFB371 /* Frameworks */,
-				167764962568A97A00DFB371 /* Resources */,
+				16AC1F432579488B007945DF /* Sources */,
+				16AC1F442579488B007945DF /* Frameworks */,
+				16AC1F452579488B007945DF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = WidgwtExtension;
-			productName = WidgwtExtension;
-			productReference = 167764982568A97A00DFB371 /* WidgwtExtension.appex */;
+			name = InstaCOVIDWidgetExtension;
+			productName = InstaCOVIDWidgetExtension;
+			productReference = 16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -400,7 +400,7 @@
 					16776431256879EA00DFB371 = {
 						CreatedOnToolsVersion = 12.2;
 					};
-					167764972568A97A00DFB371 = {
+					16AC1F462579488B007945DF = {
 						CreatedOnToolsVersion = 12.2;
 					};
 				};
@@ -419,7 +419,7 @@
 			projectRoot = "";
 			targets = (
 				16776431256879EA00DFB371 /* InstaCOVID */,
-				167764972568A97A00DFB371 /* WidgwtExtension */,
+				16AC1F462579488B007945DF /* InstaCOVIDWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -435,11 +435,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		167764962568A97A00DFB371 /* Resources */ = {
+		16AC1F452579488B007945DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				167764A22568A97B00DFB371 /* Assets.xcassets in Resources */,
+				16AC1F4E2579488C007945DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,21 +491,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		167764942568A97A00DFB371 /* Sources */ = {
+		16AC1F432579488B007945DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				167764A02568A97A00DFB371 /* Widgwt.swift in Sources */,
+				16AC1F4C2579488B007945DF /* InstaCOVIDWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		167764A52568A97B00DFB371 /* PBXTargetDependency */ = {
+		16AC1F512579488C007945DF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 167764972568A97A00DFB371 /* WidgwtExtension */;
-			targetProxy = 167764A42568A97B00DFB371 /* PBXContainerItemProxy */;
+			target = 16AC1F462579488B007945DF /* InstaCOVIDWidgetExtension */;
+			targetProxy = 16AC1F502579488C007945DF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -687,22 +687,21 @@
 			};
 			name = Release;
 		};
-		167764A82568A97B00DFB371 /* Debug */ = {
+		16AC1F542579488C007945DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Widgwt/Info.plist;
+				DEVELOPMENT_TEAM = P4HRUWL6NU;
+				INFOPLIST_FILE = InstaCOVIDWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.Widgwt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.InstaCOVIDWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -710,22 +709,21 @@
 			};
 			name = Debug;
 		};
-		167764A92568A97B00DFB371 /* Release */ = {
+		16AC1F552579488C007945DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = Widgwt/Info.plist;
+				DEVELOPMENT_TEAM = P4HRUWL6NU;
+				INFOPLIST_FILE = InstaCOVIDWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.8;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.Widgwt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.InstaCOVIDWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -754,11 +752,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		167764A72568A97B00DFB371 /* Build configuration list for PBXNativeTarget "WidgwtExtension" */ = {
+		16AC1F532579488C007945DF /* Build configuration list for PBXNativeTarget "InstaCOVIDWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				167764A82568A97B00DFB371 /* Debug */,
-				167764A92568A97B00DFB371 /* Release */,
+				16AC1F542579488C007945DF /* Debug */,
+				16AC1F552579488C007945DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
