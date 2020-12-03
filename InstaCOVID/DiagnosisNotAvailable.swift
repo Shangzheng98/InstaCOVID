@@ -30,7 +30,7 @@ struct DiagnosisNotAvailable: View {
 //                if (alreadySignInCheck){
                     Text("The personal information is not assigned yet, please go to Settings to finish it up!")
                         .font(headerFont)
-                    NavigationLink(destination: SettingMain()) {
+                    NavigationLink(destination: LogView()) {
                         Image(systemName: "arrowshape.turn.up.forward.circle")
                             .imageScale(.large)
                             .font(Font.title.weight(.regular))

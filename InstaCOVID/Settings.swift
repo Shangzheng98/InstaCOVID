@@ -40,7 +40,7 @@ struct Settings: View {
                 Section(header: Text("Select a Security Question")){
                     Picker("Selected:", selection: $selectedIndex) {
                         ForEach(0 ..< searchCategories.count, id: \.self) {
-                            Text(searchCategories[$0]).font(.system(size: 12))
+                            Text(searchCategories[$0]).font(.system(size: 15))
                         }
                         
                         

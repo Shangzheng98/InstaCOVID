@@ -58,7 +58,7 @@ struct ContentView: View {
                     Text("Diagnosis")
                     
                 }
-                SettingMain().tabItem {
+                LogView().tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }

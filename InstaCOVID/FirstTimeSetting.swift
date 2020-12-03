@@ -258,7 +258,7 @@ struct FirstTimeSetting: View {
             Section(header: Text("Select a Security Question")){
                 Picker("Selected:", selection: $selectedIndexForQuestion) {
                     ForEach(0 ..< searchCategories.count, id: \.self) {
-                        Text(searchCategories[$0]).font(.system(size: 12))
+                        Text(searchCategories[$0]).font(.system(size: 15))
                     }
                     
                     

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SettingMain: View {
+struct LogView: View {
     // Subscribe to changes in UserData
     @EnvironmentObject var userData: UserData
     
@@ -124,9 +124,9 @@ struct SettingMain: View {
     
 }
 
-struct SettingMain_Previews: PreviewProvider {
+struct LogView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingMain()
+        LogView()
     }
 }
 

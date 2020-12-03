@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06955641256AFE8C00A6882F /* SettingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955640256AFE8C00A6882F /* SettingMain.swift */; };
+		06955641256AFE8C00A6882F /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06955640256AFE8C00A6882F /* LogView.swift */; };
 		1658DCB3256F057200EA873F /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658DCB2256F057200EA873F /* DataView.swift */; };
 		1658DCB7256F0A6000EA873F /* DataListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658DCB6256F0A6000EA873F /* DataListItem.swift */; };
 		1658DCBB256F0A7000EA873F /* DataListDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658DCBA256F0A7000EA873F /* DataListDetails.swift */; };
@@ -80,7 +80,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		06955640256AFE8C00A6882F /* SettingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMain.swift; sourceTree = "<group>"; };
+		06955640256AFE8C00A6882F /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		1658DCB2256F057200EA873F /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		1658DCB6256F0A6000EA873F /* DataListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListItem.swift; sourceTree = "<group>"; };
 		1658DCBA256F0A7000EA873F /* DataListDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataListDetails.swift; sourceTree = "<group>"; };
@@ -309,7 +309,7 @@
 				16B0C5AB25760B760051AD4A /* ForgetPassword.swift */,
 				16B0C5AD25760B760051AD4A /* Settings.swift */,
 				16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */,
-				06955640256AFE8C00A6882F /* SettingMain.swift */,
+				06955640256AFE8C00A6882F /* LogView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -479,7 +479,7 @@
 				16B0C5AE25760B760051AD4A /* ForgetPassword.swift in Sources */,
 				16B0C5AF25760B760051AD4A /* FirstTimeSetting.swift in Sources */,
 				ADB38C752568930D0091D139 /* WebView.swift in Sources */,
-				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
+				06955641256AFE8C00A6882F /* LogView.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
 				C5D50AB425790C4200B661F0 /* StateHistDataStruct.swift in Sources */,
 				1658DCB3256F057200EA873F /* DataView.swift in Sources */,
