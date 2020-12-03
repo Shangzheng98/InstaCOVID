@@ -71,15 +71,6 @@ struct SettingMain: View {
                         }
                         .alert(isPresented: $showInvalidPasswordAlert, content: { self.invalidPasswordAlert })
                         
-                        //The navigation link for the forget password and username
-                        NavigationLink(destination: ForgetPassword()) {
-                            HStack {
-                                Text("Forget Password / Username")
-                                    .font(.system(size: 18))
-                            }
-                        }
-                        .frame(minWidth: 400, maxWidth: 600, alignment: .center)
-                        
                         
                         let username = UserDefaults.standard.string(forKey: "Username")
                         let password = UserDefaults.standard.string(forKey: "Password")
@@ -94,6 +85,16 @@ struct SettingMain: View {
                                 }
                             }
                             .frame(minWidth: 400, maxWidth: 500, alignment: .center)
+                        }
+                        else{
+                            //The navigation link for the forget password and username
+                            NavigationLink(destination: ForgetPassword()) {
+                                HStack {
+                                    Text("Forget Password / Username")
+                                        .font(.system(size: 18))
+                                }
+                            }
+                            .frame(minWidth: 400, maxWidth: 600, alignment: .center)
                         }
                         
                         
