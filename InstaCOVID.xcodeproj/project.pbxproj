@@ -46,6 +46,9 @@
 		ADB38C752568930D0091D139 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C742568930D0091D139 /* WebView.swift */; };
 		ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C77256893E80091D139 /* WorldDBAPI.swift */; };
 		ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C7B256893F20091D139 /* StateDBAPI.swift */; };
+		C53744812578DACD00798C27 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53744802578DACD00798C27 /* Monitor.swift */; };
+		C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */; };
+		C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA92579059400B661F0 /* MonitorListItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		ADB38C742568930D0091D139 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		ADB38C77256893E80091D139 /* WorldDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorldDBAPI.swift; path = InstaCOVID/WorldDBAPI.swift; sourceTree = SOURCE_ROOT; };
 		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = InstaCOVID/StateDBAPI.swift; sourceTree = SOURCE_ROOT; };
+		C53744802578DACD00798C27 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
+		C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorAnnotation.swift; sourceTree = "<group>"; };
+		C5D50AA92579059400B661F0 /* MonitorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +286,9 @@
 		167764B92568B18600DFB371 /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				C53744802578DACD00798C27 /* Monitor.swift */,
+				C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */,
+				C5D50AA92579059400B661F0 /* MonitorListItem.swift */,
 			);
 			name = Monitor;
 			sourceTree = "<group>";
@@ -420,9 +429,11 @@
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,
 				ADB38C6E256892BC0091D139 /* SearchBar.swift in Sources */,
+				C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */,
 				1658DCBB256F0A7000EA873F /* DataListDetails.swift in Sources */,
 				1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */,
 				1677643A256879EA00DFB371 /* ContentView.swift in Sources */,
+				C53744812578DACD00798C27 /* Monitor.swift in Sources */,
 				16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */,
 				16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */,
 				16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */,
@@ -438,6 +449,7 @@
 				16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,
 				1658DCC7256F576C00EA873F /* ListData.swift in Sources */,
+				C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
