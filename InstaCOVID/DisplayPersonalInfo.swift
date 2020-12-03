@@ -83,6 +83,7 @@ struct DisplayPersonalInfo: View {
                     //The navigation link for the first time set up
                     NavigationLink(destination: EditInfoSetting(name: $name, photo: $photo, gender: $gender, birth: $birth, nationality: $nationality, phone: $phone, identity: $identity, country: $country)) {
                         HStack {
+                            Image(systemName: "square.and.pencil")
                             Text("Edit Personal Information")
                                 .font(.system(size: 18))
                         }
