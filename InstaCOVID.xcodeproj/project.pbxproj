@@ -49,6 +49,8 @@
 		C53744812578DACD00798C27 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53744802578DACD00798C27 /* Monitor.swift */; };
 		C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */; };
 		C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA92579059400B661F0 /* MonitorListItem.swift */; };
+		C5D50AB425790C4200B661F0 /* StateHistDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */; };
+		C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AB72579113400B661F0 /* StateHistDBAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,8 @@
 		C53744802578DACD00798C27 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
 		C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorAnnotation.swift; sourceTree = "<group>"; };
 		C5D50AA92579059400B661F0 /* MonitorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListItem.swift; sourceTree = "<group>"; };
+		C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHistDataStruct.swift; sourceTree = "<group>"; };
+		C5D50AB72579113400B661F0 /* StateHistDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHistDBAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,7 @@
 				ADB38C45256880EC0091D139 /* WorldDataStruct.swift */,
 				ADB38C48256880EF0091D139 /* StateDataStruct.swift */,
 				ADB38C4B256880F10091D139 /* UserData.swift */,
+				C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 			children = (
 				ADB38C77256893E80091D139 /* WorldDBAPI.swift */,
 				ADB38C7B256893F20091D139 /* StateDBAPI.swift */,
+				C5D50AB72579113400B661F0 /* StateHistDBAPI.swift */,
 			);
 			name = "API Data";
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */,
 				16776436256879EA00DFB371 /* AppDelegate.swift in Sources */,
 				ADB38C72256893030091D139 /* MapView.swift in Sources */,
+				C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */,
 				ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */,
 				16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */,
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
@@ -445,6 +452,7 @@
 				ADB38C752568930D0091D139 /* WebView.swift in Sources */,
 				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
+				C5D50AB425790C4200B661F0 /* StateHistDataStruct.swift in Sources */,
 				1658DCB3256F057200EA873F /* DataView.swift in Sources */,
 				16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,

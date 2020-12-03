@@ -49,11 +49,15 @@ struct Monitor: View {
                 }
                 else {
                     List {
-                        Text("Working in progress")
+                        ForEach(stateHistDataList) { state in
+                            MonitorListItem(stateHistData: state)
+                        }
                     }
+                    
                 }
             }
             .navigationBarTitle("COVID-19 Case Monitor", displayMode: .inline)
+            .customNavigationViewStyle()
         }
     }
 }
