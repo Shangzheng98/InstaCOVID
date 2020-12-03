@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         getTotalWorldStatFromAPI()
+        gerStateHistDataFromAPI()
         
         let dateFormatter1 = DateFormatter()
          
