@@ -32,21 +32,17 @@ struct ContentView: View {
                     Image(systemName: "cross.circle.fill")
                     Text("Diagnosis")
                 }
-            }
-            else{
-                DiagnosisNotAvailable().tabItem {
-                    Image(systemName: "cross.circle.fill")
-                    Text("Diagnosis")
-                }
-            }
-            
-            if userData.userAuthenticated {
                 DisplayPersonalInfo().tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
             }
             else{
+                DiagnosisNotAvailable().tabItem {
+                    Image(systemName: "cross.circle.fill")
+                    Text("Diagnosis")
+                    
+                }
                 SettingMain().tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
