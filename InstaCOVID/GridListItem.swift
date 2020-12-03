@@ -9,45 +9,57 @@
 import SwiftUI
 
 struct GridListItem: View {
-    
+    @EnvironmentObject var userData:UserData
     @State private var flipped = false
     @State private var animate3d = false
+    
     let country: WorldDataStruct
     
     var body: some View {
         let binding = Binding<Bool>(get: { self.flipped }, set: {
             updateBinding($0)
         })
-        if self.flipped {
-            Image("ImageUnavailable")
-                .resizable()
-                
-                .frame(width: 150, height: 100)
-                .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
-                .onTapGesture {
-                    withAnimation(Animation.linear(duration: 0.8)) {
-                                                  self.animate3d.toggle()
-                                            }
-                }
-        } else {
-            Image(country.flagImageName)
-                .resizable()
-                .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                .frame(width: 150, height: 100)
-                .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
-                .onTapGesture {
-                    withAnimation(Animation.linear(duration: 0.8)) {
-                                                  self.animate3d.toggle()
-                        }
+        Image(country.flagImageName)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .onTapGesture {
+                self.flipped.toggle()
+                userData.flipped.toggle()
             }
-            
-        }
+//        if self.flipped {
+//            VisualEffectBlur(blurStyle: .systemUltraThinMaterial, vibrancyStyle: .fill) {
+//                Image("ImageUnavailable")
+//                    .resizable()
+//                    .scaledToFit()
+//                    .frame(width: 240, height: 150)
+//                    .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
+//                    .onTapGesture {
+//                        withAnimation(Animation.linear(duration: 0.8)) {
+//                                                      self.animate3d.toggle()
+//
+//                        }
+//                    }
+//            }
+//        } else {
+//            Image(country.flagImageName)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .modifier(FlipEffect(flipped: binding, angle: animate3d ? 180 : 0, axis: (x: 0, y: 1)))
+//                .onTapGesture {
+//                    withAnimation(Animation.linear(duration: 0.8)) {
+//                                                  self.animate3d.toggle()
+//                        }
+//            }
+//
+//        }
+        
+        
     }
     
     
     func updateBinding(_ value: Bool) {
         // If card was just flipped and at front, change the card
-        
+        userData.flipped = value
         flipped = value
     }
 }
@@ -86,6 +98,7 @@ struct FlipEffect: GeometryEffect {
     }
     
 }
+
 struct GridListItem_Previews: PreviewProvider {
     static var previews: some View {
         GridListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png", flagImageName: "af"))
