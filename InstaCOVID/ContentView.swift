@@ -22,17 +22,18 @@ struct ContentView: View {
                     Image(systemName: "chart.bar.xaxis")
                     Text("Data")
                 }
-            Monitor()
-                .tabItem {
-                    Image(systemName: "waveform.path.ecg.rectangle")
-                    Text("Monitor")
-                }
-            
-            DiagnosisAvailableOrNot()
-                .tabItem {
-                    Image(systemName: "chart.bar.xaxis")
+            if userData.userAuthenticated {
+                DiagnosisAvailable().tabItem {
+                    Image(systemName: "cross.circle.fill")
                     Text("Diagnosis")
                 }
+            }
+            else{
+                DiagnosisNotAvailable().tabItem {
+                    Image(systemName: "cross.circle.fill")
+                    Text("Diagnosis")
+                }
+            }
             
             if userData.userAuthenticated {
                 DisplayPersonalInfo().tabItem {

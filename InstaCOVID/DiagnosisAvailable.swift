@@ -1,5 +1,5 @@
 //
-//  DiagnosisAvailableOrNot.swift
+//  DiagnosisAvailable.swift
 //  InstaCOVID
 //
 //  Created by Nicole Lyu on 12/3/20.
@@ -23,20 +23,20 @@ struct FontNameManager {
 
 let headerFont = Font.custom(FontNameManager.SansitaSwashed.medium, size: 38)
 
-struct DiagnosisAvailableOrNot: View {
+struct DiagnosisAvailable: View {
     var body: some View {
         NavigationView{
             VStack{
-                if (alreadySignInCheck){
-                    Text("The personal information is not assigned yet, please go to Settings to finish it up!")
-                        .font(headerFont)
-                    NavigationLink(destination: SettingMain()) {
-                        Image(systemName: "arrowshape.turn.up.forward.circle")
-                            .imageScale(.large)
-                            .font(Font.title.weight(.regular))
-                            .foregroundColor(.blue)
-                    }
-                }else{
+//                if (alreadySignInCheck){
+//                    Text("The personal information is not assigned yet, please go to Settings to finish it up!")
+//                        .font(headerFont)
+//                    NavigationLink(destination: SettingMain()) {
+//                        Image(systemName: "arrowshape.turn.up.forward.circle")
+//                            .imageScale(.large)
+//                            .font(Font.title.weight(.regular))
+//                            .foregroundColor(.blue)
+//                    }
+//                }else{
                     
                     Text("Start your self diagnosis record right now!")
                         .font(headerFont)
@@ -46,7 +46,7 @@ struct DiagnosisAvailableOrNot: View {
                             .font(Font.title.weight(.regular))
                             .foregroundColor(.blue)
                     }
-                }
+//                }
             }
         }
         .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
@@ -63,26 +63,26 @@ struct DiagnosisAvailableOrNot: View {
       }
     }
     
-    /*
-     --------------------------------
-     MARK: - Check Password Entered
-     --------------------------------
-     */
-    var alreadySignInCheck: Bool {
-        let username = UserDefaults.standard.string(forKey: "Username")
-        let password = UserDefaults.standard.string(forKey: "Password")
-        
-        if (username == nil && password == nil){
-            return true
-        }else{
-            return false
-        }
-    }
+//    /*
+//     --------------------------------
+//     MARK: - Check Password Entered
+//     --------------------------------
+//     */
+//    var alreadySignInCheck: Bool {
+//        let username = UserDefaults.standard.string(forKey: "Username")
+//        let password = UserDefaults.standard.string(forKey: "Password")
+//
+//        if (username == nil && password == nil){
+//            return true
+//        }else{
+//            return false
+//        }
+//    }
 }
 
 
-struct DiagnosisAvailableOrNot_Previews: PreviewProvider {
+struct DiagnosisAvailable_Previews: PreviewProvider {
     static var previews: some View {
-        DiagnosisAvailableOrNot()
+        DiagnosisAvailable()
     }
 }
