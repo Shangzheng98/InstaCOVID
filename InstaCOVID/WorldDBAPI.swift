@@ -231,7 +231,15 @@ public func getEveryContriesDataFromAPISortByCases(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
-                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            if countryName == "MS Zaandam" {
+                                flagName = "unknown"
+                            } else if countryName == "Diamond Princess"
+                            {
+                                flagName = "unknown2"
+                            }
+                            else {
+                                flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            }
                         }
                     }
                 }
@@ -321,7 +329,15 @@ public func getEveryContriesDataFromAPISortByNewCases(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
-                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            if countryName == "MS Zaandam" {
+                                flagName = "unknown"
+                            }else if countryName == "Diamond Princess"
+                            {
+                                flagName = "unknown2"
+                            }
+                            else {
+                                flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            }
                         }
                     }
                 }
@@ -404,7 +420,15 @@ public func getEveryContriesDataFromAPISortByDeaths(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
-                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            if countryName == "MS Zaandam" {
+                                flagName = "unknown"
+                            } else if countryName == "Diamond Princess"
+                            {
+                                flagName = "unknown2"
+                            }else {
+                                flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            }
+                            
                         }
                     }
                 }
@@ -488,7 +512,14 @@ public func getEveryContriesDataFromAPISortByNewDeaths(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
-                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            if countryName == "MS Zaandam" {
+                                flagName = "unknown"
+                            } else if countryName == "Diamond Princess"
+                            {
+                                flagName = "unknown2"
+                            }else {
+                                flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            }
                         }
                     }
                 }
@@ -571,7 +602,14 @@ public func getEveryContriesDataFromAPISortByRecovered(){
                         if let flag = countryInfo["flag"] as? String {
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
-                            flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            if countryName == "MS Zaandam" {
+                                flagName = "unknown"
+                            } else if countryName == "Diamond Princess"
+                            {
+                                flagName = "unknown2"
+                            }else {
+                                flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
+                            }
 
                         }
                     }

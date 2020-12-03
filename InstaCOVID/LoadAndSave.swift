@@ -15,6 +15,8 @@ let deathsFileName = "Deaths.json"
 let newDeathsFileName = "NewDeaths.json"
 let recoveredFileName = "Recovered.json"
 let wordDataFileName = "WorldData.json"
+
+let followingFileName = "followingData.json"
 public func readAllDataFile() {
     var documentDirectoryHasFiles = false
     var urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent(casesFileName)
@@ -184,7 +186,20 @@ public func readAllDataFile() {
         }
     }
     
+    documentDirectoryHasFiles = false
+    urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent(followingFileName)
     
+    do {
+        _ = try Data(contentsOf: urlOfJsonFileInDocumentDirectory)
+        
+        
+        documentDirectoryHasFiles = true
+        
+        followedUpDataList = decodeJsonFileIntoArrayOfStructs(fullFilename: followingFileName, fileLocation: "Document Directory")
+        print("\(followingFileName) is loaded from document directory")
+    } catch {
+        print("error following list")
+    }
     
     
 }
@@ -331,5 +346,29 @@ public func writeFile() {
    
     (orderedSearchableWorldDataListRecovered as NSArray).write(to: urlOfFileInDocDirectory, atomically: true)
     
+    //===============
     
+    urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent(followingFileName)
+ 
+    // Encode CocktailStructList into JSON and write it into the JSON file
+    encoder = JSONEncoder()
+    if let encoded = try? encoder.encode(followedUpDataList) {
+        do {
+            try encoded.write(to: urlOfJsonFileInDocumentDirectory)
+        } catch {
+            fatalError("Unable to write followedUpDataList list data to document directory!")
+        }
+    } else {
+        fatalError("Unable to encode followedUpDataList list data!")
+    }
+    
+    let saveTime = Date()
+    let dateFormatter = DateFormatter()
+     
+    // Set the date format to yyyy-MM-dd at HH:mm
+    dateFormatter.dateFormat = "yyyy-MM-dd' at 'HH:mm"
+     
+    // Format dateAndTime under the dateFormatter and convert it to String
+    let lastTime = dateFormatter.string(from: saveTime)
+    UserDefaults.standard.set(lastTime,forKey: "lastSaveTime")
 }
