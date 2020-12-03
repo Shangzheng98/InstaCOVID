@@ -9,7 +9,7 @@
 import Foundation
 
 var followedUpDataList = [WorldDataStruct]()
-let testFollowUp = WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af")
+
 
 var worldStatInfo = WorldStatStruct(totalCases: "0", newCases: "0", totalDeaths: "0", newDeaths: "0",totalRecovered: "0")
 var everyContriesDataListCases = [WorldDataStruct]()
@@ -236,7 +236,7 @@ public func getEveryContriesDataFromAPISortByCases(){
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName:flagName)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName:flagName,following: false)
                 everyContriesDataListCases.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -326,7 +326,7 @@ public func getEveryContriesDataFromAPISortByNewCases(){
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName,following: false)
                 everyContriesDataListNewCases.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -409,7 +409,7 @@ public func getEveryContriesDataFromAPISortByDeaths(){
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName, following: false)
                 everyContriesDataListDeaths.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -493,7 +493,7 @@ public func getEveryContriesDataFromAPISortByNewDeaths(){
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL, flagImageName: flagName)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL, flagImageName: flagName, following: false)
                 everyContriesDataListNewDeaths.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
@@ -577,7 +577,7 @@ public func getEveryContriesDataFromAPISortByRecovered(){
                     }
                 }
                 let id = UUID()
-                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName)
+                let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName, following: false)
                 everyContriesDataListRecovered.append(entry)
                 
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"

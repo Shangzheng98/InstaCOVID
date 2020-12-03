@@ -27,6 +27,7 @@
 		167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA3482575FFC8008A45CA /* GridListItem.swift */; };
 		167BA352257603C1008A45CA /* ListGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA351257603C1008A45CA /* ListGrid.swift */; };
 		1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697D4322578428600D02EF9 /* VisualEffectBlur.swift */; };
+		16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F2225787CDD007945DF /* LoadAndSave.swift */; };
 		16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */; };
 		16B0C5AE25760B760051AD4A /* ForgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AB25760B760051AD4A /* ForgetPassword.swift */; };
 		16B0C5AF25760B760051AD4A /* FirstTimeSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */; };
@@ -95,6 +96,7 @@
 		167BA3482575FFC8008A45CA /* GridListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListItem.swift; sourceTree = "<group>"; };
 		167BA351257603C1008A45CA /* ListGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGrid.swift; sourceTree = "<group>"; };
 		1697D4322578428600D02EF9 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		16AC1F2225787CDD007945DF /* LoadAndSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndSave.swift; sourceTree = "<group>"; };
 		16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditInfoSetting.swift; sourceTree = "<group>"; };
 		16B0C5AB25760B760051AD4A /* ForgetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPassword.swift; sourceTree = "<group>"; };
 		16B0C5AC25760B760051AD4A /* FirstTimeSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTimeSetting.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				ADB38C6B256892BC0091D139 /* SearchBar.swift */,
 				ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */,
 				1697D4322578428600D02EF9 /* VisualEffectBlur.swift */,
+				16AC1F2225787CDD007945DF /* LoadAndSave.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
 				1658DCB3256F057200EA873F /* DataView.swift in Sources */,
+				16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,
 				1658DCC7256F576C00EA873F /* ListData.swift in Sources */,
 			);

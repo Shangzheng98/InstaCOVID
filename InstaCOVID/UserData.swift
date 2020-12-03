@@ -45,8 +45,13 @@ final class UserData: ObservableObject {
      */
    
     // Publish countriesList with initial value of countryStructList obtained in CountriesData.swift
-    @Published var countriesDataList = everyContriesDataListCases
-   
+    @Published var countriesDataListCases = everyContriesDataListCases
+    @Published var countriesDataListNewCases = everyContriesDataListNewCases
+    @Published var countriesDataListDeaths = everyContriesDataListDeaths
+    @Published var countriesDataListNewDeaths = everyContriesDataListNewDeaths
+    @Published var countriesDataListRecovered = everyContriesDataListRecovered
+    
+    
     @Published var followedCountriesList = followedUpDataList
     @Published var searchableOrderedWorldDataList = orderedSearchableWorldDataListCases
     
@@ -93,9 +98,6 @@ final class UserData: ObservableObject {
         imageNumber = counter
     }
     
-    @objc func reorderList() {
-        countriesDataList = everyContriesDataListCases
-        searchableOrderedWorldDataList = orderedSearchableWorldDataListCases
-    }
+
  
 }

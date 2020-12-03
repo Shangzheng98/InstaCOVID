@@ -86,7 +86,7 @@ struct SettingMain: View {
                         
                         if username != nil && password != nil{
                             //The navigation link for the first time set up
-                            NavigationLink(destination: EditInfoSetting()) {
+                            NavigationLink(destination: EditInfoSetting( name: $enteredUsername)) {
                                 HStack {
                                     Text("Edit Personal Information")
                                         .font(.system(size: 18))

@@ -13,9 +13,10 @@ struct ListGrid: View {
     let searchItem:String
     let filterIndex: Int
     let columns = [ GridItem(.adaptive(minimum: 100), spacing: 10) ]
+    var shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
     var body: some View {
         ZStack {
-            Color.gray.opacity(0.2).edgesIgnoringSafeArea(.all)
+            Color("Data-foreground").edgesIgnoringSafeArea(.all)
             ScrollView {
                 
                 
@@ -25,11 +26,17 @@ struct ListGrid: View {
                             contry in GridListItem(country: self.searchItemCountry(searchListItem: contry))
                                 .scaledToFit()
                                 
+                                
                         }
                     } else if filterIndex == 1 {
                         ForEach(orderedSearchableWorldDataListNewCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                             contry in GridListItem(country: self.searchItemCountry(searchListItem: contry))
                                 .scaledToFit()
+                                .overlay(
+                                shape
+                                    .inset(by: 0.5)
+                                    .stroke(Color.primary.opacity(1), lineWidth: 1)
+                                )
                         }
                     } else if filterIndex == 2 {
                         ForEach(orderedSearchableWorldDataListDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
@@ -50,9 +57,6 @@ struct ListGrid: View {
                     
                 }
                 
-                VisualEffectBlur()
-                    .ignoresSafeArea()
-                    .opacity(userData.flipped ? 1 : 0)
             }
             
         }
