@@ -12,22 +12,22 @@ struct ContentView: View {
     @EnvironmentObject var userData: UserData
     var body: some View {
         TabView {
-            Home()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-            DataView()
-                .tabItem {
-                    Image(systemName: "chart.bar.xaxis")
-                    Text("Data")
-                }
-            Monitor()
-                .tabItem {
-                    Image(systemName: "waveform.path.ecg.rectangle")
-                    Text("Monitor")
-                }
             if userData.userAuthenticated {
+                Home()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                DataView()
+                    .tabItem {
+                        Image(systemName: "chart.bar.xaxis")
+                        Text("Data")
+                    }
+                Monitor()
+                    .tabItem {
+                        Image(systemName: "waveform.path.ecg.rectangle")
+                        Text("Monitor")
+                    }
                 DiagnosisAvailable().tabItem {
                     Image(systemName: "cross.circle.fill")
                     Text("Diagnosis")
@@ -38,6 +38,21 @@ struct ContentView: View {
                 }
             }
             else{
+                Home()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("Home")
+                    }
+                DataView()
+                    .tabItem {
+                        Image(systemName: "chart.bar.xaxis")
+                        Text("Data")
+                    }
+                Monitor()
+                    .tabItem {
+                        Image(systemName: "waveform.path.ecg.rectangle")
+                        Text("Monitor")
+                    }
                 DiagnosisNotAvailable().tabItem {
                     Image(systemName: "cross.circle.fill")
                     Text("Diagnosis")
