@@ -16,7 +16,7 @@ struct ListGrid: View {
     var shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
     var body: some View {
         ZStack {
-            Color("Data-foreground").edgesIgnoringSafeArea(.all)
+            //Color("Data-foreground").edgesIgnoringSafeArea(.all)
             ScrollView {
                 
                 
