@@ -14,18 +14,20 @@ struct GridListItem: View {
     @State private var animate3d = false
     
     let country: WorldDataStruct
-    
+    var shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
     var body: some View {
-        let binding = Binding<Bool>(get: { self.flipped }, set: {
-            updateBinding($0)
-        })
+//        let binding = Binding<Bool>(get: { self.flipped }, set: {
+//            updateBinding($0)
+//        })
         Image(country.flagImageName)
             .resizable()
             .aspectRatio(contentMode: .fit)
+            .clipShape(shape)
             .onTapGesture {
                 self.flipped.toggle()
                 userData.flipped.toggle()
             }
+            
 //        if self.flipped {
 //            VisualEffectBlur(blurStyle: .systemUltraThinMaterial, vibrancyStyle: .fill) {
 //                Image("ImageUnavailable")
@@ -101,6 +103,6 @@ struct FlipEffect: GeometryEffect {
 
 struct GridListItem_Previews: PreviewProvider {
     static var previews: some View {
-        GridListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png", flagImageName: "af"))
+        GridListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png", flagImageName: "af", following: false))
     }
 }

@@ -49,23 +49,23 @@ struct ListData: View {
     
     func searchItemCountry(searchListItem: String) -> WorldDataStruct {
         if filterIndex == 0 {
-            let index = everyContriesDataListCases.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
-            return everyContriesDataListCases[index]
+            let index = userData.countriesDataListCases.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
+            return userData.countriesDataListCases[index]
         } else if filterIndex == 1 {
-            let index = everyContriesDataListNewCases.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
-            return everyContriesDataListNewCases[index]
+            let index = userData.countriesDataListNewCases.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
+            return userData.countriesDataListNewCases[index]
         }
         else if filterIndex == 2 {
-            let index = everyContriesDataListDeaths.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
-            return everyContriesDataListDeaths[index]
+            let index = userData.countriesDataListDeaths.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
+            return userData.countriesDataListDeaths[index]
         }
         else if filterIndex == 3 {
-            let index = everyContriesDataListNewDeaths.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
-            return everyContriesDataListNewDeaths[index]
+            let index = userData.countriesDataListNewDeaths.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
+            return userData.countriesDataListNewDeaths[index]
         }
         else {
-            let index = everyContriesDataListRecovered.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
-            return everyContriesDataListRecovered[index]
+            let index = userData.countriesDataListRecovered.firstIndex(where: {$0.id.uuidString == searchListItem.components(separatedBy: "|")[0]})!
+            return userData.countriesDataListRecovered[index]
         }
         
     }

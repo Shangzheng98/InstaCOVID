@@ -14,7 +14,7 @@ struct DataListDetails: View {
     // Input Parameter
     let country: WorldDataStruct
     @State private var showCountryAddedAlert = false
-    
+    @State private var follow = false
     var body: some View {
         // A Form cannot have more than 10 Sections.
         // Group the Sections if more than 10.
@@ -43,15 +43,92 @@ struct DataListDetails: View {
             
             Section(header: Text("Follow up This Country's Status")) {
                 Button(action: {
-                    userData.followedCountriesList.append(country)
-                    followedUpDataList = userData.followedCountriesList
-                    self.showCountryAddedAlert = true
+                    if !country.following {
+                        userData.followedCountriesList.append(country)
+                        let caseIndex = userData.countriesDataListCases.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let newCaseIndex = userData.countriesDataListNewCases.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let deathIndex = userData.countriesDataListDeaths.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let newDeathIndex = userData.countriesDataListNewDeaths.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let recoveredIndex = userData.countriesDataListRecovered.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        
+                        
+                        userData.countriesDataListCases[caseIndex!].following = true
+                        userData.countriesDataListNewCases[newCaseIndex!].following = true
+                        userData.countriesDataListDeaths[deathIndex!].following = true
+                        userData.countriesDataListNewDeaths[newDeathIndex!].following = true
+                        userData.countriesDataListRecovered[recoveredIndex!].following = true
+                        
+                        everyContriesDataListCases = userData.countriesDataListCases
+                        everyContriesDataListNewCases = userData.countriesDataListNewCases
+                        everyContriesDataListDeaths = userData.countriesDataListDeaths
+                        everyContriesDataListNewDeaths = userData.countriesDataListNewDeaths
+                        everyContriesDataListRecovered = userData.countriesDataListRecovered
+                        
+                        
+                        
+                        followedUpDataList = userData.followedCountriesList
+                        
+                        self.showCountryAddedAlert = true
+                        self.follow = true
+                    } else {
+                        let index = userData.followedCountriesList.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let caseIndex = userData.countriesDataListCases.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let newCaseIndex = userData.countriesDataListNewCases.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let deathIndex = userData.countriesDataListDeaths.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let newDeathIndex = userData.countriesDataListNewDeaths.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        let recoveredIndex = userData.countriesDataListRecovered.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
+                        userData.followedCountriesList.remove(at: index!)
+                        userData.countriesDataListCases[caseIndex!].following = false
+                        userData.countriesDataListNewCases[newCaseIndex!].following = false
+                        userData.countriesDataListDeaths[deathIndex!].following = false
+                        userData.countriesDataListNewDeaths[newDeathIndex!].following = false
+                        userData.countriesDataListRecovered[recoveredIndex!].following = false
+                        
+                        everyContriesDataListCases = userData.countriesDataListCases
+                        everyContriesDataListNewCases = userData.countriesDataListNewCases
+                        everyContriesDataListDeaths = userData.countriesDataListDeaths
+                        everyContriesDataListNewDeaths = userData.countriesDataListNewDeaths
+                        everyContriesDataListRecovered = userData.countriesDataListRecovered
+                        followedUpDataList = userData.followedCountriesList
+                        self.follow = false
+                    }
+                    
                 }) {
                     HStack {
-                        Image(systemName: "plus")
-                            .imageScale(.large)
-                            .foregroundColor(.blue)
-                        Text("Follow Up")
+                        if follow {
+                            Image(systemName: "heart.fill")
+                                .imageScale(.large)
+                                .foregroundColor(.red)
+                            Text("Following")
+                        } else {
+                            Image(systemName: "heart")
+                                .imageScale(.large)
+                                .foregroundColor(.red)
+                            Text("Folow Up")
+                        }
+                        
                     }
                 }
                 .alert(isPresented: $showCountryAddedAlert, content: { self.countryAddedAlert })
@@ -73,7 +150,9 @@ struct DataListDetails: View {
             
         }   // End of Form
         .navigationBarTitle(Text("Country Details"), displayMode: .inline)
-        
+        .onAppear(perform: {
+            follow = country.following
+        })
     }   // End of body
     
     var countryMap: some View {
@@ -91,6 +170,6 @@ struct DataListDetails: View {
 
 struct DataListDetails_Previews: PreviewProvider {
     static var previews: some View {
-        DataListDetails(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
+        DataListDetails(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af",following: false))
     }
 }
