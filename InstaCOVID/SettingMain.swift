@@ -84,17 +84,7 @@ struct SettingMain: View {
                         let username = UserDefaults.standard.string(forKey: "Username")
                         let password = UserDefaults.standard.string(forKey: "Password")
                         
-                        if username != nil && password != nil{
-                            //The navigation link for the first time set up
-                            NavigationLink(destination: EditInfoSetting( name: $enteredUsername)) {
-                                HStack {
-                                    Text("Edit Personal Information")
-                                        .font(.system(size: 18))
-                                }
-                            }
-                            .frame(minWidth: 400, maxWidth: 500, alignment: .center)
-                        }
-                        else{
+                        if username == nil && password == nil{
                             
                             //The navigation link for the first time set up
                             NavigationLink(destination: FirstTimeSetting()) {

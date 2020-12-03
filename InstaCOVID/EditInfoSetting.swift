@@ -16,15 +16,24 @@ struct EditInfoSetting: View {
     @Environment(\.presentationMode) var presentationMode
     //The initialize of the variable
     let selectionList = ["Camera", "Library"]
+    //Initialize binding variable
     @Binding var name : String
+    @Binding var photo: Data?
+    @Binding var gender: String
+    @Binding var birth: String
+    @Binding var nationality: String
+    @Binding var phone: String
+    @Binding var identity: String
+    @Binding var country: String
+    
     @State private var nameTextFieldValue = ""
     @State private var verifyTextField = ""
     @State private var showmissingInputDataAlert = false
     @State private var showSavingInputDataAlert = false
     @State private var selectedIndex = 0
     @State private var selectionGenderList = ["Male", "Female"]
+    @State private var photoImageData:Data? = nil
     @State private var selectedGenderIndex = 0
-    @State private var photoImageData: Data? = nil
     @State private var showImagePicker = false
     @State private var dateAndTime = Date()
     var dateClosedRange: ClosedRange<Date> {
@@ -54,8 +63,8 @@ struct EditInfoSetting: View {
             Group{
                 //The name section
                 Section(header: Text("Name")){
-//                    TextField("Enter your name", text: $nameTextFieldValue)
-                    TextField("Enter your name", text: $name)
+                    TextField("Enter your name", text: $nameTextFieldValue)
+//                    TextField("Enter your name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.words)
@@ -202,12 +211,14 @@ struct EditInfoSetting: View {
                          where you store key-value pairs persistently across launches of your app.
                          */
                         // Store the password in the user’s defaults database under the key "Password"
-                        UserDefaults.standard.set(self.nameTextFieldValue, forKey: "Name")
+                        UserDefaults.standard.set(nameTextFieldValue, forKey: "Name")
+                        name = nameTextFieldValue
                         
                         UserDefaults.standard.set(selectionGenderList[selectedGenderIndex], forKey: "Gender")
+                        gender = selectionGenderList[selectedGenderIndex]
                         
                         UserDefaults.standard.set(photoImageData, forKey: "Photo")
-                        
+                        photo = photoImageData
                         // Create an instance of DateFormatter
                         let dateFormatter2 = DateFormatter()
                         
@@ -220,12 +231,16 @@ struct EditInfoSetting: View {
                         
                         
                         UserDefaults.standard.set(travelDate, forKey: "Birth")
+                        birth = travelDate
                         
                         UserDefaults.standard.set(nationalityTextFieldValue, forKey: "Nationality")
-                        
+                        nationality = nationalityTextFieldValue
                         UserDefaults.standard.set(phoneTextFieldValue, forKey: "Phone")
+                        phone = phoneTextFieldValue
                         UserDefaults.standard.set(identityTextFieldValue, forKey: "Identity")
+                        identity = identityTextFieldValue
                         UserDefaults.standard.set(currentLivingCountryTextFieldValue, forKey: "LivingCountry")
+                        country = currentLivingCountryTextFieldValue
                         
                         // Dismiss this View and go back
                         self.presentationMode.wrappedValue.dismiss()

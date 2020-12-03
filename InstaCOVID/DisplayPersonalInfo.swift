@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct DisplayPersonalInfo: View {
-    @State private var photo = UserDefaults.standard.data(forKey: "Photo")
-//    @State private var name = UserDefaults.standard.string(forKey: "Name")
+    @State private var photo:Data? = nil
     @State private var name = ""
-    @State private var gender = UserDefaults.standard.string(forKey: "Gender")
-    @State private var birth = UserDefaults.standard.string(forKey: "Birth")
-    @State private var nationality = UserDefaults.standard.string(forKey: "Nationality")
-    @State private var phone = UserDefaults.standard.string(forKey: "Phone")
-    @State private var identity = UserDefaults.standard.string(forKey: "Identity")
-    @State private var country = UserDefaults.standard.string(forKey: "LivingCountry")
+    @State private var gender = ""
+    @State private var birth = ""
+    @State private var nationality = ""
+    @State private var phone = ""
+    @State private var identity = ""
+    @State private var country = ""
     
     
     var body: some View {
@@ -50,39 +49,39 @@ struct DisplayPersonalInfo: View {
                 //The gender section
                 
                 Section(header: Text("Gender")){
-                    Text(gender!)
+                    Text(gender)
                 }
                 
                 //The date of birth
                 Section(header: Text("Date of Birth")){
-                    Text(birth!)
+                    Text(birth)
                     
                 }
                 
                 //Nationality section
                 Section(header: Text("Nationality")){
-                    Text(nationality!)
+                    Text(nationality)
                 }
                 
                 //Phone number section
                 Section(header: Text("Phone Number")){
-                    Text("\(phone!)")
+                    Text(phone)
                 }
                 
                 //Identity section
                 Section(header: Text("Identity")){
-                    Text(identity!)
+                    Text(identity)
                 }
                 
                 //Current living country
                 Section(header: Text("Current living country")){
-                    Text(country!)
+                    Text(country)
                 }
                 
                 //Edit information
                 Section(header: Text("Change profile")){
                     //The navigation link for the first time set up
-                    NavigationLink(destination: EditInfoSetting(name: $name)) {
+                    NavigationLink(destination: EditInfoSetting(name: $name, photo: $photo, gender: $gender, birth: $birth, nationality: $nationality, phone: $phone, identity: $identity, country: $country)) {
                         HStack {
                             Text("Edit Personal Information")
                                 .font(.system(size: 18))
@@ -97,7 +96,16 @@ struct DisplayPersonalInfo: View {
                 
             }.navigationBarTitle(Text("Personal Account Information"), displayMode: .inline)//End of form
         }.onAppear {
+            photo = UserDefaults.standard.data(forKey: "Photo")
             name = UserDefaults.standard.string(forKey: "Name")!
+            gender = UserDefaults.standard.string(forKey: "Gender")!
+            birth = UserDefaults.standard.string(forKey: "Birth")!
+            nationality = UserDefaults.standard.string(forKey: "Nationality")!
+            phone = UserDefaults.standard.string(forKey: "Phone")!
+            identity = UserDefaults.standard.string(forKey: "Identity")!
+            country = UserDefaults.standard.string(forKey: "LivingCountry")!
+            
+            
         }
         //end of navigation view
     }//end of body

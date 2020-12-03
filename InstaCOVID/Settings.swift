@@ -19,6 +19,8 @@ struct Settings: View {
     @State private var selectedIndex = 4
     //Answer
     @State private var textFieldValue = ""
+    //Username
+    @State private var textField1Value = ""
     //Password
     @State private var textField2Value = ""
     //Verify Password
@@ -26,7 +28,7 @@ struct Settings: View {
     @State private var showUnmatchedPasswordAlert = false
     @State private var showPasswordSetAlert = false
     var body: some View {
-        NavigationView{
+  //      NavigationView{
             Form{
                 
                 Section(header: Text("Show / Hide Entered Values")){
@@ -69,6 +71,34 @@ struct Settings: View {
                         // Button to clear the text field
                         Button(action: {
                             self.textFieldValue = ""
+                        }) {
+                            Image(systemName: "clear")
+                                .imageScale(.medium)
+                                .font(Font.title.weight(.regular))
+                        }
+                    }   // End of HStack
+                    .frame(minWidth: 300, maxWidth: 500)
+                }
+                //Save the password to the user data
+                Section(header: Text("Enter Username")){
+                    HStack {
+                        if self.showEnteredValues{
+                            TextField("Enter Username", text: $textField1Value
+                            )
+                            .keyboardType(.numbersAndPunctuation)
+                            .frame(maxHeight: 50, alignment: .center
+                            )
+                        }
+                        else{SecureField("Enter Password", text: $textField1Value
+                                         
+                        )
+                        .keyboardType(.numbersAndPunctuation)
+                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
+                        
+                        
+                        // Button to clear the text field
+                        Button(action: {
+                            self.textField1Value = ""
                         }) {
                             Image(systemName: "clear")
                                 .imageScale(.medium)
@@ -147,8 +177,13 @@ struct Settings: View {
                                 
                                 UserDefaults.standard.set(textFieldValue, forKey: "Answer")
                                 
+                                UserDefaults.standard.set(textField1Value, forKey: "Username")
+                                
+                                
+                                
                                 //Initialize the value
                                 self.textFieldValue = ""
+                                self.textField1Value = ""
                                 self.textField2Value = ""
                                 self.textField3Value = ""
                                 self.showPasswordSetAlert = true
@@ -172,11 +207,11 @@ struct Settings: View {
                 }
                 
                 
-            }.navigationBarTitle(Text("Settings"), displayMode: .inline)
+            }
             //End of form
             
             
-        } //End of NavigationView
+      //  } //End of NavigationView
     } // End of body
     /*
      --------------------------
