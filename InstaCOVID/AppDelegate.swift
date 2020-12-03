@@ -6,26 +6,35 @@
 //
 
 import UIKit
- 
+import Foundation
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        /*
-         *****************************************
-         Read Countries data files upon app launch
-         *****************************************
-         */
-        //readCountriesDataFiles()
-          getTotalWorldStatFromAPI()
-//        getEveryContriesDataFromAPISortByCases()
-//        getEveryContriesDataFromAPISortByNewCases()
-//        getEveryContriesDataFromAPISortByDeaths()
-//        getEveryContriesDataFromAPISortByNewDeaths()
-//        getEveryContriesDataFromAPISortByRecovered()
-//        gerStateDataFromAPI()
+        getTotalWorldStatFromAPI()
+        gerStateHistDataFromAPI()
         
-        readAllDataFile()
+        let dateFormatter1 = DateFormatter()
+         
+        // Set the date format to yyyy-MM-dd at HH:mm
+        dateFormatter1.dateFormat = "yyyy-MM-dd' at 'HH:mm"
+         
+        // Format dateAndTime under the dateFormatter and convert it to String
+        let StringlastTime = dateFormatter1.string(from: Date())
+        UserDefaults.standard.set(StringlastTime,forKey: "lastSaveTime")
+        let currentTime = Date()
+        let lastTime = UserDefaults.standard.string(forKey: "lastSaveTime")!
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd' at 'HH:mm"
+        let lastDate = dateFormatter.date(from: lastTime)
+        if currentTime <= (lastDate?.addingTimeInterval(60*60*24))! {
+            readAllDataFile()
+        }
+        
+        
+        
         return true
     }
  

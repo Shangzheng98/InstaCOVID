@@ -22,6 +22,11 @@ struct ContentView: View {
                     Image(systemName: "chart.bar.xaxis")
                     Text("Data")
                 }
+            Monitor()
+                .tabItem {
+                    Image(systemName: "waveform.path.ecg.rectangle")
+                    Text("Monitor")
+                }
             
             DiagnosisAvailableOrNot()
                 .tabItem {

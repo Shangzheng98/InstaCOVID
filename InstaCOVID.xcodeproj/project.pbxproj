@@ -47,6 +47,11 @@
 		ADB38C752568930D0091D139 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C742568930D0091D139 /* WebView.swift */; };
 		ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C77256893E80091D139 /* WorldDBAPI.swift */; };
 		ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C7B256893F20091D139 /* StateDBAPI.swift */; };
+		C53744812578DACD00798C27 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53744802578DACD00798C27 /* Monitor.swift */; };
+		C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */; };
+		C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA92579059400B661F0 /* MonitorListItem.swift */; };
+		C5D50AB425790C4200B661F0 /* StateHistDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */; };
+		C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AB72579113400B661F0 /* StateHistDBAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +129,11 @@
 		ADB38C742568930D0091D139 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		ADB38C77256893E80091D139 /* WorldDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorldDBAPI.swift; path = InstaCOVID/WorldDBAPI.swift; sourceTree = SOURCE_ROOT; };
 		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = InstaCOVID/StateDBAPI.swift; sourceTree = SOURCE_ROOT; };
+		C53744802578DACD00798C27 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
+		C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorAnnotation.swift; sourceTree = "<group>"; };
+		C5D50AA92579059400B661F0 /* MonitorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListItem.swift; sourceTree = "<group>"; };
+		C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHistDataStruct.swift; sourceTree = "<group>"; };
+		C5D50AB72579113400B661F0 /* StateHistDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateHistDBAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +235,7 @@
 				ADB38C45256880EC0091D139 /* WorldDataStruct.swift */,
 				ADB38C48256880EF0091D139 /* StateDataStruct.swift */,
 				ADB38C4B256880F10091D139 /* UserData.swift */,
+				C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -234,6 +245,7 @@
 			children = (
 				ADB38C77256893E80091D139 /* WorldDBAPI.swift */,
 				ADB38C7B256893F20091D139 /* StateDBAPI.swift */,
+				C5D50AB72579113400B661F0 /* StateHistDBAPI.swift */,
 			);
 			name = "API Data";
 			sourceTree = "<group>";
@@ -290,6 +302,9 @@
 		167764B92568B18600DFB371 /* Monitor */ = {
 			isa = PBXGroup;
 			children = (
+				C53744802578DACD00798C27 /* Monitor.swift */,
+				C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */,
+				C5D50AA92579059400B661F0 /* MonitorListItem.swift */,
 			);
 			name = Monitor;
 			sourceTree = "<group>";
@@ -440,15 +455,18 @@
 				167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */,
 				16776436256879EA00DFB371 /* AppDelegate.swift in Sources */,
 				ADB38C72256893030091D139 /* MapView.swift in Sources */,
+				C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */,
 				ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */,
 				AD3C10212578C81A0080AC30 /* DiagnosisAvailableOrNot.swift in Sources */,
 				16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */,
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,
 				ADB38C6E256892BC0091D139 /* SearchBar.swift in Sources */,
+				C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */,
 				1658DCBB256F0A7000EA873F /* DataListDetails.swift in Sources */,
 				1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */,
 				1677643A256879EA00DFB371 /* ContentView.swift in Sources */,
+				C53744812578DACD00798C27 /* Monitor.swift in Sources */,
 				16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */,
 				16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */,
 				16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */,
@@ -460,10 +478,12 @@
 				ADB38C752568930D0091D139 /* WebView.swift in Sources */,
 				06955641256AFE8C00A6882F /* SettingMain.swift in Sources */,
 				ADB38C6F256892BC0091D139 /* UtilityFunctions.swift in Sources */,
+				C5D50AB425790C4200B661F0 /* StateHistDataStruct.swift in Sources */,
 				1658DCB3256F057200EA873F /* DataView.swift in Sources */,
 				16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */,
 				ADB38C5A2568823E0091D139 /* Home.swift in Sources */,
 				1658DCC7256F576C00EA873F /* ListData.swift in Sources */,
+				C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,6 +550,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -591,6 +612,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -619,6 +641,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"InstaCOVID/Preview Content\"";
 				DEVELOPMENT_TEAM = P4HRUWL6NU;
@@ -628,7 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -642,6 +665,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"InstaCOVID/Preview Content\"";
 				DEVELOPMENT_TEAM = P4HRUWL6NU;
@@ -651,7 +675,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -664,6 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Widgwt/Info.plist;
@@ -672,7 +697,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.Widgwt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -686,6 +711,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Widgwt/Info.plist;
@@ -694,7 +720,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.Widgwt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
