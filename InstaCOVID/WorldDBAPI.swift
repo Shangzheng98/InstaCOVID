@@ -139,7 +139,7 @@ public func getTotalWorldStatFromAPI () {
             worldStatInfo.totalDeaths = totalDeaths
             worldStatInfo.totalRecovered = totalRecovered
             worldStatInfo.newDeaths = newDeaths
-            print(worldStatInfo)
+            
  
         } catch {
             // countryFound will have the initial values set as above
@@ -243,7 +243,7 @@ public func getEveryContriesDataFromAPISortByCases(){
                 orderedSearchableWorldDataListCases.append(searchableListEntry)
             }
             
-            print(everyContriesDataListCases.description)
+            
         }
         
 
@@ -572,7 +572,7 @@ public func getEveryContriesDataFromAPISortByRecovered(){
                             flagURL = flag
                             flagURL = flagURL.replacingOccurrences(of: "https://raw.githubusercontent.com/NovelCOVID/API/master/assets/flags", with: "https://manta.cs.vt.edu/iOS/flags")
                             flagName = String(flagURL.dropFirst(flagURL.count - 6).dropLast(4))
-                            print(flagName)
+
                         }
                     }
                 }

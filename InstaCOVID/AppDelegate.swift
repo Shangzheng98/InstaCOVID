@@ -17,13 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          *****************************************
          */
         //readCountriesDataFiles()
-        getTotalWorldStatFromAPI()
-        getEveryContriesDataFromAPISortByCases()
-        getEveryContriesDataFromAPISortByNewCases()
-        getEveryContriesDataFromAPISortByDeaths()
-        getEveryContriesDataFromAPISortByNewDeaths()
-        getEveryContriesDataFromAPISortByRecovered()
+          getTotalWorldStatFromAPI()
+//        getEveryContriesDataFromAPISortByCases()
+//        getEveryContriesDataFromAPISortByNewCases()
+//        getEveryContriesDataFromAPISortByDeaths()
+//        getEveryContriesDataFromAPISortByNewDeaths()
+//        getEveryContriesDataFromAPISortByRecovered()
 //        gerStateDataFromAPI()
+        
+        readAllDataFile()
         return true
     }
  
