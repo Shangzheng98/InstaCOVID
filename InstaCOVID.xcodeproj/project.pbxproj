@@ -35,6 +35,7 @@
 		16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */; };
 		16B0C5B625760BCB0051AD4A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B425760BCB0051AD4A /* ImagePicker.swift */; };
 		16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */; };
+		AD3C10212578C81A0080AC30 /* DiagnosisAvailableOrNot.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C10202578C81A0080AC30 /* DiagnosisAvailableOrNot.swift */; };
 		ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
 		ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C48256880EF0091D139 /* StateDataStruct.swift */; };
 		ADB38C4C256880F10091D139 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C4B256880F10091D139 /* UserData.swift */; };
@@ -109,6 +110,14 @@
 		16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
 		16B0C5B425760BCB0051AD4A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayPersonalInfo.swift; sourceTree = "<group>"; };
+		AD3C10202578C81A0080AC30 /* DiagnosisAvailableOrNot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisAvailableOrNot.swift; sourceTree = "<group>"; };
+		AD3C10412578E12D0080AC30 /* SansitaSwashed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Light.ttf"; sourceTree = "<group>"; };
+		AD3C10422578E12D0080AC30 /* SansitaSwashed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Regular.ttf"; sourceTree = "<group>"; };
+		AD3C10432578E12D0080AC30 /* SansitaSwashed-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Black.ttf"; sourceTree = "<group>"; };
+		AD3C10442578E12D0080AC30 /* SansitaSwashed-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AD3C10452578E12D0080AC30 /* SansitaSwashed-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-SemiBold.ttf"; sourceTree = "<group>"; };
+		AD3C10462578E12E0080AC30 /* SansitaSwashed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Bold.ttf"; sourceTree = "<group>"; };
+		AD3C10472578E12E0080AC30 /* SansitaSwashed-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Medium.ttf"; sourceTree = "<group>"; };
 		ADB38C45256880EC0091D139 /* WorldDataStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorldDataStruct.swift; sourceTree = "<group>"; };
 		ADB38C48256880EF0091D139 /* StateDataStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDataStruct.swift; sourceTree = "<group>"; };
 		ADB38C4B256880F10091D139 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
@@ -169,6 +178,7 @@
 		16776434256879EA00DFB371 /* InstaCOVID */ = {
 			isa = PBXGroup;
 			children = (
+				AD3C103F2578E1020080AC30 /* Fonts */,
 				167764B62568B16A00DFB371 /* Tab Bar Views */,
 				167764B42568B13500DFB371 /* Supporting Files */,
 				167764B32568B11E00DFB371 /* API Data */,
@@ -316,8 +326,23 @@
 			isa = PBXGroup;
 			children = (
 				167BA31C2575DF64008A45CA /* Diagnosis.swift */,
+				AD3C10202578C81A0080AC30 /* DiagnosisAvailableOrNot.swift */,
 			);
 			name = Diagnosis;
+			sourceTree = "<group>";
+		};
+		AD3C103F2578E1020080AC30 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD3C10462578E12E0080AC30 /* SansitaSwashed-Bold.ttf */,
+				AD3C10442578E12D0080AC30 /* SansitaSwashed-ExtraBold.ttf */,
+				AD3C10412578E12D0080AC30 /* SansitaSwashed-Light.ttf */,
+				AD3C10472578E12E0080AC30 /* SansitaSwashed-Medium.ttf */,
+				AD3C10422578E12D0080AC30 /* SansitaSwashed-Regular.ttf */,
+				AD3C10432578E12D0080AC30 /* SansitaSwashed-Black.ttf */,
+				AD3C10452578E12D0080AC30 /* SansitaSwashed-SemiBold.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +457,7 @@
 				ADB38C72256893030091D139 /* MapView.swift in Sources */,
 				C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */,
 				ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */,
+				AD3C10212578C81A0080AC30 /* DiagnosisAvailableOrNot.swift in Sources */,
 				16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */,
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,
@@ -664,7 +690,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P4HRUWL6NU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Widgwt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -687,7 +713,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P4HRUWL6NU;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Widgwt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

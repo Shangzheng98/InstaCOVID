@@ -28,6 +28,12 @@ struct ContentView: View {
                     Text("Monitor")
                 }
             
+            DiagnosisAvailableOrNot()
+                .tabItem {
+                    Image(systemName: "chart.bar.xaxis")
+                    Text("Diagnosis")
+                }
+            
             if userData.userAuthenticated {
                 DisplayPersonalInfo().tabItem {
                     Image(systemName: "gear")
@@ -41,10 +47,10 @@ struct ContentView: View {
                 }
             }
         }   // End of TabView
-            
+        
     }
 }
- 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
