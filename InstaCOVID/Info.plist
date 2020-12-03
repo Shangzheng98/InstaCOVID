@@ -67,5 +67,23 @@
 	<string>MyPIM needs to access our camera</string>
 	<key>NSAppleMusicUsageDescription</key>
 	<string>MyPIM needs to access my Photos library</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string></string>
+	</array>
+	<key>Item 0</key>
+	<string>SansitaSwashed-Black</string>
+	<key>Item 1</key>
+	<string>SansitaSwashed-Bold</string>
+	<key>Item 2</key>
+	<string>SansitaSwashed-ExtraBold</string>
+	<key>Item 3</key>
+	<string>SansitaSwashed-Light</string>
+	<key>Item 4</key>
+	<string>SansitaSwashed-Medium</string>
+	<key>Item 5</key>
+	<string>SansitaSwashed-Regular</string>
+	<key>Item 6</key>
+	<string>SansitaSwashed-SemiBold</string>
 </dict>
 </plist>
