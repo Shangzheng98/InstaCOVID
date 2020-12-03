@@ -31,6 +31,7 @@ struct LogView: View {
                         TextField("Username", text: $enteredUsername)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 300, height: 36)
+                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
                             .padding()
                         //password section
                         SecureField("Password", text: $enteredPassword)
