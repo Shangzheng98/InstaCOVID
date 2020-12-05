@@ -16,18 +16,22 @@ struct MonitorAnnotation: View {
         HStack {
             Image(country.flagImageName)
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width:80)
-            VStack(alignment: .leading) {
+                .frame(width:40)
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.white, lineWidth: 1))
+            VStack {
                 HStack {
                     Text(country.countryName)
+                        .multilineTextAlignment(.center)
                 }
                 .font(.system(size: 13))
                 VStack(alignment: .leading) {
-                    Text("Confirmed")
+                    Text("Confirmed:")
                         .font(.system(size: 12.5))
                         .foregroundColor(.red)
                     Text("\(country.cases)")
+                        .font(.system(size: 12.5))
+                        .foregroundColor(.red)
                     HStack {
                         Image(systemName: "arrow.up")
                             .imageScale(.small)
@@ -40,7 +44,9 @@ struct MonitorAnnotation: View {
                 }
                 .font(.system(size: 12))
             }
-        }
+        }.frame(width: 130, height: 70)
+        //.background(Color.clear)
+        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
     }
 }
 
