@@ -1,15 +1,14 @@
 //
-//  DataListDetails.swift
+//  GridListDetails.swift
 //  InstaCOVID
 //
-//  Created by Shangzheng Ji on 11/25/20.
+//  Created by Shangzheng Ji on 12/6/20.
 //  Copyright © 2020 team2. All rights reserved.
 //
 
 import SwiftUI
 import MapKit
-
-struct DataListDetails: View {
+struct GridListDetails: View {
     @EnvironmentObject var userData: UserData
     // Input Parameter
     let country: WorldDataStruct
@@ -18,6 +17,7 @@ struct DataListDetails: View {
     var body: some View {
         // A Form cannot have more than 10 Sections.
         // Group the Sections if more than 10.
+        NavigationView{
         Form {
             Section(header: Text("Country Name")) {
                 Text(country.countryName)
@@ -153,6 +153,7 @@ struct DataListDetails: View {
             follow = country.following
         })
     }   // End of body
+    }
     
     var countryMap: some View {
         return AnyView(MapView(mapType: MKMapType.standard, latitude: country.lat, longitude: country.long, delta: 15.0, deltaUnit: "degrees", annotationTitle: country.countryName, annotationSubtitle: country.countryName)
@@ -164,11 +165,12 @@ struct DataListDetails: View {
         Alert(title: Text("Successfully Follow Up!"),
               message: Text("This country is followed up and you can see it on the Home page!"),
               dismissButton: .default(Text("OK")) )
+    
     }
 }
 
-struct DataListDetails_Previews: PreviewProvider {
+struct GridListDetails_Previews: PreviewProvider {
     static var previews: some View {
-        DataListDetails(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af",following: false))
+        GridListDetails(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af",following: false))
     }
 }

@@ -25,18 +25,11 @@ struct ListGrid: View {
                         ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                             contry in GridListItem(country: self.searchItemCountry(searchListItem: contry))
                                 .scaledToFit()
-                                
-                                
                         }
                     } else if filterIndex == 1 {
                         ForEach(orderedSearchableWorldDataListNewCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                             contry in GridListItem(country: self.searchItemCountry(searchListItem: contry))
                                 .scaledToFit()
-                                .overlay(
-                                shape
-                                    .inset(by: 0.5)
-                                    .stroke(Color.primary.opacity(1), lineWidth: 1)
-                                )
                         }
                     } else if filterIndex == 2 {
                         ForEach(orderedSearchableWorldDataListDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {

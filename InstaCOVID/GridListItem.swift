@@ -12,7 +12,7 @@ struct GridListItem: View {
     @EnvironmentObject var userData:UserData
     @State private var flipped = false
     @State private var animate3d = false
-    
+    @State private var showingDetails = false
     let country: WorldDataStruct
     var shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
     var body: some View {
@@ -24,9 +24,13 @@ struct GridListItem: View {
             .aspectRatio(contentMode: .fit)
             .clipShape(shape)
             .onTapGesture {
-                self.flipped.toggle()
-                userData.flipped.toggle()
+//                self.flipped.toggle()
+//                userData.flipped.toggle()
+                self.showingDetails.toggle()
             }
+            .sheet(isPresented: $showingDetails, content: {
+                GridListDetails(country: country)
+            })
             
 //        if self.flipped {
 //            VisualEffectBlur(blurStyle: .systemUltraThinMaterial, vibrancyStyle: .fill) {
