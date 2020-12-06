@@ -21,6 +21,7 @@
 		167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA31C2575DF64008A45CA /* Diagnosis.swift */; };
 		167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA3482575FFC8008A45CA /* GridListItem.swift */; };
 		167BA352257603C1008A45CA /* ListGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA351257603C1008A45CA /* ListGrid.swift */; };
+		168FE419257DA5D600E677BB /* GridListDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE418257DA5D600E677BB /* GridListDetails.swift */; };
 		1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697D4322578428600D02EF9 /* VisualEffectBlur.swift */; };
 		16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F2225787CDD007945DF /* LoadAndSave.swift */; };
 		16AC1F482579488B007945DF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
@@ -98,6 +99,7 @@
 		167BA31C2575DF64008A45CA /* Diagnosis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnosis.swift; sourceTree = "<group>"; };
 		167BA3482575FFC8008A45CA /* GridListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListItem.swift; sourceTree = "<group>"; };
 		167BA351257603C1008A45CA /* ListGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGrid.swift; sourceTree = "<group>"; };
+		168FE418257DA5D600E677BB /* GridListDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridListDetails.swift; sourceTree = "<group>"; };
 		1697D4322578428600D02EF9 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		16AC1F2225787CDD007945DF /* LoadAndSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndSave.swift; sourceTree = "<group>"; };
 		16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InstaCOVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -281,6 +283,7 @@
 		167764B82568B17F00DFB371 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				168FE418257DA5D600E677BB /* GridListDetails.swift */,
 				1658DCB2256F057200EA873F /* DataView.swift */,
 				1658DCB6256F0A6000EA873F /* DataListItem.swift */,
 				1658DCBA256F0A7000EA873F /* DataListDetails.swift */,
@@ -453,6 +456,7 @@
 				ADB38C4C256880F10091D139 /* UserData.swift in Sources */,
 				ADB38C6D256892BC0091D139 /* NavigationStyle.swift in Sources */,
 				16B0C5B025760B760051AD4A /* Settings.swift in Sources */,
+				168FE419257DA5D600E677BB /* GridListDetails.swift in Sources */,
 				1658DCB7256F0A6000EA873F /* DataListItem.swift in Sources */,
 				ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */,
 				167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */,
