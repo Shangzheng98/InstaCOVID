@@ -101,15 +101,15 @@ final class UserData: ObservableObject {
     }
     
     @IBAction func logging() {
-        // 創建 LAContext 實例
+        
         let context = LAContext()
-        // 設置取消按鈕標題
+        
         context.localizedCancelTitle = "Cancel"
         var error: NSError?
-        // 評估是否可以針對給定方案進行身份驗證
+        
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             let reason = "Log in to your account"
-            // 評估指定方案
+            
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { (success, error) in
                 if success {
                     DispatchQueue.main.async { [unowned self] in
