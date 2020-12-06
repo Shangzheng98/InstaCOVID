@@ -28,190 +28,198 @@ struct Settings: View {
     @State private var showUnmatchedPasswordAlert = false
     @State private var showPasswordSetAlert = false
     var body: some View {
-  //      NavigationView{
-            Form{
-                
-                Section(header: Text("Show / Hide Entered Values")){
-                    Toggle(isOn: $showEnteredValues){
-                        Text("Show Entered Value")
+        //      NavigationView{
+        Form{
+            
+            Section(header: Text("Show / Hide Entered Values")){
+                Toggle(isOn: $showEnteredValues){
+                    Text("Show Entered Value")
+                }
+            }.alert(isPresented: $showPasswordSetAlert, content: { self.passwordSetAlert })
+            //Choosing the different questions for the security
+            Section(header: Text("Select a Security Question")){
+                Picker("Selected:", selection: $selectedIndex) {
+                    ForEach(0 ..< searchCategories.count, id: \.self) {
+                        Text(searchCategories[$0]).font(.system(size: 15))
                     }
-                }.alert(isPresented: $showPasswordSetAlert, content: { self.passwordSetAlert })
-                //Choosing the different questions for the security
-                Section(header: Text("Select a Security Question")){
-                    Picker("Selected:", selection: $selectedIndex) {
-                        ForEach(0 ..< searchCategories.count, id: \.self) {
-                            Text(searchCategories[$0]).font(.system(size: 15))
-                        }
-                        
-                        
-                    }
-                    .frame(minWidth: 300, maxWidth: 500)
+                    
                     
                 }
-                
-                //Aswer the question and save it to the userdata
-                Section(header: Text("Enter answer to selected security question")){
-                    HStack {
-                        if self.showEnteredValues{
-                            TextField("Enter Answer", text: $textFieldValue
-                            )
-                            .keyboardType(.numbersAndPunctuation)
-                            .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            
-                        }
-                        else{
-                            SecureField("Enter Answer", text: $textFieldValue
-                            )
-                            .keyboardType(.numbersAndPunctuation)
-                            .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            
-                        }
-                        
-                        
-                        // Button to clear the text field
-                        Button(action: {
-                            self.textFieldValue = ""
-                        }) {
-                            Image(systemName: "clear")
-                                .imageScale(.medium)
-                                .font(Font.title.weight(.regular))
-                        }
-                    }   // End of HStack
-                    .frame(minWidth: 300, maxWidth: 500)
-                }
-                //Save the password to the user data
-                Section(header: Text("Enter Username")){
-                    HStack {
-                        if self.showEnteredValues{
-                            TextField("Enter Username", text: $textField1Value
-                            )
-                            .keyboardType(.numbersAndPunctuation)
-                            .frame(maxHeight: 50, alignment: .center
-                            )
-                        }
-                        else{SecureField("Enter Password", text: $textField1Value
-                                         
-                        )
-                        .keyboardType(.numbersAndPunctuation)
-                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
-                        
-                        
-                        // Button to clear the text field
-                        Button(action: {
-                            self.textField1Value = ""
-                        }) {
-                            Image(systemName: "clear")
-                                .imageScale(.medium)
-                                .font(Font.title.weight(.regular))
-                        }
-                    }   // End of HStack
-                    .frame(minWidth: 300, maxWidth: 500)
-                }
-                //Save the password to the user data
-                Section(header: Text("Enter Password")){
-                    HStack {
-                        if self.showEnteredValues{
-                            TextField("Enter Password", text: $textField2Value
-                            )
-                            .keyboardType(.numbersAndPunctuation)
-                            .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        }
-                        else{SecureField("Enter Password", text: $textField2Value
-                                         
-                        )
-                        .keyboardType(.numbersAndPunctuation)
-                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
-                        
-                        
-                        // Button to clear the text field
-                        Button(action: {
-                            self.textField2Value = ""
-                        }) {
-                            Image(systemName: "clear")
-                                .imageScale(.medium)
-                                .font(Font.title.weight(.regular))
-                        }
-                    }   // End of HStack
-                    .frame(minWidth: 300, maxWidth: 500)
-                }
-                //Check the value for the password is the same
-                Section(header: Text("Verify Password")){
-                    HStack {
-                        if self.showEnteredValues{
-                            TextField("Verify Password", text: $textField3Value
-                                      
-                            )
-                            .keyboardType(.numbersAndPunctuation)
-                            .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        }
-                        else{SecureField("Verify Password", text: $textField3Value
-                        )
-                        .keyboardType(.numbersAndPunctuation)
-                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
-                        
-                        
-                        // Button to clear the text field
-                        Button(action: {
-                            self.textField3Value = ""
-                        }) {
-                            Image(systemName: "clear")
-                                .imageScale(.medium)
-                                .font(Font.title.weight(.regular))
-                        }
-                    }   // End of HStack
-                    .frame(minWidth: 300, maxWidth: 500)
-                }
-                //If it is the same save the value
-                Section(header: Text("Set Password")){
-                    Button(action: {
-                        if !textField2Value.isEmpty {
-                            if textField2Value == textField3Value {
-                                /*
-                                 UserDefaults provides an interface to the user’s defaults database,
-                                 where you store key-value pairs persistently across launches of your app.
-                                 */
-                                // Store the password in the user’s defaults database under the key "Password"
-                                UserDefaults.standard.set(self.textField2Value, forKey: "Password")
-                            
-                                UserDefaults.standard.set(searchCategories[selectedIndex], forKey: "Question")
-                                
-                                UserDefaults.standard.set(textFieldValue, forKey: "Answer")
-                                
-                                UserDefaults.standard.set(textField1Value, forKey: "Username")
-                                
-                                
-                                
-                                //Initialize the value
-                                self.textFieldValue = ""
-                                self.textField1Value = ""
-                                self.textField2Value = ""
-                                self.textField3Value = ""
-                                self.showPasswordSetAlert = true
-                                // Dismiss this View and go back
-                                self.presentationMode.wrappedValue.dismiss()
-                                
-                            } else {
-                                self.showUnmatchedPasswordAlert = true
-                            }
-                        }
-                    }) {
-                        Text("Set Password to Unlock App")
-                            .frame(width: 300, height: 36, alignment: .center)
-                            .background(
-                                RoundedRectangle(cornerRadius: 16)
-                                    .strokeBorder(Color.black, lineWidth: 1)
-                            )
-                    }
-                    .alert(isPresented: $showUnmatchedPasswordAlert, content: { self.unmatchedPasswordAlert })
-                    
-                }
-                
+                .frame(minWidth: 300, maxWidth: 500)
                 
             }
-            //End of form
+            
+            //Aswer the question and save it to the userdata
+            Section(header: Text("Enter answer to selected security question")){
+                HStack {
+                    if self.showEnteredValues{
+                        TextField("Enter Answer", text: $textFieldValue
+                        )
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        
+                    }
+                    else{
+                        SecureField("Enter Answer", text: $textFieldValue
+                        )
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        
+                    }
+                    
+                    
+                    // Button to clear the text field
+                    Button(action: {
+                        self.textFieldValue = ""
+                    }) {
+                        Image(systemName: "clear")
+                            .imageScale(.medium)
+                            .font(Font.title.weight(.regular))
+                    }
+                }   // End of HStack
+                .frame(minWidth: 300, maxWidth: 500)
+            }
+            //Save the password to the user data
+            Section(header: Text("Enter Username")){
+                HStack {
+                    if self.showEnteredValues{
+                        TextField("Enter Username", text: $textField1Value
+                        )
+                        .disableAutocorrection(true)
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .frame(maxHeight: 50, alignment: .center
+                        )
+                    }
+                    else{SecureField("Enter Password", text: $textField1Value
+                                     
+                    )
+                    .disableAutocorrection(true)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
+                    
+                    
+                    // Button to clear the text field
+                    Button(action: {
+                        self.textField1Value = ""
+                    }) {
+                        Image(systemName: "clear")
+                            .imageScale(.medium)
+                            .font(Font.title.weight(.regular))
+                    }
+                }   // End of HStack
+                .frame(minWidth: 300, maxWidth: 500)
+            }
+            //Save the password to the user data
+            Section(header: Text("Enter Password")){
+                HStack {
+                    if self.showEnteredValues{
+                        TextField("Enter Password", text: $textField2Value
+                        )
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+                    else{SecureField("Enter Password", text: $textField2Value
+                                     
+                    )
+                    .disableAutocorrection(true)
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
+                    
+                    
+                    // Button to clear the text field
+                    Button(action: {
+                        self.textField2Value = ""
+                    }) {
+                        Image(systemName: "clear")
+                            .imageScale(.medium)
+                            .font(Font.title.weight(.regular))
+                    }
+                }   // End of HStack
+                .frame(minWidth: 300, maxWidth: 500)
+            }
+            //Check the value for the password is the same
+            Section(header: Text("Verify Password")){
+                HStack {
+                    if self.showEnteredValues{
+                        TextField("Verify Password", text: $textField3Value
+                                  
+                        )
+                        .disableAutocorrection(true)
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+                    else{
+                        SecureField("Verify Password", text: $textField3Value)
+                            .disableAutocorrection(true)
+                            .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                            .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)}
+                    
+                    
+                    // Button to clear the text field
+                    Button(action: {
+                        self.textField3Value = ""
+                    }) {
+                        Image(systemName: "clear")
+                            .imageScale(.medium)
+                            .font(Font.title.weight(.regular))
+                    }
+                }   // End of HStack
+                .frame(minWidth: 300, maxWidth: 500)
+            }
+            //If it is the same save the value
+            Section(header: Text("Set Password")){
+                Button(action: {
+                    if !textField2Value.isEmpty {
+                        if textField2Value == textField3Value {
+                            /*
+                             UserDefaults provides an interface to the user’s defaults database,
+                             where you store key-value pairs persistently across launches of your app.
+                             */
+                            // Store the password in the user’s defaults database under the key "Password"
+                            UserDefaults.standard.set(self.textField2Value, forKey: "Password")
+                            
+                            UserDefaults.standard.set(searchCategories[selectedIndex], forKey: "Question")
+                            
+                            UserDefaults.standard.set(textFieldValue, forKey: "Answer")
+                            
+                            UserDefaults.standard.set(textField1Value, forKey: "Username")
+                            
+                            
+                            
+                            //Initialize the value
+                            self.textFieldValue = ""
+                            self.textField1Value = ""
+                            self.textField2Value = ""
+                            self.textField3Value = ""
+                            self.showPasswordSetAlert = true
+                            // Dismiss this View and go back
+                            self.presentationMode.wrappedValue.dismiss()
+                            
+                        } else {
+                            self.showUnmatchedPasswordAlert = true
+                        }
+                    }
+                }) {
+                    Text("Set Password to Unlock App")
+                        .frame(width: 300, height: 36, alignment: .center)
+                        .background(
+                            RoundedRectangle(cornerRadius: 16)
+                                .strokeBorder(Color.black, lineWidth: 1)
+                        )
+                }
+                .alert(isPresented: $showUnmatchedPasswordAlert, content: { self.unmatchedPasswordAlert })
+                
+            }
             
             
-      //  } //End of NavigationView
+        }
+        //End of form
+        
+        
+        //  } //End of NavigationView
     } // End of body
     /*
      --------------------------

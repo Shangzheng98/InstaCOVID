@@ -12,6 +12,7 @@ struct LogView: View {
     // Subscribe to changes in UserData
     @EnvironmentObject var userData: UserData
     
+    
     @State private var enteredPassword = ""
     @State private var showInvalidPasswordAlert = false
     @State private var enteredUsername = ""
@@ -38,43 +39,61 @@ struct LogView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(width: 300, height: 36)
                             .padding()
-                        
-                        Button(action: {
-                            /*
-                             UserDefaults provides an interface to the user’s defaults database,
-                             where you store key-value pairs persistently across launches of your app.
-                             */
-                            // Retrieve the password from the user’s defaults database under the key "Password"
-                            let validPassword = UserDefaults.standard.string(forKey: "Password")
-                            
-                            let validUsername = UserDefaults.standard.string(forKey: "Username")
-                            
-                            /*
-                             If the user has not yet set a password, validPassword = nil
-                             In this case, allow the user to login.
-                             */
-                            
-                            if  self.enteredPassword == validPassword && self.enteredUsername == validUsername {
-                                userData.userAuthenticated = true
-                                self.showInvalidPasswordAlert = false
-                                
-                            } else {
-                                self.showInvalidPasswordAlert = true
-                            }
-                            
-                        }) {
-                            Text("Login")
-                                .frame(width: 100, height: 36, alignment: .center)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 16)
-                                        .strokeBorder(Color.black, lineWidth: 1))
-                                .padding()
-                        }
-                        .alert(isPresented: $showInvalidPasswordAlert, content: { self.invalidPasswordAlert })
-                        
-                        
                         let username = UserDefaults.standard.string(forKey: "Username")
                         let password = UserDefaults.standard.string(forKey: "Password")
+                        HStack{
+                            Button(action: {
+                                /*
+                                 UserDefaults provides an interface to the user’s defaults database,
+                                 where you store key-value pairs persistently across launches of your app.
+                                 */
+                                // Retrieve the password from the user’s defaults database under the key "Password"
+                                let validPassword = UserDefaults.standard.string(forKey: "Password")
+                                
+                                let validUsername = UserDefaults.standard.string(forKey: "Username")
+                                
+                                /*
+                                 If the user has not yet set a password, validPassword = nil
+                                 In this case, allow the user to login.
+                                 */
+                                
+                                if  self.enteredPassword == validPassword && self.enteredUsername == validUsername {
+                                    userData.userAuthenticated = true
+                                    self.showInvalidPasswordAlert = false
+                                    
+                                } else {
+                                    self.showInvalidPasswordAlert = true
+                                }
+                                
+                            }) {
+                                Text("Login")
+                                    .frame(width: 100, height: 36, alignment: .center)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 16)
+                                            .strokeBorder(Color.black, lineWidth: 1))
+                                    .padding()
+                            }
+                            .alert(isPresented: $showInvalidPasswordAlert, content: { self.invalidPasswordAlert })
+                            
+                            
+                            if username != nil && password != nil{
+                                //FaceID
+                                Button(action: {
+                                    
+                                    self.userData.logging()
+                                    
+                                }) {
+                                    Text("FaceID")
+                                        .frame(width: 100, height: 36, alignment: .center)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 16)
+                                                .strokeBorder(Color.black, lineWidth: 1))
+                                        .padding()
+                                }
+                                .alert(isPresented: $showInvalidPasswordAlert, content: { self.invalidPasswordAlert })
+                            }
+                        }//end of Hstack
+
                         
                         if username == nil && password == nil{
                             
@@ -96,12 +115,8 @@ struct LogView: View {
                                 }
                             }
                             .frame(minWidth: 400, maxWidth: 600, alignment: .center)
-                        }
-                        
-                        
-                        
-                        
-                        
+                            
+                        } 
                         
                     }//end of vstack
                 }//end of showsIndiator
@@ -121,6 +136,7 @@ struct LogView: View {
         
         // Tapping OK resets @State var showInvalidPasswordAlert to false.
     }
+    
     
     
 }

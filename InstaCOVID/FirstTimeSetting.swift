@@ -56,7 +56,6 @@ struct FirstTimeSetting: View {
                     TextField("Enter your name", text: $nameTextFieldValue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                        .autocapitalization(.words)
                 }.alert(isPresented: $showmissingInputDataAlert, content: { self.missingInputDataAlert })
                 HStack{
                     // Form{
@@ -159,7 +158,6 @@ struct FirstTimeSetting: View {
                     TextField("Enter your nationality", text: $nationalityTextFieldValue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                        .autocapitalization(.words)
                 }.alert(isPresented: $showmissingInputDataAlert, content: { self.missingInputDataAlert })
                 
                 //Phone number section
@@ -167,7 +165,6 @@ struct FirstTimeSetting: View {
                     TextField("Enter your phone number", text: $phoneTextFieldValue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                        .autocapitalization(.words)
                 }.alert(isPresented: $showmissingInputDataAlert, content: { self.missingInputDataAlert })
                 
                 //Identity section
@@ -175,7 +172,6 @@ struct FirstTimeSetting: View {
                     TextField("Enter your job", text: $identityTextFieldValue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                        .autocapitalization(.words)
                 }.alert(isPresented: $showmissingInputDataAlert, content: { self.missingInputDataAlert })
                 
                 //Current living country
@@ -183,7 +179,6 @@ struct FirstTimeSetting: View {
                     TextField("Enter your current living country", text: $currentLivingCountryTextFieldValue)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
-                        .autocapitalization(.words)
                 }.alert(isPresented: $showmissingInputDataAlert, content: { self.missingInputDataAlert })
                 
                 //Username section
@@ -191,9 +186,9 @@ struct FirstTimeSetting: View {
                     HStack {
                         TextField("Enter Username", text: $usernameTextFieldValue
                         )
-                        .keyboardType(.numbersAndPunctuation)
                         .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
                         // Button to clear the text field
                         Button(action: {
                             self.usernameTextFieldValue = ""
@@ -211,11 +206,10 @@ struct FirstTimeSetting: View {
                     HStack {
                         TextField("Enter Password", text: $passwordTextFieldValue
                         )
-                        .keyboardType(.numbersAndPunctuation)
                         .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                        
-                        
+                        .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                        .disableAutocorrection(true)
+                  
                         // Button to clear the text field
                         Button(action: {
                             self.passwordTextFieldValue = ""
@@ -238,9 +232,9 @@ struct FirstTimeSetting: View {
                     TextField("Verify Password", text: $verifyTextField
                               
                     )
-                    .keyboardType(.numbersAndPunctuation)
                     .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    
+                    .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                    .disableAutocorrection(true)
                     
                     // Button to clear the text field
                     Button(action: {
@@ -272,7 +266,6 @@ struct FirstTimeSetting: View {
                 HStack {
                     TextField("Enter Answer", text: $textFieldValue
                     )
-                    .keyboardType(.numbersAndPunctuation)
                     .frame(maxHeight: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
                     // Button to clear the text field
