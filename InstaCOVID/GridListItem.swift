@@ -14,21 +14,40 @@ struct GridListItem: View {
     @State private var animate3d = false
     @State private var showDetails = false
     let country: WorldDataStruct
-    var shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
+    var shape = RoundedRectangle(cornerRadius: 15, style: .continuous)
     var body: some View {
 //        let binding = Binding<Bool>(get: { self.flipped }, set: {
 //            updateBinding($0)
 //        })
-        Image(country.flagImageName)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .clipShape(shape)
-            .onTapGesture {
-                self.showDetails.toggle()
-            }
-            .sheet(isPresented: $showDetails, content: {
-                GridListDetails(country: country)
-            })
+        if (!country.following) {
+            Image(country.flagImageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(shape)
+                .onTapGesture {
+                    self.showDetails.toggle()
+                }
+                .sheet(isPresented: $showDetails, content: {
+                    GridListDetails(country: country)
+                })
+        } else {
+            Image(country.flagImageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .clipShape(shape)
+                .onTapGesture {
+                    self.showDetails.toggle()
+                }
+                .overlay(
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                    , alignment: .topTrailing
+                )
+                .sheet(isPresented: $showDetails, content: {
+                    GridListDetails(country: country)
+                })
+        }
+        
             
 //        if self.flipped {
 //            VisualEffectBlur(blurStyle: .systemUltraThinMaterial, vibrancyStyle: .fill) {
