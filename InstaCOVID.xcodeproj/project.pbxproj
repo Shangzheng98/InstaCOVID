@@ -22,10 +22,15 @@
 		167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA3482575FFC8008A45CA /* GridListItem.swift */; };
 		167BA352257603C1008A45CA /* ListGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BA351257603C1008A45CA /* ListGrid.swift */; };
 		168FE419257DA5D600E677BB /* GridListDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE418257DA5D600E677BB /* GridListDetails.swift */; };
+		168FE41D257DD0CC00E677BB /* FollowingInfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE41C257DD0CC00E677BB /* FollowingInfoWidget.swift */; };
+		168FE421257DD10600E677BB /* SelfCheckCardWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE420257DD10600E677BB /* SelfCheckCardWidget.swift */; };
+		168FE424257DD2F500E677BB /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
+		168FE42B257DE75900E677BB /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; };
+		168FE42C257DE75900E677BB /* SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		168FE42E257DE75A00E677BB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
+		168FE42F257DE75A00E677BB /* WidgetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697D4322578428600D02EF9 /* VisualEffectBlur.swift */; };
 		16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F2225787CDD007945DF /* LoadAndSave.swift */; };
-		16AC1F482579488B007945DF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
-		16AC1F492579488B007945DF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; };
 		16AC1F4C2579488B007945DF /* InstaCOVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */; };
 		16AC1F4E2579488C007945DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16AC1F4D2579488C007945DF /* Assets.xcassets */; };
 		16AC1F522579488C007945DF /* InstaCOVIDWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -78,6 +83,18 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		168FE42D257DE75900E677BB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				168FE42C257DE75900E677BB /* SwiftUI.framework in Embed Frameworks */,
+				168FE42F257DE75A00E677BB /* WidgetKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +117,8 @@
 		167BA3482575FFC8008A45CA /* GridListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridListItem.swift; sourceTree = "<group>"; };
 		167BA351257603C1008A45CA /* ListGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListGrid.swift; sourceTree = "<group>"; };
 		168FE418257DA5D600E677BB /* GridListDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridListDetails.swift; sourceTree = "<group>"; };
+		168FE41C257DD0CC00E677BB /* FollowingInfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingInfoWidget.swift; sourceTree = "<group>"; };
+		168FE420257DD10600E677BB /* SelfCheckCardWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCheckCardWidget.swift; sourceTree = "<group>"; };
 		1697D4322578428600D02EF9 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		16AC1F2225787CDD007945DF /* LoadAndSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndSave.swift; sourceTree = "<group>"; };
 		16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InstaCOVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,8 +171,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16AC1F492579488B007945DF /* SwiftUI.framework in Frameworks */,
-				16AC1F482579488B007945DF /* WidgetKit.framework in Frameworks */,
+				168FE42B257DE75900E677BB /* SwiftUI.framework in Frameworks */,
+				168FE42E257DE75A00E677BB /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +352,8 @@
 				16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */,
 				16AC1F4D2579488C007945DF /* Assets.xcassets */,
 				16AC1F4F2579488C007945DF /* Info.plist */,
+				168FE41C257DD0CC00E677BB /* FollowingInfoWidget.swift */,
+				168FE420257DD10600E677BB /* SelfCheckCardWidget.swift */,
 			);
 			path = InstaCOVIDWidget;
 			sourceTree = "<group>";
@@ -380,6 +401,7 @@
 				16AC1F432579488B007945DF /* Sources */,
 				16AC1F442579488B007945DF /* Frameworks */,
 				16AC1F452579488B007945DF /* Resources */,
+				168FE42D257DE75900E677BB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -499,7 +521,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168FE421257DD10600E677BB /* SelfCheckCardWidget.swift in Sources */,
 				16AC1F4C2579488B007945DF /* InstaCOVIDWidget.swift in Sources */,
+				168FE41D257DD0CC00E677BB /* FollowingInfoWidget.swift in Sources */,
+				168FE424257DD2F500E677BB /* WorldDataStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +730,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.InstaCOVIDWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -727,6 +753,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.InstaCOVIDWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
