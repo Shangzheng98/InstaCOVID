@@ -14,6 +14,7 @@ struct FirstTimeSetting: View {
      to go back to the previous view in the navigation hierarchy.
      */
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var userData: UserData
     //The initialize of the variable
     let selectionList = ["Camera", "Library"]
     @State private var nameTextFieldValue = ""
@@ -294,7 +295,7 @@ struct FirstTimeSetting: View {
                         UserDefaults.standard.set(selectionGenderList[selectedGenderIndex], forKey: "Gender")
                         
                         UserDefaults.standard.set(photoImageData, forKey: "Photo")
-                        
+                        userData.profilePhoto = photoImageData
                         // Create an instance of DateFormatter
                         let dateFormatter2 = DateFormatter()
                         

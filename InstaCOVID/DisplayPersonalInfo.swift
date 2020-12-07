@@ -21,7 +21,7 @@ struct DisplayPersonalInfo: View {
     
     var body: some View {
         
-        NavigationView{
+        
             Form{
                 //The picture section
                 Section(header: Text("")){
@@ -86,16 +86,18 @@ struct DisplayPersonalInfo: View {
                             Image(systemName: "square.and.pencil")
                             Text("Edit Personal Information")
                                 .font(.system(size: 18))
+                                .foregroundColor(.blue)
                         }
                     }
                     .frame(minWidth: 400, maxWidth: 500, alignment: .center)
-                }
                 
                 
                 
                 
                 
-            }.navigationBarTitle(Text("Personal Account Information"), displayMode: .inline)//End of form
+                
+            }
+                .navigationBarTitle(Text("Personal Account Information"), displayMode: .inline)//End of form
         }.onAppear {
             photo = UserDefaults.standard.data(forKey: "Photo")
             name = UserDefaults.standard.string(forKey: "Name")!

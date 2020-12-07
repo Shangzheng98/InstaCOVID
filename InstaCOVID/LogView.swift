@@ -16,7 +16,7 @@ struct LogView: View {
     @State private var enteredPassword = ""
     @State private var showInvalidPasswordAlert = false
     @State private var enteredUsername = ""
-    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         NavigationView{
             ZStack {
@@ -60,7 +60,7 @@ struct LogView: View {
                                 if  self.enteredPassword == validPassword && self.enteredUsername == validUsername {
                                     userData.userAuthenticated = true
                                     self.showInvalidPasswordAlert = false
-                                    
+                                    self.presentationMode.wrappedValue.dismiss()
                                 } else {
                                     self.showInvalidPasswordAlert = true
                                 }
@@ -81,7 +81,6 @@ struct LogView: View {
                                 Button(action: {
                                     
                                     self.userData.logging()
-                                    
                                 }) {
                                     Image(systemName: "faceid")
                                         .frame(width: 100, height: 36, alignment: .center)

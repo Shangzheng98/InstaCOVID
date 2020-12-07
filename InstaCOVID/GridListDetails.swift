@@ -59,13 +59,17 @@ struct GridListDetails: View {
                         let recoveredIndex = userData.countriesDataListRecovered.firstIndex(where: {
                             $0.countryName == country.countryName
                         })
-                        
+                        let followListIndex = userData.followedCountriesList.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
                         
                         userData.countriesDataListCases[caseIndex!].following = true
                         userData.countriesDataListNewCases[newCaseIndex!].following = true
                         userData.countriesDataListDeaths[deathIndex!].following = true
                         userData.countriesDataListNewDeaths[newDeathIndex!].following = true
                         userData.countriesDataListRecovered[recoveredIndex!].following = true
+                        userData.followedCountriesList[followListIndex!].following = true
+                        
                         
                         everyContriesDataListCases = userData.countriesDataListCases
                         everyContriesDataListNewCases = userData.countriesDataListNewCases
@@ -98,12 +102,16 @@ struct GridListDetails: View {
                         let recoveredIndex = userData.countriesDataListRecovered.firstIndex(where: {
                             $0.countryName == country.countryName
                         })
+                        
+                        
                         userData.followedCountriesList.remove(at: index!)
                         userData.countriesDataListCases[caseIndex!].following = false
                         userData.countriesDataListNewCases[newCaseIndex!].following = false
                         userData.countriesDataListDeaths[deathIndex!].following = false
                         userData.countriesDataListNewDeaths[newDeathIndex!].following = false
                         userData.countriesDataListRecovered[recoveredIndex!].following = false
+                        
+                        
                         
                         everyContriesDataListCases = userData.countriesDataListCases
                         everyContriesDataListNewCases = userData.countriesDataListNewCases
