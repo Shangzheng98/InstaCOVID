@@ -79,7 +79,10 @@ struct DataListItem: View {
                 .font(.system(size: 12))
                 
             }
-            
+            if (country.following) {
+                Image(systemName: "star.fill")
+                    .foregroundColor(.yellow)
+            }
         }
     }
 }
