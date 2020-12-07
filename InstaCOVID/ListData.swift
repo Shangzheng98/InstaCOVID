@@ -17,31 +17,31 @@ struct ListData: View {
             ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                 item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
                     DataListItem(country: self.searchItemCountry(searchListItem: item))
-                }
+                }.buttonStyle(PlainButtonStyle())
             }
         } else if filterIndex == 1 {
             ForEach(orderedSearchableWorldDataListNewCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                 item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
                     DataListItem(country: self.searchItemCountry(searchListItem: item))
-                }
+                }.buttonStyle(PlainButtonStyle())
             }
         } else if filterIndex == 2 {
             ForEach(orderedSearchableWorldDataListDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                 item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
                     DataListItem(country: self.searchItemCountry(searchListItem: item))
-                }
+                }.buttonStyle(PlainButtonStyle())
             }
         } else if filterIndex == 3 {
             ForEach(orderedSearchableWorldDataListNewDeaths.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                 item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
                     DataListItem(country: self.searchItemCountry(searchListItem: item))
-                }
+                }.buttonStyle(PlainButtonStyle())
             }
         } else {
             ForEach(orderedSearchableWorldDataListRecovered.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                 item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {
                     DataListItem(country: self.searchItemCountry(searchListItem: item))
-                }
+                }.buttonStyle(PlainButtonStyle())
             }
         }
         

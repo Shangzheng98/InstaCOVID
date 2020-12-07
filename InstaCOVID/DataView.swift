@@ -66,6 +66,7 @@ struct DataView: View {
                 
             }
             .customNavigationViewStyle()
+            
         }
         
     }
