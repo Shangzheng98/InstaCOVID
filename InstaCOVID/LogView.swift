@@ -83,7 +83,7 @@ struct LogView: View {
                                     self.userData.logging()
                                     
                                 }) {
-                                    Text("FaceID")
+                                    Image(systemName: "faceid")
                                         .frame(width: 100, height: 36, alignment: .center)
                                         .background(
                                             RoundedRectangle(cornerRadius: 16)
