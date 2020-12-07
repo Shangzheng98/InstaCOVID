@@ -19,25 +19,25 @@ struct MonitorListItem: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                Text("Total cases: \(stateHistData.cases[0])")
-                    .font(.footnote)
-                Text("Total deaths: \(stateHistData.deaths[0])")
-                    .font(.footnote)
             }
             GeometryReader { geometry in
                 ZStack {
-                    getLineChart(data: stateHistData.cases, width: Int(geometry.frame(in: .local).size.width), height: 100)
-                        .stroke(Color.red, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
-                        .drawingGroup()
-                    getLineChart(data: stateHistData.deaths, width: Int(geometry.frame(in: .local).size.width), height: 100)
-                        .stroke(Color.blue, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
-                        .drawingGroup()
+                    getGraphCapsule(stateHistData: stateHistData, height: geometry.size.height)
                 }
             }
             .frame(height: 100)
         }
     }
     
+    func getGraphCapsule(stateHistData: StateHistDataStruct, height: CGFloat) -> some View {
+        HStack (alignment: .bottom){
+            ForEach(stateHistData.data) { dayData in
+                Capsule()
+                    .fill(Color.gray)
+                    .frame(width: 3, height: CGFloat(dayData.increaseCase + 1) * height / CGFloat(stateHistData.maxIncreaseCase))
+            }
+        }
+    }
     func getLineChart(data: [Int], width: Int, height: Int) -> Path {
         var path = Path()
         let max = Double(data.max()!)

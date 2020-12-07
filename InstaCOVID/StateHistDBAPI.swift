@@ -73,26 +73,57 @@ public func gerStateHistDataFromAPI() {
 
             if let array = jsonResponse as? [Any] {
                 for state in stateList {
-                    var caseList = [Int]()
-                    var deathList = [Int]()
+                    var maxCase = 0
+                    var maxIncreaseCase = 0
+                    var maxDeath = 0
+                    var maxIncreaseDeath = 0
+                    var stateInfo = [StateDayData]()
                     for object in array  {
                         if let info = object as? [String : Any]{
-                            var totalCases = 0, totalDeaths = 0
+                            var totalCases = 0, totalDeaths = 0, increaseCase = 0, increaseDeath = 0, increaseTest = 0, date = 0
                             if let name = info["state"] as? String {
                                 if name == state {
                                     if let cases = info["positive"] as? Int {
                                         totalCases = cases
+                                        if cases > maxCase {
+                                            maxCase = cases
+                                        }
                                     }
                                     if let deaths = info["death"] as? Int {
                                         totalDeaths = deaths
+                                        if deaths > maxDeath {
+                                            maxDeath = deaths
+                                        }
                                     }
-                                    caseList.append(totalCases)
-                                    deathList.append(totalDeaths)
+                                    if let increaseCases = info["positiveIncrease"] as? Int {
+                                        increaseCase = increaseCases
+                                        if increaseCase > maxIncreaseCase {
+                                            maxIncreaseCase = increaseCase
+                                        }
+                                    }
+                                    if let increaseDeaths = info["deathIncrease"] as? Int {
+                                        increaseDeath = increaseDeaths
+                                        if increaseDeaths > maxIncreaseDeath {
+                                            maxIncreaseDeath = totalDeaths
+                                        }
+                                    }
+                                    if let dateInfo = info["date"] as? Int {
+                                        date = dateInfo
+                                    }
+                                    if let increaseTestInfo = info["totalTestResultsIncrease"] as? Int {
+                                        increaseTest = increaseTestInfo
+                                    }
+                                    let dayInfo = StateDayData(id: UUID(), date: date, totalCase: totalCases, increaseCase: increaseCase, totalDeath: totalDeaths, increaseDeath: increaseDeath, totalTestResultIncrease: increaseTest)
+                                    stateInfo.append(dayInfo)
                                 }
                             }
                         }
                     }
-                    let histData = StateHistDataStruct(id: UUID(), stateName: state, cases: caseList, deaths: deathList)
+                    stateInfo.sort(by: {$0.date > $1.date})
+                    let histData = StateHistDataStruct(id: UUID(), stateName: state, maxCase: maxCase, maxIncreaseCase: maxIncreaseCase, maxIncreaseDeath: maxIncreaseDeath, data: stateInfo)
+                    if (maxIncreaseDeath == 0 || maxIncreaseCase == 0) {
+                        print("Error, maxIncrease Death or Case is zero for state: \(state)")
+                    }
                     stateHistDataList.append(histData)
                 }
             }
