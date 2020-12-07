@@ -123,7 +123,7 @@ struct FollowUp: View{
                         Divider()
                         
                         VStack(alignment: .center) {
-                            Text("Recovered ")
+                            Text("Recovered")
                                 .font(.system(size: 12.5))
                                 .foregroundColor(.green)
                                 .multilineTextAlignment(.leading)
