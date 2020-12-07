@@ -15,6 +15,18 @@ import Foundation
 struct StateHistDataStruct: Hashable, Codable, Identifiable {
     var id: UUID
     var stateName: String
-    var cases: [Int]
-    var deaths: [Int]
+    var maxCase: Int
+    var maxIncreaseCase: Int
+    var maxIncreaseDeath: Int
+    var data: [StateDayData]
+}
+
+struct StateDayData: Hashable, Codable, Identifiable {
+    var id: UUID
+    var date: Int
+    var totalCase: Int
+    var increaseCase: Int
+    var totalDeath: Int
+    var increaseDeath: Int
+    var totalTestResultIncrease: Int
 }
