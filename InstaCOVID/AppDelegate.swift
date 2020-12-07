@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         getTotalWorldStatFromAPI()
         gerStateHistDataFromAPI()
-        
+        profileImgae = UserDefaults.standard.data(forKey: "Photo")
         let dateFormatter1 = DateFormatter()
          
         // Set the date format to yyyy-MM-dd at HH:mm

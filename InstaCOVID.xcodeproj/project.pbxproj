@@ -29,6 +29,10 @@
 		168FE42C257DE75900E677BB /* SwiftUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649C2568A97A00DFB371 /* SwiftUI.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		168FE42E257DE75A00E677BB /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; };
 		168FE42F257DE75A00E677BB /* WidgetKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1677649A2568A97A00DFB371 /* WidgetKit.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		168FE438257E07DD00E677BB /* SettingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE437257E07DD00E677BB /* SettingMenu.swift */; };
+		168FE43B257E1B9000E677BB /* FollowingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE43A257E1B9000E677BB /* FollowingListView.swift */; };
+		168FE43E257E1C8D00E677BB /* ManageSelfQuarantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE43D257E1C8D00E677BB /* ManageSelfQuarantine.swift */; };
+		168FE441257E2D9100E677BB /* DiagnisisHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168FE440257E2D9100E677BB /* DiagnisisHistoryView.swift */; };
 		1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1697D4322578428600D02EF9 /* VisualEffectBlur.swift */; };
 		16AC1F2325787CDD007945DF /* LoadAndSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F2225787CDD007945DF /* LoadAndSave.swift */; };
 		16AC1F4C2579488B007945DF /* InstaCOVIDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */; };
@@ -119,6 +123,10 @@
 		168FE418257DA5D600E677BB /* GridListDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridListDetails.swift; sourceTree = "<group>"; };
 		168FE41C257DD0CC00E677BB /* FollowingInfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingInfoWidget.swift; sourceTree = "<group>"; };
 		168FE420257DD10600E677BB /* SelfCheckCardWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfCheckCardWidget.swift; sourceTree = "<group>"; };
+		168FE437257E07DD00E677BB /* SettingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenu.swift; sourceTree = "<group>"; };
+		168FE43A257E1B9000E677BB /* FollowingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingListView.swift; sourceTree = "<group>"; };
+		168FE43D257E1C8D00E677BB /* ManageSelfQuarantine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageSelfQuarantine.swift; sourceTree = "<group>"; };
+		168FE440257E2D9100E677BB /* DiagnisisHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnisisHistoryView.swift; sourceTree = "<group>"; };
 		1697D4322578428600D02EF9 /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
 		16AC1F2225787CDD007945DF /* LoadAndSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAndSave.swift; sourceTree = "<group>"; };
 		16AC1F472579488B007945DF /* InstaCOVIDWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InstaCOVIDWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -332,6 +340,10 @@
 				16B0C5AD25760B760051AD4A /* Settings.swift */,
 				16B0C5A725760B3C0051AD4A /* EditInfoSetting.swift */,
 				06955640256AFE8C00A6882F /* LogView.swift */,
+				168FE437257E07DD00E677BB /* SettingMenu.swift */,
+				168FE43A257E1B9000E677BB /* FollowingListView.swift */,
+				168FE43D257E1C8D00E677BB /* ManageSelfQuarantine.swift */,
+				168FE440257E2D9100E677BB /* DiagnisisHistoryView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -479,9 +491,11 @@
 				ADB38C6D256892BC0091D139 /* NavigationStyle.swift in Sources */,
 				16B0C5B025760B760051AD4A /* Settings.swift in Sources */,
 				168FE419257DA5D600E677BB /* GridListDetails.swift in Sources */,
+				168FE43E257E1C8D00E677BB /* ManageSelfQuarantine.swift in Sources */,
 				1658DCB7256F0A6000EA873F /* DataListItem.swift in Sources */,
 				ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */,
 				167BA3492575FFC8008A45CA /* GridListItem.swift in Sources */,
+				168FE438257E07DD00E677BB /* SettingMenu.swift in Sources */,
 				16776436256879EA00DFB371 /* AppDelegate.swift in Sources */,
 				ADB38C72256893030091D139 /* MapView.swift in Sources */,
 				C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */,
@@ -491,12 +505,14 @@
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,
 				ADB38C6E256892BC0091D139 /* SearchBar.swift in Sources */,
+				168FE43B257E1B9000E677BB /* FollowingListView.swift in Sources */,
 				C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */,
 				1658DCBB256F0A7000EA873F /* DataListDetails.swift in Sources */,
 				1697D4332578428600D02EF9 /* VisualEffectBlur.swift in Sources */,
 				1677643A256879EA00DFB371 /* ContentView.swift in Sources */,
 				C53744812578DACD00798C27 /* Monitor.swift in Sources */,
 				16B0C5A825760B3C0051AD4A /* EditInfoSetting.swift in Sources */,
+				168FE441257E2D9100E677BB /* DiagnisisHistoryView.swift in Sources */,
 				16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */,
 				16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */,
 				16B0C5B625760BCB0051AD4A /* ImagePicker.swift in Sources */,

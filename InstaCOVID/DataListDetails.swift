@@ -60,13 +60,17 @@ struct DataListDetails: View {
                         let recoveredIndex = userData.countriesDataListRecovered.firstIndex(where: {
                             $0.countryName == country.countryName
                         })
-                        
+                        let followListIndex = userData.followedCountriesList.firstIndex(where: {
+                            $0.countryName == country.countryName
+                        })
                         
                         userData.countriesDataListCases[caseIndex!].following = true
                         userData.countriesDataListNewCases[newCaseIndex!].following = true
                         userData.countriesDataListDeaths[deathIndex!].following = true
                         userData.countriesDataListNewDeaths[newDeathIndex!].following = true
                         userData.countriesDataListRecovered[recoveredIndex!].following = true
+                        userData.followedCountriesList[followListIndex!].following = true
+                        
                         
                         everyContriesDataListCases = userData.countriesDataListCases
                         everyContriesDataListNewCases = userData.countriesDataListNewCases

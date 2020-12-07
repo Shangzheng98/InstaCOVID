@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 import LocalAuthentication
  
+
+var profileImgae: Data? = nil
 final class UserData: ObservableObject {
     // Publish if the user is authenticated or not
     @Published var userAuthenticated = false
@@ -53,6 +55,8 @@ final class UserData: ObservableObject {
     @Published var countriesDataListNewDeaths = everyContriesDataListNewDeaths
     @Published var countriesDataListRecovered = everyContriesDataListRecovered
     
+    
+    @Published var profilePhoto: Data? = profileImgae
     
     @Published var followedCountriesList = followedUpDataList
     @Published var searchableOrderedWorldDataList = orderedSearchableWorldDataListCases

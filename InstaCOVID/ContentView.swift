@@ -28,11 +28,14 @@ struct ContentView: View {
                         Image(systemName: "waveform.path.ecg.rectangle")
                         Text("Monitor")
                     }
-                DiagnosisAvailable().tabItem {
+                DiagnosisAvailable()
+                    .tabItem {
                     Image(systemName: "cross.circle.fill")
                     Text("Diagnosis")
                 }
-                DisplayPersonalInfo().tabItem {
+                //DisplayPersonalInfo()
+                SettingMenu()
+                    .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
@@ -53,12 +56,14 @@ struct ContentView: View {
                         Image(systemName: "waveform.path.ecg.rectangle")
                         Text("Monitor")
                     }
-                DiagnosisNotAvailable().tabItem {
+                DiagnosisNotAvailable()
+                    .tabItem {
                     Image(systemName: "cross.circle.fill")
                     Text("Diagnosis")
                     
                 }
-                LogView().tabItem {
+                LogView()
+                    .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }
