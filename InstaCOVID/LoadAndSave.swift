@@ -401,7 +401,7 @@ public func writeFile() {
     let dateFormatter = DateFormatter()
      
     // Set the date format to yyyy-MM-dd at HH:mm
-    dateFormatter.dateFormat = "yyyy-MM-dd' at 'HH:mm"
+    dateFormatter.dateFormat = "yyyy-MM-dd"
      
     // Format dateAndTime under the dateFormatter and convert it to String
     let lastTime = dateFormatter.string(from: saveTime)

@@ -8,7 +8,8 @@
 
 import Foundation
 
-
+var lastRecord = Date()
+var numberOfStampe = 0
 struct DiagnosisStruct: Hashable, Codable, Identifiable {
     var id: UUID = UUID()
     var temperture:String

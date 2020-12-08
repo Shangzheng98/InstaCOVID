@@ -123,7 +123,7 @@ struct Diagnosis: View {
                 self.missingAlert
             })
             Section(header: Text("Self-quarantine Record Card")) {
-                
+                RecordCard( animatedStamps: userData.recordDay)
             }
             
         }   // End of Form
@@ -156,6 +156,40 @@ struct Diagnosis: View {
             userData.diagnosisHistoryList.append(disgnosis)
             diagnosisStructlist = userData.diagnosisHistoryList
             self.showSavedAlert = true
+            let currentDate = Date()
+            if userData.recordDay != 14
+            {
+                if currentDate < lastRecord.addingTimeInterval(26*60*60){
+                    userData.recordDay += 1
+                    numberOfStampe = userData.recordDay
+                    userData.lastRecordDate = currentDate
+                    lastRecord = userData.lastRecordDate
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+
+
+                    let dateString = dateFormatter.string(from: userData.lastRecordDate)
+                    UserDefaults.standard.set(dateString,forKey: "lastRecordDate")
+                    UserDefaults.standard.set(numberOfStampe, forKey: "stampeNumber")
+                }
+                else {
+                    userData.recordDay = 1
+                    numberOfStampe = userData.recordDay
+                    userData.lastRecordDate = currentDate
+                    lastRecord = userData.lastRecordDate
+                    
+                    let dateFormatter = DateFormatter()
+                    
+                    dateFormatter.dateFormat = "yyyy-MM-dd"
+
+                    let dateString = dateFormatter.string(from: userData.lastRecordDate)
+                    UserDefaults.standard.set(dateString,forKey: "lastRecordDate")
+                    UserDefaults.standard.set(numberOfStampe, forKey: "stampeNumber")
+                }
+            }
+            
+            
         }
     }
     
