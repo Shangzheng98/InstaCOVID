@@ -17,6 +17,11 @@ let recoveredFileName = "Recovered.json"
 let wordDataFileName = "WorldData.json"
 
 let followingFileName = "followingData.json"
+
+let diagnosisFileName = "diagnosis.json"
+var diagnosisStructlist = [DiagnosisStruct]()
+
+
 public func readAllDataFile() {
     var documentDirectoryHasFiles = false
     var urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent(casesFileName)
@@ -200,8 +205,21 @@ public func readAllDataFile() {
     } catch {
         print("error following list")
     }
+    //================
+    documentDirectoryHasFiles = false
+    urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent(diagnosisFileName)
     
-    
+    do {
+        _ = try Data(contentsOf: urlOfJsonFileInDocumentDirectory)
+        
+        
+        documentDirectoryHasFiles = true
+        
+        diagnosisStructlist = decodeJsonFileIntoArrayOfStructs(fullFilename: diagnosisFileName, fileLocation: "Document Directory")
+        print("\(diagnosisFileName) is loaded from document directory")
+    } catch {
+        print("error diagnosis list")
+    }
 }
 
 
@@ -360,6 +378,23 @@ public func writeFile() {
         }
     } else {
         fatalError("Unable to encode followedUpDataList list data!")
+    }
+    
+    
+    //===============
+    
+    urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent(diagnosisFileName)
+ 
+    // Encode CocktailStructList into JSON and write it into the JSON file
+    encoder = JSONEncoder()
+    if let encoded = try? encoder.encode(diagnosisStructlist) {
+        do {
+            try encoded.write(to: urlOfJsonFileInDocumentDirectory)
+        } catch {
+            fatalError("Unable to write diagnosisStructlist list data to document directory!")
+        }
+    } else {
+        fatalError("Unable to encode diagnosisStructlist list data!")
     }
     
     let saveTime = Date()
