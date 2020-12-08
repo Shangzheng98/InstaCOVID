@@ -66,6 +66,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //writeCountriesDataFiles()
         
         writeFile()
+        
+        
     }
  
 }

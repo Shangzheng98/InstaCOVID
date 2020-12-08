@@ -64,8 +64,14 @@ final class UserData: ObservableObject {
     
     @Published var stateInfoList = stateDataList
    
+    
+    @Published var recordDay = numberOfStampe
+    @Published var lastRecordDate = lastRecord
+    
+    
     // Publish imageNumber to refresh the View body in Home.swift when it is changed in the slide show
     @Published var imageNumber = 0
+    
     
     @Published var flipped = false
     /*

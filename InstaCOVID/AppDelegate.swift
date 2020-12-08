@@ -15,25 +15,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         getTotalWorldStatFromAPI()
         gerStateHistDataFromAPI()
         profileImgae = UserDefaults.standard.data(forKey: "Photo")
-        let dateFormatter1 = DateFormatter()
+        let dateFormatter = DateFormatter()
          
         // Set the date format to yyyy-MM-dd at HH:mm
-        dateFormatter1.dateFormat = "yyyy-MM-dd' at 'HH:mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
          
-        // Format dateAndTime under the dateFormatter and convert it to String
-        let StringlastTime = dateFormatter1.string(from: Date())
-        UserDefaults.standard.set(StringlastTime,forKey: "lastSaveTime")
         let currentTime = Date()
-        let lastTime = UserDefaults.standard.string(forKey: "lastSaveTime")!
-        let dateFormatter = DateFormatter()
-        
-        dateFormatter.dateFormat = "yyyy-MM-dd' at 'HH:mm"
-        let lastDate = dateFormatter.date(from: lastTime)
-        if currentTime <= (lastDate?.addingTimeInterval(60*60*24))! {
-            readAllDataFile()
+        if let lastTime = UserDefaults.standard.string(forKey: "lastSaveTime") {
+            let lastSaveDate = dateFormatter.date(from: lastTime)
+            if currentTime <= (lastSaveDate?.addingTimeInterval(60*60*24))! {
+                readAllDataFile()
+            }else {
+                print("update the data from API")
+                getEveryContriesDataFromAPISortByCases()
+                getEveryContriesDataFromAPISortByDeaths()
+                getEveryContriesDataFromAPISortByRecovered()
+                getEveryContriesDataFromAPISortByNewCases()
+                getEveryContriesDataFromAPISortByNewDeaths()
+            }
         }
+        else {
+            print("first install the app, get data from API")
+            getEveryContriesDataFromAPISortByCases()
+            getEveryContriesDataFromAPISortByDeaths()
+            getEveryContriesDataFromAPISortByRecovered()
+            getEveryContriesDataFromAPISortByNewCases()
+            getEveryContriesDataFromAPISortByNewDeaths()
+            
+        }
+//        let lastRecordSavedDate = UserDefaults.standard.string(forKey: "lastRecordDate") ?? "2020-12-07"
+//
+//
+//
+//
+//
+//        let date = dateFormatter.date(from: lastRecordSavedDate)
+//
+//        lastRecord = date!
         
-        
+        if let lastRecordSavedDate = UserDefaults.standard.string(forKey: "lastRecordDate") {
+            let date = dateFormatter.date(from: lastRecordSavedDate)
+            if currentTime > (date?.addingTimeInterval(26*60*60))! {
+                numberOfStampe = 0
+                print("reset the card record")
+            } else {
+                let stampeNumber = UserDefaults.standard.integer(forKey: "stampeNumber")
+                numberOfStampe = stampeNumber
+            }
+        } else {
+            print("There is no record card info")
+        }
         
         return true
     }
