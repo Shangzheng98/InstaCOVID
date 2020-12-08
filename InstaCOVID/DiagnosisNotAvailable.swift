@@ -25,59 +25,66 @@ import SwiftUI
 
 struct DiagnosisNotAvailable: View {
     var body: some View {
-        NavigationView{
-            VStack{
-//                if (alreadySignInCheck){
+            NavigationView{
+                VStack{
+                    //                if (alreadySignInCheck){
                     Text("The personal information is not assigned yet, please go to Settings to finish it up!")
                         .font(headerFont)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 350, height: 500, alignment: .bottom)
+                        .foregroundColor(.white)
                     NavigationLink(destination: LogView()) {
                         Image(systemName: "arrowshape.turn.up.forward.circle")
                             .imageScale(.large)
                             .font(Font.title.weight(.regular))
                             .foregroundColor(.blue)
                     }
-//                }else{
-//
-//                    Text("Start your self diagnosis record right now!")
-//                        .font(headerFont)
-//                    NavigationLink(destination: Diagnosis()) {
-//                        Image(systemName: "arrowshape.turn.up.forward.circle")
-//                            .imageScale(.large)
-//                            .font(Font.title.weight(.regular))
-//                            .foregroundColor(.blue)
-//                    }
-//                }
+                    //                }else{
+                    //
+                    //                    Text("Start your self diagnosis record right now!")
+                    //                        .font(headerFont)
+                    //                    NavigationLink(destination: Diagnosis()) {
+                    //                        Image(systemName: "arrowshape.turn.up.forward.circle")
+                    //                            .imageScale(.large)
+                    //                            .font(Font.title.weight(.regular))
+                    //                            .foregroundColor(.blue)
+                    //                    }
+                    //                }
+                }
+                .background(Image("background").resizable().scaledToFill().clipped()).edgesIgnoringSafeArea(.all)
             }
-        }
-        .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
-        .onAppear(perform:{getCustomFontNames()})
+            
+            
+            .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
+            //.onAppear(perform:{getCustomFontNames()})
+            
     }   // End of var
-   
     
-    func getCustomFontNames() {
-      // get each of the font families
-      for family in UIFont.familyNames.sorted() {
-        let names = UIFont.fontNames(forFamilyName: family)
-        // print array of names
-        //print("Family: \(family) Font names: \(names)")
-      }
-    }
     
-//    /*
-//     --------------------------------
-//     MARK: - Check Password Entered
-//     --------------------------------
-//     */
-//    var alreadySignInCheck: Bool {
-//        let username = UserDefaults.standard.string(forKey: "Username")
-//        let password = UserDefaults.standard.string(forKey: "Password")
-//
-//        if (username == nil && password == nil){
-//            return true
-//        }else{
-//            return false
+//    func getCustomFontNames() {
+//        // get each of the font families
+//        for family in UIFont.familyNames.sorted() {
+//            let names = UIFont.fontNames(forFamilyName: family)
+//            // print array of names
+//            print("Family: \(family) Font names: \(names)")
 //        }
 //    }
+    
+    //    /*
+    //     --------------------------------
+    //     MARK: - Check Password Entered
+    //     --------------------------------
+    //     */
+    //    var alreadySignInCheck: Bool {
+    //        let username = UserDefaults.standard.string(forKey: "Username")
+    //        let password = UserDefaults.standard.string(forKey: "Password")
+    //
+    //        if (username == nil && password == nil){
+    //            return true
+    //        }else{
+    //            return false
+    //        }
+    //    }
 }
 
 
