@@ -59,7 +59,7 @@ struct DiagnosisAvailable: View {
       for family in UIFont.familyNames.sorted() {
         let names = UIFont.fontNames(forFamilyName: family)
         // print array of names
-        print("Family: \(family) Font names: \(names)")
+        //print("Family: \(family) Font names: \(names)")
       }
     }
     

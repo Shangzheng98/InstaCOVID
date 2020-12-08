@@ -52,7 +52,7 @@ struct SettingMenu: View {
                                 .imageScale(.medium)
                                 .padding()
                             
-                            Text("Diagnisis History list")
+                            Text("Diagnisis Record list")
                             
                             
                         }

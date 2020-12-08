@@ -9,8 +9,41 @@
 import SwiftUI
 
 struct DiagnisisHistoryView: View {
+    @EnvironmentObject var userData:UserData
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ForEach(userData.diagnosisHistoryList,id: \.self) { item in
+                VStack(alignment: .leading) {
+                    VStack(alignment: .leading) {
+                        HStack() {
+                            Image(systemName: "thermometer")
+                                .imageScale(.medium)
+                                .foregroundColor(.red)
+                            Text("Temperature: \(item.temperture)")
+                        }
+                    }
+                    Spacer()
+                    
+                    VStack(alignment: .leading) {
+                        Text("Status: \(item.healthStatus.title)")
+                    }
+                    Spacer()
+                    VStack(alignment:.leading) {
+                        Text("Sysptoms:")
+                        ForEach(item.possibleSymptomsList, id: \.self) {
+                            symptom in
+                            Text("\(symptom.symptom)")
+                            
+                        }
+                    }
+                    
+                    
+                    
+                }
+                
+            }
+        }
+        .navigationBarTitle(Text("Self-Diagnosis Records"), displayMode: .inline)
     }
 }
 

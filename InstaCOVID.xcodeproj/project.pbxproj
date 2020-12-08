@@ -45,6 +45,7 @@
 		16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */; };
 		16B0C5B625760BCB0051AD4A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B425760BCB0051AD4A /* ImagePicker.swift */; };
 		16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */; };
+		16B30630257F82230010475A /* DiagnosisStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3062F257F82230010475A /* DiagnosisStruct.swift */; };
 		AD3C10212578C81A0080AC30 /* DiagnosisAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */; };
 		AD3C105F2579378A0080AC30 /* DiagnosisNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C105E2579378A0080AC30 /* DiagnosisNotAvailable.swift */; };
 		ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
@@ -140,6 +141,7 @@
 		16B0C5B325760BCB0051AD4A /* PhotoCaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCaptureView.swift; sourceTree = "<group>"; };
 		16B0C5B425760BCB0051AD4A /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayPersonalInfo.swift; sourceTree = "<group>"; };
+		16B3062F257F82230010475A /* DiagnosisStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisStruct.swift; sourceTree = "<group>"; };
 		AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisAvailable.swift; sourceTree = "<group>"; };
 		AD3C10412578E12D0080AC30 /* SansitaSwashed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Light.ttf"; sourceTree = "<group>"; };
 		AD3C10422578E12D0080AC30 /* SansitaSwashed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Regular.ttf"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				ADB38C48256880EF0091D139 /* StateDataStruct.swift */,
 				ADB38C4B256880F10091D139 /* UserData.swift */,
 				C5D50AB325790C4200B661F0 /* StateHistDataStruct.swift */,
+				16B3062F257F82230010475A /* DiagnosisStruct.swift */,
 			);
 			name = "Data Models";
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				C5D50AB82579113400B661F0 /* StateHistDBAPI.swift in Sources */,
 				ADB38C49256880EF0091D139 /* StateDataStruct.swift in Sources */,
 				AD3C10212578C81A0080AC30 /* DiagnosisAvailable.swift in Sources */,
+				16B30630257F82230010475A /* DiagnosisStruct.swift in Sources */,
 				16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */,
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,

@@ -55,6 +55,7 @@ final class UserData: ObservableObject {
     @Published var countriesDataListNewDeaths = everyContriesDataListNewDeaths
     @Published var countriesDataListRecovered = everyContriesDataListRecovered
     
+    @Published var diagnosisHistoryList = diagnosisStructlist
     
     @Published var profilePhoto: Data? = profileImgae
     
