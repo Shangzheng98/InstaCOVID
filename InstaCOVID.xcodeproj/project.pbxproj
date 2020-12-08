@@ -60,6 +60,7 @@
 		ADB38C752568930D0091D139 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C742568930D0091D139 /* WebView.swift */; };
 		ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C77256893E80091D139 /* WorldDBAPI.swift */; };
 		ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C7B256893F20091D139 /* StateDBAPI.swift */; };
+		ADEF452225802BBB00999D8E /* RussoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADEF45202580262400999D8E /* RussoOne-Regular.ttf */; };
 		C53744812578DACD00798C27 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53744802578DACD00798C27 /* Monitor.swift */; };
 		C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */; };
 		C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA92579059400B661F0 /* MonitorListItem.swift */; };
@@ -164,6 +165,7 @@
 		ADB38C742568930D0091D139 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		ADB38C77256893E80091D139 /* WorldDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorldDBAPI.swift; path = InstaCOVID/WorldDBAPI.swift; sourceTree = SOURCE_ROOT; };
 		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = InstaCOVID/StateDBAPI.swift; sourceTree = SOURCE_ROOT; };
+		ADEF45202580262400999D8E /* RussoOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RussoOne-Regular.ttf"; sourceTree = "<group>"; };
 		C53744802578DACD00798C27 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
 		C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorAnnotation.swift; sourceTree = "<group>"; };
 		C5D50AA92579059400B661F0 /* MonitorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListItem.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				AD3C10422578E12D0080AC30 /* SansitaSwashed-Regular.ttf */,
 				AD3C10432578E12D0080AC30 /* SansitaSwashed-Black.ttf */,
 				AD3C10452578E12D0080AC30 /* SansitaSwashed-SemiBold.ttf */,
+				ADEF45202580262400999D8E /* RussoOne-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16776442256879EB00DFB371 /* LaunchScreen.storyboard in Resources */,
+				ADEF452225802BBB00999D8E /* RussoOne-Regular.ttf in Resources */,
 				1677643F256879EB00DFB371 /* Preview Assets.xcassets in Resources */,
 				1677643C256879EB00DFB371 /* Assets.xcassets in Resources */,
 			);

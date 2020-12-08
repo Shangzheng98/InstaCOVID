@@ -71,13 +71,14 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
-		<string>SansitaSwashed-Black</string>
-		<string>SansitaSwashed-Bold</string>
-		<string>SansitaSwashed-ExtraBold </string>
-		<string>SansitaSwashed-Light</string>
-		<string>SansitaSwashed-Medium </string>
-		<string>SansitaSwashed-Regular </string>
-		<string>SansitaSwashed-SemiBold</string>
+		<string>RussoOne-Regular.ttf</string>
+		<string>SansitaSwashed-Black.ttf</string>
+		<string>SansitaSwashed-Bold.ttf</string>
+		<string>SansitaSwashed-ExtraBold .ttf</string>
+		<string>SansitaSwashed-Light.ttf</string>
+		<string>SansitaSwashed-Medium.ttf </string>
+		<string>SansitaSwashed-Regular.ttf </string>
+		<string>SansitaSwashed-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
