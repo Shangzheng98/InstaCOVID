@@ -21,7 +21,6 @@ struct FontNameManager {
     }
     
     struct RussoOne {
-//        static let reg = "AcademyEngravedLetPlain"
         static let reg = "RussoOne-Regular"
     }
 }
@@ -31,43 +30,49 @@ let headerFont = Font.custom(FontNameManager.RussoOne.reg, size: 30)
 struct DiagnosisAvailable: View {
     var body: some View {
         NavigationView{
-            VStack{
-                //                if (alreadySignInCheck){
-                //                    Text("The personal information is not assigned yet, please go to Settings to finish it up!")
-                //                        .font(headerFont)
-                //                    NavigationLink(destination: SettingMain()) {
-                //                        Image(systemName: "arrowshape.turn.up.forward.circle")
-                //                            .imageScale(.large)
-                //                            .font(Font.title.weight(.regular))
-                //                            .foregroundColor(.blue)
-                //                    }
-                //                }else{
-                
-                Text("Start your self diagnosis record right now!")
-                    .font(headerFont)
-                    .multilineTextAlignment(.center)
-                NavigationLink(destination: Diagnosis()) {
-                    Image(systemName: "arrowshape.turn.up.forward.circle")
-                        .imageScale(.large)
-                        .font(Font.title.weight(.regular))
-                        .foregroundColor(.blue)
+            ZStack{
+                Image("background").resizable().aspectRatio(contentMode:.fill).edgesIgnoringSafeArea(.all)
+                VStack{
+                    //                if (alreadySignInCheck){
+                    //                    Text("The personal information is not assigned yet, please go to Settings to finish it up!")
+                    //                        .font(headerFont)
+                    //                    NavigationLink(destination: SettingMain()) {
+                    //                        Image(systemName: "arrowshape.turn.up.forward.circle")
+                    //                            .imageScale(.large)
+                    //                            .font(Font.title.weight(.regular))
+                    //                            .foregroundColor(.blue)
+                    //                    }
+                    //                }else{
+                    
+                    Text("Start your self diagnosis record right now!")
+                        .font(headerFont)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 350, height: 500, alignment: .bottom)
+                        .foregroundColor(.white)
+                    NavigationLink(destination: Diagnosis()) {
+                        Image(systemName: "arrowshape.turn.up.right.circle")
+                            .imageScale(.large)
+                            .font(Font.title.weight(.regular))
+                            .foregroundColor(.newBlack)
+                            .background(Color.newYellow).clipShape(Circle())
+                    }
+                    //                }
                 }
-                //                }
             }
+            .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
+            //        .onAppear(perform:{getCustomFontNames()})
         }
-        .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
-//        .onAppear(perform:{getCustomFontNames()})
     }   // End of var
     
     
-//    func getCustomFontNames() {
-//        // get each of the font families
-//        for family in UIFont.familyNames.sorted() {
-//            let names = UIFont.fontNames(forFamilyName: family)
-//            // print array of names
-//            print("Family: \(family) Font names: \(names)")
-//        }
-//    }
+    //    func getCustomFontNames() {
+    //        // get each of the font families
+    //        for family in UIFont.familyNames.sorted() {
+    //            let names = UIFont.fontNames(forFamilyName: family)
+    //            // print array of names
+    //            print("Family: \(family) Font names: \(names)")
+    //        }
+    //    }
     
     //    /*
     //     --------------------------------
