@@ -12,6 +12,7 @@ import Foundation
 class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        createAudioPlayers()
         getTotalWorldStatFromAPI()
         gerStateHistDataFromAPI()
         profileImgae = UserDefaults.standard.data(forKey: "Photo")

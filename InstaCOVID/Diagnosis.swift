@@ -195,7 +195,7 @@ struct Diagnosis: View {
                 userDefault?.set(numberOfStampe, forKey: "stampeNumber")
             }
             
-            
+            applaudSoundAudioPlayer!.play()
         }
     }
     
