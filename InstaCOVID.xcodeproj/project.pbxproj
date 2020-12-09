@@ -62,6 +62,7 @@
 		ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C7B256893F20091D139 /* StateDBAPI.swift */; };
 		ADEF452225802BBB00999D8E /* RussoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADEF45202580262400999D8E /* RussoOne-Regular.ttf */; };
 		ADEF45282580758900999D8E /* EastSeaDokdo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADEF45262580717400999D8E /* EastSeaDokdo-Regular.ttf */; };
+		ADEF452B258141EB00999D8E /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF452A258141EB00999D8E /* RadioButton.swift */; };
 		C53744812578DACD00798C27 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53744802578DACD00798C27 /* Monitor.swift */; };
 		C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */; };
 		C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA92579059400B661F0 /* MonitorListItem.swift */; };
@@ -167,6 +168,7 @@
 		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = InstaCOVID/StateDBAPI.swift; sourceTree = SOURCE_ROOT; };
 		ADEF45202580262400999D8E /* RussoOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RussoOne-Regular.ttf"; sourceTree = "<group>"; };
 		ADEF45262580717400999D8E /* EastSeaDokdo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EastSeaDokdo-Regular.ttf"; sourceTree = "<group>"; };
+		ADEF452A258141EB00999D8E /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		C53744802578DACD00798C27 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
 		C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorAnnotation.swift; sourceTree = "<group>"; };
 		C5D50AA92579059400B661F0 /* MonitorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListItem.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 		167BA31B2575DF48008A45CA /* Diagnosis */ = {
 			isa = PBXGroup;
 			children = (
+				ADEF452A258141EB00999D8E /* RadioButton.swift */,
 				167BA31C2575DF64008A45CA /* Diagnosis.swift */,
 				AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */,
 				AD3C105E2579378A0080AC30 /* DiagnosisNotAvailable.swift */,
@@ -515,6 +518,7 @@
 				16B30630257F82230010475A /* DiagnosisStruct.swift in Sources */,
 				16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */,
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
+				ADEF452B258141EB00999D8E /* RadioButton.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,
 				ADB38C6E256892BC0091D139 /* SearchBar.swift in Sources */,
 				168FE43B257E1B9000E677BB /* FollowingListView.swift in Sources */,
