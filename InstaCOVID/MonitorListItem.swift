@@ -18,24 +18,56 @@ struct MonitorListItem: View {
                 Text(stateHistData.stateName)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .bold()
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(.blue)
+                Spacer()
+                Text("Total case: \(stateHistData.data[0].totalCase)")
+                    .foregroundColor(.red)
+                    .font(.system(size: 14))
+                    .bold()
             }
-            GeometryReader { geometry in
-                ZStack {
-                    getGraphCapsule(stateHistData: stateHistData, height: geometry.size.height)
+            VStack {
+                Text("Day case")
+                    .font(.system(size: 20))
+                    .bold()
+                    .foregroundColor(.gray)
+                GeometryReader { geometry in
+                    ZStack {
+                        dashLine()
+                            .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                            .frame(height: 1)
+                            .offset(y: -geometry.size.height / 2)
+                        Text("\(stateHistData.maxCase)")
+                            .font(.system(size: 14))
+                            .foregroundColor(.gray)
+                            .offset(x: -geometry.size.width / 2 + 20, y: -geometry.size.height / 2 + 10)
+                        getGraphCapsule(stateHistData: stateHistData, height: geometry.size.height)
+                    }
                 }
+                .frame(height: 100)
             }
-            .frame(height: 100)
+        }
+        
+    }
+    
+    struct dashLine: Shape {
+        func path(in rect: CGRect) -> Path {
+            var path = Path()
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: rect.width, y: 0))
+            return path
         }
     }
     
     func getGraphCapsule(stateHistData: StateHistDataStruct, height: CGFloat) -> some View {
-        HStack (alignment: .bottom){
-            ForEach(stateHistData.data) { dayData in
-                Capsule()
-                    .fill(Color.gray)
-                    .frame(width: 3, height: CGFloat(dayData.increaseCase + 1) * height / CGFloat(stateHistData.maxIncreaseCase))
+        ScrollView (.horizontal){
+            HStack (alignment: .bottom, spacing: 1){
+                ForEach(stateHistData.data) { dayData in
+                    Capsule()
+                        .fill(Color.blue)
+                        .frame(width: 3, height: max(CGFloat(dayData.increaseCase + 1) * height / CGFloat(stateHistData.maxIncreaseCase), 5))
+                }
             }
+            .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
         }
     }
     func getLineChart(data: [Int], width: Int, height: Int) -> Path {
