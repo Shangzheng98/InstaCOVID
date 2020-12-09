@@ -45,13 +45,6 @@ struct EditInfoSetting: View {
         let maxDate = Calendar.current.date(byAdding: .year, value: 2, to: Date())!
         return minDate...maxDate
     }
-    
-   // @State private var nationalityTextFieldValue = ""
-   // @State private var phoneTextFieldValue = ""
-    //@State private var identityTextFieldValue = ""
-   // @State private var currentLivingCountryTextFieldValue = ""
-    //@State private var usernameTextFieldValue = ""
-    //@State private var passwordTextFieldValue = ""
     let searchCategories = ["In what city or town did your mother and father meet?", "In what city or town were you born?", "What did you want to be when you grew up?", "What do you remember most from your childhood?", "What is the name of the boy or girl that you first kissed?", "What is the name of the first school you attended?", "What is the name of your favourite childhood friend?", "What is the name of your first pet?", "What is your mother's maiden name?", "What was your favorite place to visit as a child?"]
     @State private var selectedIndexForQuestion = 4
     //Answer

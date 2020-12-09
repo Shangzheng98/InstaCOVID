@@ -21,7 +21,7 @@ struct DisplayPersonalInfo: View {
     
     var body: some View {
         
-        
+        //The view of the display personal information
             Form{
                 //The picture section
                 Section(header: Text("")){
@@ -99,6 +99,7 @@ struct DisplayPersonalInfo: View {
             }
                 .navigationBarTitle(Text("Personal Account Information"), displayMode: .inline)//End of form
         }.onAppear {
+            //passing the personal information data to the edit part, so when the change is applied, it will apply immediately. 
             photo = UserDefaults.standard.data(forKey: "Photo")
             name = UserDefaults.standard.string(forKey: "Name")!
             gender = UserDefaults.standard.string(forKey: "Gender")!

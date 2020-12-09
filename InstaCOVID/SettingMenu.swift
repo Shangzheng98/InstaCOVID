@@ -2,7 +2,7 @@
 //  SettingMenu.swift
 //  InstaCOVID
 //
-//  Created by Shangzheng Ji on 12/7/20.
+//  Created by Tenghui Zhang on 11/22/20.
 //  Copyright © 2020 team2. All rights reserved.
 //
 
@@ -33,15 +33,6 @@ struct SettingMenu: View {
                             Text("Following List")
                         }
                     }
-                    
-//                    NavigationLink(destination: ManageSelfQuarantine()) {
-//                        HStack {
-//                            Image(systemName: "cross.circle")
-//                                .imageScale(.medium)
-//                                .padding()
-//                            Text("Self-Quarantine Card")
-//                        }
-//                    }
                 }
                 
                 
