@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-
+import WidgetKit
 
 struct Diagnosis: View {
     @EnvironmentObject var userData: UserData
@@ -172,6 +172,7 @@ struct Diagnosis: View {
                     let dateString = dateFormatter.string(from: userData.lastRecordDate)
                     UserDefaults.standard.set(dateString,forKey: "lastRecordDate")
                     UserDefaults.standard.set(numberOfStampe, forKey: "stampeNumber")
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
                 else {
                     userData.recordDay = 1
@@ -186,7 +187,12 @@ struct Diagnosis: View {
                     let dateString = dateFormatter.string(from: userData.lastRecordDate)
                     UserDefaults.standard.set(dateString,forKey: "lastRecordDate")
                     UserDefaults.standard.set(numberOfStampe, forKey: "stampeNumber")
+                    WidgetCenter.shared.reloadAllTimelines()
                 }
+                
+                
+                let userDefault = UserDefaults(suiteName:"group.com.ShangzhengJi.InstaCOVID")
+                userDefault?.set(numberOfStampe, forKey: "stampeNumber")
             }
             
             
