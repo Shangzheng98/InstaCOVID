@@ -10,13 +10,17 @@ import SwiftUI
 import MapKit
 
 struct Monitor: View {
+    
+    // State variable for map display
     @State private var userTrackingMode: MapUserTrackingMode = .follow
     @State private var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 37.6, longitude: -95.6),
         span: MKCoordinateSpan(latitudeDelta: 40, longitudeDelta: 40)
     )
+    
     @EnvironmentObject var userData: UserData
     
+    // State variable for switching the tab view
     let selectionImageName = ["map", "list.dash"]
     @State private var selectedIndex = 0
     

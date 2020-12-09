@@ -48,7 +48,9 @@ struct MonitorListItem: View {
         }
         
     }
-    
+    /*
+     Create dashLine in the View
+     */
     struct dashLine: Shape {
         func path(in rect: CGRect) -> Path {
             var path = Path()
@@ -58,6 +60,9 @@ struct MonitorListItem: View {
         }
     }
     
+    /*
+     Create a set of cpasule to display the state hist data
+     */
     func getGraphCapsule(stateHistData: StateHistDataStruct, height: CGFloat) -> some View {
         ScrollView (.horizontal){
             HStack (alignment: .bottom, spacing: 1){
@@ -70,6 +75,11 @@ struct MonitorListItem: View {
             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
         }
     }
+    
+    /*
+     Create a path for display the data
+     */
+    
     func getLineChart(data: [Int], width: Int, height: Int) -> Path {
         var path = Path()
         let max = Double(data.max()!)

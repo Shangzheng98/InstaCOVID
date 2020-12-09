@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct MonitorAnnotation: View {
+    
     let country: WorldDataStruct
     
     var body: some View {
