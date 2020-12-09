@@ -14,6 +14,7 @@ struct MonitorListItem: View {
     
     var body: some View {
         VStack (alignment: .leading){
+            // Title displaying state name and total case
             HStack(alignment: .center) {
                 Text(stateHistData.stateName)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
@@ -25,6 +26,7 @@ struct MonitorListItem: View {
                     .font(.system(size: 14))
                     .bold()
             }
+            // graph displaying day case for each state
             VStack {
                 Text("Day case")
                     .font(.system(size: 20))
@@ -32,6 +34,7 @@ struct MonitorListItem: View {
                     .foregroundColor(.gray)
                 GeometryReader { geometry in
                     ZStack {
+                        // Use ZStack and offset to put each element of the graph together
                         dashLine()
                             .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
                             .frame(height: 1)
@@ -48,8 +51,11 @@ struct MonitorListItem: View {
         }
         
     }
+    
     /*
-     Create dashLine in the View
+     --------------------------------
+     MARK: - Create dash line for the view
+     --------------------------------
      */
     struct dashLine: Shape {
         func path(in rect: CGRect) -> Path {
@@ -61,15 +67,22 @@ struct MonitorListItem: View {
     }
     
     /*
-     Create a set of cpasule to display the state hist data
+     --------------------------------
+     MARK: - Create Capsule chart
+     --------------------------------
      */
     func getGraphCapsule(stateHistData: StateHistDataStruct, height: CGFloat) -> some View {
+        /*
+         calculate the each capsule height by using the frame height and put them
+         together by using HStack.
+         */
         ScrollView (.horizontal){
             HStack (alignment: .bottom, spacing: 1){
                 ForEach(stateHistData.data) { dayData in
                     Capsule()
                         .fill(Color.blue)
                         .frame(width: 3, height: max(CGFloat(dayData.increaseCase + 1) * height / CGFloat(stateHistData.maxIncreaseCase), 5))
+                    // use max() to limit the capsule height to minimum of 5 to avoid error
                 }
             }
             .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
@@ -77,10 +90,15 @@ struct MonitorListItem: View {
     }
     
     /*
-     Create a path for display the data
+     --------------------------------
+     MARK: - Create Line chart
+            Not in use, not looking good
+     --------------------------------
      */
-    
     func getLineChart(data: [Int], width: Int, height: Int) -> Path {
+        /*
+         Calculate line height by using lineHeight = data * height / (max - min)
+         */
         var path = Path()
         let max = Double(data.max()!)
         let min = Double(data.min()!)
@@ -88,6 +106,7 @@ struct MonitorListItem: View {
         let xStep = Double(Double(width)/Double(data.count))
         let p1 = CGPoint(x:0, y: (Double(data[0]) - min) * yStep)
         path.move(to: p1)
+        // Connect each point to create line chart
         for index in 1 ..< data.count {
             let p2 = CGPoint(x: xStep * Double(index), y: yStep*Double(data[index])-min)
             path.addLine(to: p2)

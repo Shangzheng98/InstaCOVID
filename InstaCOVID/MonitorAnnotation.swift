@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct MonitorAnnotation: View {
-    
+    // Input parameter
     let country: WorldDataStruct
     
     var body: some View {
-        
+        // Map annotation view
         HStack {
+            // Country flag with circle clipping
             Image(country.flagImageName)
                 .resizable()
                 .frame(width:40)

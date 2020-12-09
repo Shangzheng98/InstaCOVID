@@ -41,6 +41,7 @@ struct Monitor: View {
                         userTrackingMode: $userTrackingMode,
                         annotationItems: userData.countriesDataListCases
                     ) { country in
+                        // create map annotation for each country
                         MapAnnotation(coordinate: CLLocationCoordinate2D(latitude: country.lat, longitude: country.long), anchorPoint: CGPoint(x: 0.5, y: 0.5)) {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 5)
