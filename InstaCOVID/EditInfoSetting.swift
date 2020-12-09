@@ -206,7 +206,7 @@ struct EditInfoSetting: View {
             //Save button
             Section(header: Text("Save profile")){
                 Button(action: {
-                    if (!name.isEmpty || !nationalityTextFieldValue.isEmpty || !phoneTextFieldValue.isEmpty || !identityTextFieldValue.isEmpty || !currentLivingCountryTextFieldValue.isEmpty) {
+                    if (!nameTextFieldValue.isEmpty || photoImageData != nil || !nationalityTextFieldValue.isEmpty || !phoneTextFieldValue.isEmpty || !identityTextFieldValue.isEmpty || !currentLivingCountryTextFieldValue.isEmpty) {
                         /*
                          UserDefaults provides an interface to the user’s defaults database,
                          where you store key-value pairs persistently across launches of your app.
@@ -297,22 +297,5 @@ struct EditInfoSetting: View {
          Tapping OK resets @State var showMissingInputDataAlert to false.
          */
     }
-    //Update personal infomation
-//    func updateInfo() {
-//        photo = UserDefaults.standard.data(forKey: "Photo")
-//        name = UserDefaults.standard.string(forKey: "Name")
-//        gender = UserDefaults.standard.string(forKey: "Gender")
-//        birth = UserDefaults.standard.string(forKey: "Birth")
-//        nationality = UserDefaults.standard.string(forKey: "Nationality")
-//        phone = UserDefaults.standard.string(forKey: "Phone")
-//        identity = UserDefaults.standard.string(forKey: "Identity")
-//        country = UserDefaults.standard.string(forKey: "LivingCountry")
-//    }
+
 }
-
-//struct EditInfoSetting_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EditInfoSetting()
-//    }
-//}
-
