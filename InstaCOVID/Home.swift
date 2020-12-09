@@ -11,28 +11,37 @@ import SwiftUI
 struct Home: View {
     // Subscribe to changes in UserData
     @EnvironmentObject var userData: UserData
+    let imageSliderPhotoCaptions = ["Covid-19 Protection", "Wash Your Hands", "We can Overcome Together", "Take Care", "Protect Your Grandparents"]
     
     var body: some View {
         ZStack {        // Background
-            Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
+            Color.white.opacity(0.1).edgesIgnoringSafeArea(.all)
             VStack {
                 VStack {
-                    Image("Welcome")
-                        .padding(.top, 50)
-                    // Show IEX Cloud API provider's website in default web browser
-
-                    Link(destination: URL(string: "https://www.cdc.gov/coronavirus/2019-ncov/")!) {
-                        Text("CDC's Covid-19 News")
-                    }
-
+                    Image("start")
+                        .resizable()
+                        .frame(height: 200, alignment: .center)
+                        .edgesIgnoringSafeArea(.horizontal)
+                        .padding(.top, 20)
                     Image("photo\(userData.imageNumber + 1)")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(minWidth: 300, maxWidth: 500, alignment: .center)
-                        .padding(.top, 30)
-                        .padding(.bottom, 5)
+                        //.aspectRatio(contentMode: .fill)
+                        .frame(width: 400, height: 250, alignment: .center)
+                        //.padding(.top, 30)
+                        //.padding(.bottom, 5)
                         .padding(.horizontal)
-
+                    Link(destination: URL(string: "https://www.cdc.gov/coronavirus/2019-ncov/")!) {
+                        HStack{
+                        Text("\(imageSliderPhotoCaptions[userData.imageNumber])")
+                            .font(homeFont)
+                            //.padding(.bottom, 5)
+                            Image(systemName: "arrow.turn.up.right")
+                                .imageScale(.small)
+                                .font(Font.title.weight(.light))
+                        }
+                    }
+                    
+                    
                     HStack {
                         Button(action: {    // Button 1
                             self.userData.imageNumber = 0
@@ -54,11 +63,17 @@ struct Home: View {
                         }) {
                             self.imageForButton(buttonNumber: 3)
                         }
+                        Button(action: {    // Button 5
+                            self.userData.imageNumber = 4
+                        }) {
+                            self.imageForButton(buttonNumber: 4)
+                        }
 
                     }   // End of HStack
-                    .imageScale(.medium)
-                    .font(Font.title.weight(.regular))
-                    .padding(.bottom, 100)
+                    .imageScale(.small)
+                    .font(Font.title.weight(.light))
+                    .padding(.bottom, 90)
+                    .foregroundColor(.black)
 
                 }   // End of VStack
                 .onAppear() {
@@ -68,16 +83,15 @@ struct Home: View {
                     self.userData.stopTimer()
                 }
                 
-                
                 Text("Your Followed Country's Covid-19 Data")
-                    .padding(.top, -20)
+                    .font(homeFont)
+                    //.foregroundColor(.newPink)
+                    .padding(.top, -60)
                 FollowUp()
+                    .background(Color.newGray)
+                    .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+                    .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
             }
-            
-//            VStack {
-//
-//                FollowUp()
-//            }
                 
         }   // End of ZStack
         .edgesIgnoringSafeArea(.all)
@@ -96,7 +110,10 @@ struct Home: View {
 struct FollowUp: View{
     @EnvironmentObject var userData: UserData
     var body: some View{
+//        ZStack{
+//            Image("home").resizable().edgesIgnoringSafeArea(.horizontal).padding(.bottom, 45)
         ScrollView(.horizontal,showsIndicators: false) {
+            
             HStack {
                 VStack {
                     HStack {
@@ -107,7 +124,7 @@ struct FollowUp: View{
                     HStack{
                         VStack(alignment: .center) {
                             Text("Confirmed")
-                                .font(.system(size: 12.5))
+                                .font(.system(size: 13))
                                 .foregroundColor(.red)
                             Text("\(worldStatInfo.totalCases)")
                             HStack {
@@ -124,7 +141,7 @@ struct FollowUp: View{
                         
                         VStack(alignment: .center) {
                             Text("Recovered")
-                                .font(.system(size: 12.5))
+                                .font(.system(size: 13))
                                 .foregroundColor(.green)
                                 .multilineTextAlignment(.leading)
                             
@@ -137,7 +154,7 @@ struct FollowUp: View{
                         Divider()
                         VStack(alignment: .center) {
                             Text("Deaths")
-                                .font(.system(size: 12.5))
+                                .font(.system(size: 13))
                             Text("\(worldStatInfo.totalDeaths)")
                             
                             HStack {
@@ -152,15 +169,17 @@ struct FollowUp: View{
                         }
                     }
                     .frame(width: UIScreen.main.bounds.width, height: 100)
-                    .font(.system(size: 12))
-                    
+                    .font(.system(size: 13))
                 }
+                .padding(.bottom, 45)
                 ForEach(userData.followedCountriesList) {
                     followUp in DataListItem(country: followUp)
                         .frame(width: UIScreen.main.bounds.width, height: 100)
                 }
             }
+   //         }
         }
+        
 //                DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
 //                DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))
 //                DataListItem(country: WorldDataStruct(id: UUID(), countryName: "Afghanistan", cases: 840, deaths: 30, totalRecovered: 54, newDeaths: 5, newCases: 56, lat: 33, long: 65, flagImgURL: "https://manta.cs.vt.edu/iOS/flags/af.png",flagImageName: "af"))

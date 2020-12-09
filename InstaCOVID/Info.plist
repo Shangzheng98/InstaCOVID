@@ -71,6 +71,7 @@
 	</array>
 	<key>UIAppFonts</key>
 	<array>
+		<string>EastSeaDokdo-Regular.ttf</string>
 		<string>RussoOne-Regular.ttf</string>
 		<string>SansitaSwashed-Black.ttf</string>
 		<string>SansitaSwashed-Bold.ttf</string>

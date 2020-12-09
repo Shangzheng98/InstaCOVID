@@ -23,9 +23,15 @@ struct FontNameManager {
     struct RussoOne {
         static let reg = "RussoOne-Regular"
     }
+    
+    struct EastSeaDokdo {
+        static let regu = "EastSeaDokdo-Regular"
+        
+    }
 }
 
 let headerFont = Font.custom(FontNameManager.RussoOne.reg, size: 30)
+let homeFont = Font.custom(FontNameManager.EastSeaDokdo.regu, size: 30)
 
 struct DiagnosisAvailable: View {
     var body: some View {
@@ -60,19 +66,19 @@ struct DiagnosisAvailable: View {
                 }
             }
             .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
-            //        .onAppear(perform:{getCustomFontNames()})
+                    //.onAppear(perform:{getCustomFontNames()})
         }
     }   // End of var
     
     
-    //    func getCustomFontNames() {
-    //        // get each of the font families
-    //        for family in UIFont.familyNames.sorted() {
-    //            let names = UIFont.fontNames(forFamilyName: family)
-    //            // print array of names
-    //            print("Family: \(family) Font names: \(names)")
-    //        }
-    //    }
+//        func getCustomFontNames() {
+//            // get each of the font families
+//            for family in UIFont.familyNames.sorted() {
+//                let names = UIFont.fontNames(forFamilyName: family)
+//                // print array of names
+//                print("Family: \(family) Font names: \(names)")
+//            }
+//        }
     
     //    /*
     //     --------------------------------
