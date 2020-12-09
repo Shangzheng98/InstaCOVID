@@ -27,13 +27,13 @@ struct EditInfoSetting: View {
     @Binding var identity: String
     @Binding var country: String
     
-    @State private var nameTextFieldValue = ""
-    @State private var verifyTextField = ""
+   // @State private var nameTextFieldValue = ""
+   // @State private var verifyTextField = ""
     @State private var showmissingInputDataAlert = false
     @State private var showSavingInputDataAlert = false
     @State private var selectedIndex = 0
     @State private var selectionGenderList = ["Male", "Female"]
-    @State private var photoImageData:Data? = nil
+    //@State private var photoImageData:Data? = nil
     @State private var selectedGenderIndex = 0
     @State private var showImagePicker = false
     @State private var dateAndTime = Date()
@@ -46,12 +46,12 @@ struct EditInfoSetting: View {
         return minDate...maxDate
     }
     
-    @State private var nationalityTextFieldValue = ""
-    @State private var phoneTextFieldValue = ""
-    @State private var identityTextFieldValue = ""
-    @State private var currentLivingCountryTextFieldValue = ""
-    @State private var usernameTextFieldValue = ""
-    @State private var passwordTextFieldValue = ""
+   // @State private var nationalityTextFieldValue = ""
+   // @State private var phoneTextFieldValue = ""
+    //@State private var identityTextFieldValue = ""
+   // @State private var currentLivingCountryTextFieldValue = ""
+    //@State private var usernameTextFieldValue = ""
+    //@State private var passwordTextFieldValue = ""
     let searchCategories = ["In what city or town did your mother and father meet?", "In what city or town were you born?", "What did you want to be when you grew up?", "What do you remember most from your childhood?", "What is the name of the boy or girl that you first kissed?", "What is the name of the first school you attended?", "What is the name of your favourite childhood friend?", "What is the name of your first pet?", "What is your mother's maiden name?", "What was your favorite place to visit as a child?"]
     @State private var selectedIndexForQuestion = 4
     //Answer
@@ -64,7 +64,7 @@ struct EditInfoSetting: View {
             Group{
                 //The name section
                 Section(header: Text("Name")){
-                    TextField("Enter your name", text: $nameTextFieldValue)
+                    TextField("Enter your name", text: $name)
 //                    TextField("Enter your name", text: $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
@@ -96,7 +96,7 @@ struct EditInfoSetting: View {
                                 }
                             }.sheet(isPresented: self.$showImagePicker) {
                                 PhotoCaptureView(showImagePicker: self.$showImagePicker,
-                                                 photoImageData: self.$photoImageData,
+                                                 photoImageData: self.$photo,
                                                  cameraOrLibrary: "Camera")
                             }
                             
@@ -114,7 +114,7 @@ struct EditInfoSetting: View {
                                 }
                             }.sheet(isPresented: self.$showImagePicker) {
                                 PhotoCaptureView(showImagePicker: self.$showImagePicker,
-                                                 photoImageData: self.$photoImageData,
+                                                 photoImageData: self.$photo,
                                                  cameraOrLibrary: "Photo Library")
                             }
                         }
@@ -124,9 +124,9 @@ struct EditInfoSetting: View {
                     
                     //Check the picture is taken or not, if not use the default setting
                     
-                    if photoImageData != nil{
+                    if photo != nil{
                         Section(header: Text("")) {
-                            getImageFromBinaryData(binaryData: self.photoImageData, defaultFilename: "DefaultContactPhoto")
+                            getImageFromBinaryData(binaryData: self.photo, defaultFilename: "DefaultContactPhoto")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(minWidth: 100, maxWidth: 100, alignment: .center)
@@ -168,7 +168,7 @@ struct EditInfoSetting: View {
                 
                 //Nationality section
                 Section(header: Text("Nationality")){
-                    TextField("Enter your nationality", text: $nationalityTextFieldValue)
+                    TextField("Enter your nationality", text: $nationality)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.words)
@@ -176,7 +176,7 @@ struct EditInfoSetting: View {
                 
                 //Phone number section
                 Section(header: Text("Phone Number")){
-                    TextField("Enter your phone number", text: $phoneTextFieldValue)
+                    TextField("Enter your phone number", text: $phone)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.words)
@@ -184,7 +184,7 @@ struct EditInfoSetting: View {
                 
                 //Identity section
                 Section(header: Text("Identity")){
-                    TextField("Enter your job", text: $identityTextFieldValue)
+                    TextField("Enter your job", text: $identity)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.words)
@@ -192,7 +192,7 @@ struct EditInfoSetting: View {
                 
                 //Current living country
                 Section(header: Text("Current living country")){
-                    TextField("Enter your current living country", text: $currentLivingCountryTextFieldValue)
+                    TextField("Enter your current living country", text: $country)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.words)
@@ -206,21 +206,21 @@ struct EditInfoSetting: View {
             //Save button
             Section(header: Text("Save profile")){
                 Button(action: {
-                    if (!nameTextFieldValue.isEmpty || photoImageData != nil || !nationalityTextFieldValue.isEmpty || !phoneTextFieldValue.isEmpty || !identityTextFieldValue.isEmpty || !currentLivingCountryTextFieldValue.isEmpty) {
+                    if (!name.isEmpty || photo != nil || !nationality.isEmpty || !phone.isEmpty || !identity.isEmpty || !country.isEmpty) {
                         /*
                          UserDefaults provides an interface to the user’s defaults database,
                          where you store key-value pairs persistently across launches of your app.
                          */
                         // Store the password in the user’s defaults database under the key "Password"
-                        UserDefaults.standard.set(nameTextFieldValue, forKey: "Name")
-                        name = nameTextFieldValue
+                        UserDefaults.standard.set(name, forKey: "Name")
+                        
                         
                         UserDefaults.standard.set(selectionGenderList[selectedGenderIndex], forKey: "Gender")
                         gender = selectionGenderList[selectedGenderIndex]
-                        if photoImageData != nil {
-                            UserDefaults.standard.set(photoImageData, forKey: "Photo")
-                            photo = photoImageData
-                            userData.profilePhoto = photoImageData
+                        if photo != nil {
+                            UserDefaults.standard.set(photo, forKey: "Photo")
+                        
+                            userData.profilePhoto = photo
                         }
                         
                         // Create an instance of DateFormatter
@@ -237,14 +237,14 @@ struct EditInfoSetting: View {
                         UserDefaults.standard.set(travelDate, forKey: "Birth")
                         birth = travelDate
                         
-                        UserDefaults.standard.set(nationalityTextFieldValue, forKey: "Nationality")
-                        nationality = nationalityTextFieldValue
-                        UserDefaults.standard.set(phoneTextFieldValue, forKey: "Phone")
-                        phone = phoneTextFieldValue
-                        UserDefaults.standard.set(identityTextFieldValue, forKey: "Identity")
-                        identity = identityTextFieldValue
-                        UserDefaults.standard.set(currentLivingCountryTextFieldValue, forKey: "LivingCountry")
-                        country = currentLivingCountryTextFieldValue
+                        UserDefaults.standard.set(nationality, forKey: "Nationality")
+                      
+                        UserDefaults.standard.set(phone, forKey: "Phone")
+
+                        UserDefaults.standard.set(identity, forKey: "Identity")
+                        
+                        UserDefaults.standard.set(country, forKey: "LivingCountry")
+                        
                         
                         // Dismiss this View and go back
                         self.presentationMode.wrappedValue.dismiss()
