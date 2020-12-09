@@ -90,7 +90,8 @@ struct Home: View {
                 FollowUp()
                     .background(Color.newGray)
                     .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    .frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
+                    //.frame(width: UIScreen.main.bounds.width, height: 150, alignment: .center)
+                    .padding(.bottom)
             }
                 
         }   // End of ZStack
