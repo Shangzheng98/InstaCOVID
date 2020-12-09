@@ -47,6 +47,8 @@
 		16B30630257F82230010475A /* DiagnosisStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3062F257F82230010475A /* DiagnosisStruct.swift */; };
 		16B30633258013940010475A /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B30632258013940010475A /* RecordCard.swift */; };
 		16C3EE7325805B0A0047AA30 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */; };
+		16C3EE86258172760047AA30 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16C3EE85258172760047AA30 /* AudioPlayer.swift */; };
+		16C3EE8B258174A60047AA30 /* ApplaudSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 16C3EE8A258174A60047AA30 /* ApplaudSound.wav */; };
 		AD3C10212578C81A0080AC30 /* DiagnosisAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */; };
 		AD3C105F2579378A0080AC30 /* DiagnosisNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C105E2579378A0080AC30 /* DiagnosisNotAvailable.swift */; };
 		ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
@@ -61,6 +63,8 @@
 		ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C77256893E80091D139 /* WorldDBAPI.swift */; };
 		ADB38C7C256893F20091D139 /* StateDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C7B256893F20091D139 /* StateDBAPI.swift */; };
 		ADEF452225802BBB00999D8E /* RussoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADEF45202580262400999D8E /* RussoOne-Regular.ttf */; };
+		ADEF45282580758900999D8E /* EastSeaDokdo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ADEF45262580717400999D8E /* EastSeaDokdo-Regular.ttf */; };
+		ADEF452B258141EB00999D8E /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEF452A258141EB00999D8E /* RadioButton.swift */; };
 		C53744812578DACD00798C27 /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53744802578DACD00798C27 /* Monitor.swift */; };
 		C5D50AA62578FF8D00B661F0 /* MonitorAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */; };
 		C5D50AAA2579059400B661F0 /* MonitorListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D50AA92579059400B661F0 /* MonitorListItem.swift */; };
@@ -144,6 +148,8 @@
 		16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayPersonalInfo.swift; sourceTree = "<group>"; };
 		16B3062F257F82230010475A /* DiagnosisStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisStruct.swift; sourceTree = "<group>"; };
 		16B30632258013940010475A /* RecordCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCard.swift; sourceTree = "<group>"; };
+		16C3EE85258172760047AA30 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		16C3EE8A258174A60047AA30 /* ApplaudSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ApplaudSound.wav; sourceTree = "<group>"; };
 		AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisAvailable.swift; sourceTree = "<group>"; };
 		AD3C10412578E12D0080AC30 /* SansitaSwashed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Light.ttf"; sourceTree = "<group>"; };
 		AD3C10422578E12D0080AC30 /* SansitaSwashed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SansitaSwashed-Regular.ttf"; sourceTree = "<group>"; };
@@ -165,6 +171,8 @@
 		ADB38C77256893E80091D139 /* WorldDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WorldDBAPI.swift; path = InstaCOVID/WorldDBAPI.swift; sourceTree = SOURCE_ROOT; };
 		ADB38C7B256893F20091D139 /* StateDBAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StateDBAPI.swift; path = InstaCOVID/StateDBAPI.swift; sourceTree = SOURCE_ROOT; };
 		ADEF45202580262400999D8E /* RussoOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RussoOne-Regular.ttf"; sourceTree = "<group>"; };
+		ADEF45262580717400999D8E /* EastSeaDokdo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "EastSeaDokdo-Regular.ttf"; sourceTree = "<group>"; };
+		ADEF452A258141EB00999D8E /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		C53744802578DACD00798C27 /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
 		C5D50AA52578FF8D00B661F0 /* MonitorAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorAnnotation.swift; sourceTree = "<group>"; };
 		C5D50AA92579059400B661F0 /* MonitorListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorListItem.swift; sourceTree = "<group>"; };
@@ -214,6 +222,7 @@
 		16776434256879EA00DFB371 /* InstaCOVID */ = {
 			isa = PBXGroup;
 			children = (
+				16C3EE89258174A60047AA30 /* Sound Files */,
 				AD3C103F2578E1020080AC30 /* Fonts */,
 				167764B62568B16A00DFB371 /* Tab Bar Views */,
 				167764B42568B13500DFB371 /* Supporting Files */,
@@ -289,6 +298,7 @@
 				ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */,
 				1697D4322578428600D02EF9 /* VisualEffectBlur.swift */,
 				16AC1F2225787CDD007945DF /* LoadAndSave.swift */,
+				16C3EE85258172760047AA30 /* AudioPlayer.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -356,6 +366,7 @@
 		167BA31B2575DF48008A45CA /* Diagnosis */ = {
 			isa = PBXGroup;
 			children = (
+				ADEF452A258141EB00999D8E /* RadioButton.swift */,
 				167BA31C2575DF64008A45CA /* Diagnosis.swift */,
 				AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */,
 				AD3C105E2579378A0080AC30 /* DiagnosisNotAvailable.swift */,
@@ -376,6 +387,14 @@
 			path = InstaCOVIDWidget;
 			sourceTree = "<group>";
 		};
+		16C3EE89258174A60047AA30 /* Sound Files */ = {
+			isa = PBXGroup;
+			children = (
+				16C3EE8A258174A60047AA30 /* ApplaudSound.wav */,
+			);
+			path = "Sound Files";
+			sourceTree = "<group>";
+		};
 		AD3C103F2578E1020080AC30 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +406,7 @@
 				AD3C10432578E12D0080AC30 /* SansitaSwashed-Black.ttf */,
 				AD3C10452578E12D0080AC30 /* SansitaSwashed-SemiBold.ttf */,
 				ADEF45202580262400999D8E /* RussoOne-Regular.ttf */,
+				ADEF45262580717400999D8E /* EastSeaDokdo-Regular.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -473,9 +493,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADEF45282580758900999D8E /* EastSeaDokdo-Regular.ttf in Resources */,
 				16776442256879EB00DFB371 /* LaunchScreen.storyboard in Resources */,
 				ADEF452225802BBB00999D8E /* RussoOne-Regular.ttf in Resources */,
 				1677643F256879EB00DFB371 /* Preview Assets.xcassets in Resources */,
+				16C3EE8B258174A60047AA30 /* ApplaudSound.wav in Resources */,
 				1677643C256879EB00DFB371 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +533,7 @@
 				16B30630257F82230010475A /* DiagnosisStruct.swift in Sources */,
 				16776438256879EA00DFB371 /* SceneDelegate.swift in Sources */,
 				167BA31D2575DF64008A45CA /* Diagnosis.swift in Sources */,
+				ADEF452B258141EB00999D8E /* RadioButton.swift in Sources */,
 				ADB38C78256893E80091D139 /* WorldDBAPI.swift in Sources */,
 				ADB38C6E256892BC0091D139 /* SearchBar.swift in Sources */,
 				168FE43B257E1B9000E677BB /* FollowingListView.swift in Sources */,
@@ -523,6 +546,7 @@
 				168FE441257E2D9100E677BB /* DiagnisisHistoryView.swift in Sources */,
 				16B0C5B525760BCB0051AD4A /* PhotoCaptureView.swift in Sources */,
 				16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */,
+				16C3EE86258172760047AA30 /* AudioPlayer.swift in Sources */,
 				16B30633258013940010475A /* RecordCard.swift in Sources */,
 				16B0C5B625760BCB0051AD4A /* ImagePicker.swift in Sources */,
 				ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */,
