@@ -34,14 +34,14 @@ struct SettingMenu: View {
                         }
                     }
                     
-                    NavigationLink(destination: ManageSelfQuarantine()) {
-                        HStack {
-                            Image(systemName: "cross.circle")
-                                .imageScale(.medium)
-                                .padding()
-                            Text("Self-Quarantine Card")
-                        }
-                    }
+//                    NavigationLink(destination: ManageSelfQuarantine()) {
+//                        HStack {
+//                            Image(systemName: "cross.circle")
+//                                .imageScale(.medium)
+//                                .padding()
+//                            Text("Self-Quarantine Card")
+//                        }
+//                    }
                 }
                 
                 
