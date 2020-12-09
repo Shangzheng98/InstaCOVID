@@ -43,19 +43,19 @@ struct DiagnosisNotAvailable: View {
         }
         
         .navigationBarTitle(Text("Self-Diagnosis"), displayMode: .inline)
-        //.onAppear(perform:{getCustomFontNames()})
+//        .onAppear(perform:{getCustomFontNames()})
         
     }   // End of var
     
     
-    //    func getCustomFontNames() {
-    //        // get each of the font families
-    //        for family in UIFont.familyNames.sorted() {
-    //            let names = UIFont.fontNames(forFamilyName: family)
-    //            // print array of names
-    //            print("Family: \(family) Font names: \(names)")
-    //        }
-    //    }
+//        func getCustomFontNames() {
+//            // get each of the font families
+//            for family in UIFont.familyNames.sorted() {
+//                let names = UIFont.fontNames(forFamilyName: family)
+//                // print array of names
+//                print("Family: \(family) Font names: \(names)")
+//            }
+//        }
     
     //    /*
     //     --------------------------------
@@ -77,6 +77,8 @@ struct DiagnosisNotAvailable: View {
 extension Color{
     static let newYellow = Color(red: 221/255, green: 183/255, blue: 2/255)
     static let newBlack = Color(red: 50/255, green: 51/255, blue: 53/255)
+    static let newPink = Color(red: 151/255, green: 30/255, blue: 87/255)
+    static let newGray = Color(red: 245/255, green: 245/255, blue: 245/255)
 }
 
 struct DiagnosisNotAvailable_Previews: PreviewProvider {

@@ -87,7 +87,7 @@ final class UserData: ObservableObject {
          Schedule a timer to invoke the fireTimer() method given below
          after 3 seconds in a loop that repeats itself until it is stopped.
          */
-        slideShowTimer = Timer.scheduledTimer(timeInterval: 3,
+        slideShowTimer = Timer.scheduledTimer(timeInterval: 4,
                              target: self,
                              selector: (#selector(fireTimer)),
                              userInfo: nil,
