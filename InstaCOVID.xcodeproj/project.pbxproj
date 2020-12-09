@@ -47,6 +47,7 @@
 		16B0C5BA25760C710051AD4A /* DisplayPersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B0C5B925760C710051AD4A /* DisplayPersonalInfo.swift */; };
 		16B30630257F82230010475A /* DiagnosisStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3062F257F82230010475A /* DiagnosisStruct.swift */; };
 		16B30633258013940010475A /* RecordCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B30632258013940010475A /* RecordCard.swift */; };
+		16C3EE7325805B0A0047AA30 /* UtilityFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C6C256892BC0091D139 /* UtilityFunctions.swift */; };
 		AD3C10212578C81A0080AC30 /* DiagnosisAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C10202578C81A0080AC30 /* DiagnosisAvailable.swift */; };
 		AD3C105F2579378A0080AC30 /* DiagnosisNotAvailable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C105E2579378A0080AC30 /* DiagnosisNotAvailable.swift */; };
 		ADB38C46256880EC0091D139 /* WorldDataStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB38C45256880EC0091D139 /* WorldDataStruct.swift */; };
@@ -369,11 +370,11 @@
 		16AC1F4A2579488B007945DF /* InstaCOVIDWidget */ = {
 			isa = PBXGroup;
 			children = (
+				168FE420257DD10600E677BB /* SelfCheckCardWidget.swift */,
 				16AC1F4B2579488B007945DF /* InstaCOVIDWidget.swift */,
+				168FE41C257DD0CC00E677BB /* FollowingInfoWidget.swift */,
 				16AC1F4D2579488C007945DF /* Assets.xcassets */,
 				16AC1F4F2579488C007945DF /* Info.plist */,
-				168FE41C257DD0CC00E677BB /* FollowingInfoWidget.swift */,
-				168FE420257DD10600E677BB /* SelfCheckCardWidget.swift */,
 			);
 			path = InstaCOVIDWidget;
 			sourceTree = "<group>";
@@ -552,6 +553,7 @@
 				168FE421257DD10600E677BB /* SelfCheckCardWidget.swift in Sources */,
 				16AC1F4C2579488B007945DF /* InstaCOVIDWidget.swift in Sources */,
 				168FE41D257DD0CC00E677BB /* FollowingInfoWidget.swift in Sources */,
+				16C3EE7325805B0A0047AA30 /* UtilityFunctions.swift in Sources */,
 				168FE424257DD2F500E677BB /* WorldDataStruct.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +704,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InstaCOVID/InstaCOVID.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"InstaCOVID/Preview Content\"";
@@ -726,6 +729,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = InstaCOVID/InstaCOVID.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"InstaCOVID/Preview Content\"";
@@ -749,6 +753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InstaCOVIDWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4HRUWL6NU;
@@ -761,6 +766,7 @@
 				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.InstaCOVIDWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -772,6 +778,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = InstaCOVIDWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4HRUWL6NU;
@@ -784,6 +791,7 @@
 				MARKETING_VERSION = 0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ShangzhengJi.InstaCOVID.InstaCOVIDWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

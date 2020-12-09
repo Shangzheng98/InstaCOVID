@@ -67,7 +67,7 @@ struct InstaCOVIDWidget: WidgetBundle {
     var body: some Widget {
         
         FollowingInfoWidget()
-//        SelfCheckCardWidget()
+        SelfCheckCardWidget()
     }
 }
 //struct InstaCOVIDWidget_Previews: PreviewProvider {
