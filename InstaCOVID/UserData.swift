@@ -109,7 +109,7 @@ final class UserData: ObservableObject {
         imageNumber = counter
     }
     
-    //This is the helper function which can be used to login by the faceID, since the faceID is related to the bio setting, it is required to use the LA Context and import local LocalAuthentication for the check and in the info.plist, we need to get the promission to Privacy - Face ID Usage Description.
+    //This is the helper function which can be used to login by the faceID, since the faceID is related to the bio setting, it is required to use the LA Context and import LocalAuthentication for the check and in the info.plist, we need to get the promission to Privacy - Face ID Usage Description.
     @IBAction func logging() {
         
         let context = LAContext()
