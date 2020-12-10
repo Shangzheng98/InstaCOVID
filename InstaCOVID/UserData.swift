@@ -109,16 +109,17 @@ final class UserData: ObservableObject {
         imageNumber = counter
     }
     
+    //This is the helper function which can be used to login by the faceID, since the faceID is related to the bio setting, it is required to use the LA Context and import local LocalAuthentication for the check and in the info.plist, we need to get the promission to Privacy - Face ID Usage Description.
     @IBAction func logging() {
         
         let context = LAContext()
         
         context.localizedCancelTitle = "Cancel"
         var error: NSError?
-        
+        //By calling the evaluationPolicy of the content which in the LAContect(), we are able to get the authentication
         if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             let reason = "Log in to your account"
-            
+            //Useing the evaluatePolicy, it will try to run the faceID check on our app, when we catch the sucees signal, we set the global variable of userauthenticated become true and if we catch the error message mean the user's face is not same with the iphone saved in the database, we want to keep the userauthenticated become false
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { (success, error) in
                 if success {
                     DispatchQueue.main.async { [unowned self] in

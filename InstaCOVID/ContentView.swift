@@ -12,6 +12,7 @@ struct ContentView: View {
     @EnvironmentObject var userData: UserData
     var body: some View {
         TabView {
+            //Checking whether the user is successfully login their account by the password or faceID
             if userData.userAuthenticated {
                 Home()
                     .tabItem {
