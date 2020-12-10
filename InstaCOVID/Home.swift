@@ -176,6 +176,7 @@ struct FollowUp: View{
                 ForEach(userData.followedCountriesList) {
                     followUp in DataListItem(country: followUp)
                         .frame(width: UIScreen.main.bounds.width, height: 100)
+                        .padding(.bottom,45)
                 }
             }
    //         }
