@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSFaceIDUsageDescription</key>
-	<string>Use faceID instand password</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -31,6 +29,20 @@
 	<string>MyPIM needs to access my Photos library</string>
 	<key>NSCameraUsageDescription</key>
 	<string>MyPIM needs to access our camera</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Use faceID instand password</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>EastSeaDokdo-Regular.ttf</string>
+		<string>RussoOne-Regular.ttf</string>
+		<string>SansitaSwashed-Black.ttf</string>
+		<string>SansitaSwashed-Bold.ttf</string>
+		<string>SansitaSwashed-ExtraBold .ttf</string>
+		<string>SansitaSwashed-Light.ttf</string>
+		<string>SansitaSwashed-Medium.ttf </string>
+		<string>SansitaSwashed-Regular.ttf </string>
+		<string>SansitaSwashed-SemiBold.ttf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -59,8 +71,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -68,18 +78,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>EastSeaDokdo-Regular.ttf</string>
-		<string>RussoOne-Regular.ttf</string>
-		<string>SansitaSwashed-Black.ttf</string>
-		<string>SansitaSwashed-Bold.ttf</string>
-		<string>SansitaSwashed-ExtraBold .ttf</string>
-		<string>SansitaSwashed-Light.ttf</string>
-		<string>SansitaSwashed-Medium.ttf </string>
-		<string>SansitaSwashed-Regular.ttf </string>
-		<string>SansitaSwashed-SemiBold.ttf</string>
 	</array>
 </dict>
 </plist>
