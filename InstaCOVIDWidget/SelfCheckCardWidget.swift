@@ -146,8 +146,6 @@ extension SelfCheckCardWidget {
                 
             }
         }
-        
     }
-    
 }
 
