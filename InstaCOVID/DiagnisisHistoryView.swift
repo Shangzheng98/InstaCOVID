@@ -38,8 +38,6 @@ struct DiagnisisHistoryView: View {
                         }
                     }
                     
-                    
-                    
                 }
                 
             }

@@ -21,6 +21,7 @@ struct SelfCheckCardWidget: Widget {
 }
 
 extension SelfCheckCardWidget {
+    // the entry we define in the timeline
     struct RecordCarEntry: TimelineEntry {
         var date: Date = Date()
         
@@ -29,6 +30,7 @@ extension SelfCheckCardWidget {
 }
 
 extension SelfCheckCardWidget {
+    /// to implement the TimelineProvider, we need to implement three methodt, placeholder(), getSnapShot(), and getTimeLine()
     struct RecordCardTimeLine: TimelineProvider {
     
         func placeholder(in context: Context) ->RecordCarEntry {
@@ -47,10 +49,10 @@ extension SelfCheckCardWidget {
             let refeshDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)!
             
             var stampeNumber = 5
+            // we set up a sand box called group.com.ShangzhengJi.InstaCOVID to exchange the data between widget and main app
             let userDefault = UserDefaults(suiteName: "group.com.ShangzhengJi.InstaCOVID")
             stampeNumber = userDefault!.integer(forKey: "stampeNumber")
             
-//                = UserDefaults.standard.integer(forKey: "stampeNumber")
             let entry = RecordCarEntry(date: currentDate, stampedNumber: stampeNumber)
             entries.append(entry)
             

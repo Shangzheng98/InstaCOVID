@@ -15,8 +15,6 @@ struct GridListDetails: View {
     @State private var showCountryAddedAlert = false
     @State private var follow = false
     var body: some View {
-        // A Form cannot have more than 10 Sections.
-        // Group the Sections if more than 10.
         NavigationView{
         Form {
             Section(header: Text("Country Name")) {

@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
-
 import WidgetKit
 
 struct Diagnosis: View {
+
     @EnvironmentObject var userData: UserData
     let choicesForAnswer = ["°C", "°F"]
+    //y the state variables for the Diagnosis view
     @State private var personalHealthStatusIndex = 0
     @State private var personalPossibleSymptomsSelectedIndex = [Int]()
     @State private var times = 0
@@ -157,6 +158,8 @@ struct Diagnosis: View {
             diagnosisStructlist = userData.diagnosisHistoryList
             self.showSavedAlert = true
             let currentDate = Date()
+            
+            // keep tracing the if the record is 14 days continuely, if not, the record card will become 0 staped.
             if userData.recordDay != 14
             {
                 if currentDate < lastRecord.addingTimeInterval(26*60*60){
@@ -172,6 +175,7 @@ struct Diagnosis: View {
                     let dateString = dateFormatter.string(from: userData.lastRecordDate)
                     UserDefaults.standard.set(dateString,forKey: "lastRecordDate")
                     UserDefaults.standard.set(numberOfStampe, forKey: "stampeNumber")
+                    // reflash the timeline of widget to reflash the view of widget.
                     WidgetCenter.shared.reloadAllTimelines()
                 }
                 else {
@@ -187,6 +191,7 @@ struct Diagnosis: View {
                     let dateString = dateFormatter.string(from: userData.lastRecordDate)
                     UserDefaults.standard.set(dateString,forKey: "lastRecordDate")
                     UserDefaults.standard.set(numberOfStampe, forKey: "stampeNumber")
+                    // reflash the timeline of widget to reflash the view of widget.
                     WidgetCenter.shared.reloadAllTimelines()
                 }
                 
@@ -194,7 +199,7 @@ struct Diagnosis: View {
                 let userDefault = UserDefaults(suiteName:"group.com.ShangzhengJi.InstaCOVID")
                 userDefault?.set(numberOfStampe, forKey: "stampeNumber")
             }
-            
+            // after saving successfully, play audio to user.
             applaudSoundAudioPlayer!.play()
         }
     }

@@ -26,3 +26,27 @@ struct PossibleSymptoms: Hashable, Codable,Identifiable{
     var symptom: String
     var isSelected: Bool = false
 }
+
+/// load the new font
+struct FontNameManager {
+    //MARK: name of font family
+    
+    struct SansitaSwashed {
+        static let black = "AmericanTypewriter"
+        static let bold = "AmericanTypewriter-Light"
+        static let extraBold = "AmericanTypewriter-Semibold"
+        static let light = "AmericanTypewriter-Bold"
+        static let medium = "AmericanTypewriter-Condensed"
+        static let regular = "AmericanTypewriter-CondensedLight"
+        static let semiBold = "AmericanTypewriter-CondensedBold"
+    }
+    
+    struct RussoOne {
+        static let reg = "RussoOne-Regular"
+    }
+    
+    struct EastSeaDokdo {
+        static let regu = "EastSeaDokdo-Regular"
+        
+    }
+}

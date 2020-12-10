@@ -13,6 +13,7 @@ struct ListData: View {
     let searchItem:String
     let filterIndex:Int
     var body: some View {
+        // depend on the sort method, to show content in different orders
         if filterIndex == 0 {
             ForEach(orderedSearchableWorldDataListCases.filter{self.searchItem.isEmpty ? true : $0.localizedStandardContains(self.searchItem)}, id: \.self) {
                 item in NavigationLink (destination: DataListDetails(country:self.searchItemCountry(searchListItem: item))) {

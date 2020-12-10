@@ -1,5 +1,5 @@
 //
-//  FollowingInfoWidget.swift
+//  WorldInfoWidget.swift
 //  InstaCOVIDWidgetExtension
 //
 //  Created by Shangzheng Ji on 12/6/20.
@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 import Intents
 
-struct FollowingInfoWidget: Widget {
+struct WorldInfoWidget: Widget {
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: "FollowingInfo", provider: WorldInfoTimeLine()) {
             entry in
@@ -17,18 +17,18 @@ struct FollowingInfoWidget: Widget {
         }
         .configurationDisplayName("World COVID-19 Data")
         .description("Shows the World COVID-19 Data.")
-        .supportedFamilies([.systemMedium, .systemLarge])
+        .supportedFamilies([.systemMedium])
     }
 }
 
-extension FollowingInfoWidget {
+extension WorldInfoWidget {
     struct WorldInfoEntry: TimelineEntry {
         var date: Date
         var contry: WorldStatStruct
     }
     
     struct InfoLoader {
-        
+        // we set the a Loader Struct to handle the HTTP request from the remote API
         static func getInfo(completion: @escaping (Result<WorldStatStruct, Error>) -> Void) {
             let APIKey = "889af3ca3fmshd882371958ac448p100118jsn58444a268212"
             let url = URL(string: "https://coronavirus-monitor-v2.p.rapidapi.com/coronavirus/worldstat.php")!
@@ -81,12 +81,11 @@ extension FollowingInfoWidget {
         }
     }
 }
-extension FollowingInfoWidget {
+extension WorldInfoWidget {
+    
+    /// to implement the TimelineProvider, we need to implement three methodt, placeholder(), getSnapShot(), and getTimeLine()
     struct WorldInfoTimeLine: TimelineProvider {
         
-        
-        
-//        typealias  Entry = WorldInfo
         
         func placeholder(in context: Context) -> WorldInfoEntry{
             WorldInfoEntry(date: Date(), contry: WorldStatStruct(totalCases: "-", newCases: "-", totalDeaths: "-", newDeaths: "-", totalRecovered: "-"))
@@ -115,14 +114,12 @@ extension FollowingInfoWidget {
                 let timeline = Timeline(entries: entries, policy: .after(refeshDate))
                 completion(timeline)
             }
-
-//            WidgetCenter.shared.reloadAllTimelines()
         }
         
         
     }
     
-    
+    // the view of widget
     struct WorldInfoEntryView: View {
         let entry: WorldInfoEntry
         
@@ -195,10 +192,3 @@ extension FollowingInfoWidget {
         }
     }
 }
-
-//struct FollowingInfoWidget_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FollowingInfoWidget.WorldInfoEntryView(entry: FollowingInfoWidget.WorldInfoEntry(date: Date(), contry: WorldStatStruct(totalCases: "100000", newCases: "10000", totalDeaths: "100000", newDeaths: "100000", totalRecovered: "100000")))
-//            .previewContext(WidgetPreviewContext(family: .systemMedium))
-//    }
-//}

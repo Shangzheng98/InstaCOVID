@@ -48,13 +48,15 @@ final class UserData: ObservableObject {
      ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
      */
    
-    // Publish countriesList with initial value of countryStructList obtained in CountriesData.swift
+    // Publish contry data lists with initial value of WorldDataStruct obtained in WorldDBAPI.swift
     @Published var countriesDataListCases = everyContriesDataListCases
     @Published var countriesDataListNewCases = everyContriesDataListNewCases
     @Published var countriesDataListDeaths = everyContriesDataListDeaths
     @Published var countriesDataListNewDeaths = everyContriesDataListNewDeaths
     @Published var countriesDataListRecovered = everyContriesDataListRecovered
     
+    // Publish diagnosis record with initial value of DiagnosisStruct list obtained in LoadAndSave.swift
+
     @Published var diagnosisHistoryList = diagnosisStructlist
     
     @Published var profilePhoto: Data? = profileImgae
@@ -62,18 +64,14 @@ final class UserData: ObservableObject {
     @Published var followedCountriesList = followedUpDataList
     @Published var searchableOrderedWorldDataList = orderedSearchableWorldDataListCases
     
-    @Published var stateInfoList = stateDataList
    
-    
+    // publish record with initial value of number obtained in AppDelegated.swift
     @Published var recordDay = numberOfStampe
     @Published var lastRecordDate = lastRecord
     
     
     // Publish imageNumber to refresh the View body in Home.swift when it is changed in the slide show
     @Published var imageNumber = 0
-    
-    
-    @Published var flipped = false
     /*
      --------------------------
      MARK: - Scheduling a Timer
