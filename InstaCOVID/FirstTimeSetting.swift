@@ -26,6 +26,7 @@ struct FirstTimeSetting: View {
     @State private var selectedGenderIndex = 0
     @State private var photoImageData: Data? = nil
     @State private var showImagePicker = false
+    @State private var showPasswordFomateAlert = false
     @State private var dateAndTime = Date()
     var dateClosedRange: ClosedRange<Date> {
         // Set minimum date to 100 years earlier than the current year
@@ -222,6 +223,9 @@ struct FirstTimeSetting: View {
                     }   // End of HStack
                     .frame(minWidth: 300, maxWidth: 500)
                 }
+                .alert(isPresented: $showPasswordFomateAlert, content: {
+                    self.passwordAlert
+                })
                 
                 
                 
@@ -290,6 +294,12 @@ struct FirstTimeSetting: View {
                          where you store key-value pairs persistently across launches of your app.
                          */
                         // Store the password in the user’s defaults database under the key "Password"
+                        if checkPassword() {
+                            UserDefaults.standard.set(passwordTextFieldValue, forKey: "Password")
+                        } else {
+                            self.showPasswordFomateAlert = true
+                            return
+                        }
                         UserDefaults.standard.set(self.nameTextFieldValue, forKey: "Name")
                         
                         UserDefaults.standard.set(selectionGenderList[selectedGenderIndex], forKey: "Gender")
@@ -315,7 +325,8 @@ struct FirstTimeSetting: View {
                         UserDefaults.standard.set(identityTextFieldValue, forKey: "Identity")
                         UserDefaults.standard.set(currentLivingCountryTextFieldValue, forKey: "LivingCountry")
                         UserDefaults.standard.set(usernameTextFieldValue, forKey: "Username")
-                        UserDefaults.standard.set(passwordTextFieldValue, forKey: "Password")
+                        
+                        
                         UserDefaults.standard.set(searchCategories[selectedIndexForQuestion], forKey: "Question")
                         UserDefaults.standard.set(textFieldValue, forKey: "Answer")
                         // Dismiss this View and go back
@@ -365,8 +376,34 @@ struct FirstTimeSetting: View {
               message: Text("You are successfully save your account!"),
               dismissButton: .default(Text("OK")))
         /*
-         Tapping OK resets @State var showMissingInputDataAlert to false.
+         Tapping OK resets @State var showSavingInputDataAlert to false.
          */
+    }
+    
+    /*
+     --------------------------------
+     MARK: - check password Alert
+     --------------------------------
+     */
+    var passwordAlert: Alert {
+        Alert(title: Text("Wrong Format!"),
+              message: Text("the password length at lease 8, and first letter is capitalized"),
+              dismissButton: .default(Text("OK")))
+        /*
+         Tapping OK resets @State var showPasswordAlert to false.
+         */
+    }
+    
+    func checkPassword() -> Bool {
+        if passwordTextFieldValue == ""
+        {
+            return false
+        }
+        if passwordTextFieldValue.count < 8  || passwordTextFieldValue.first!.isLowercase{
+            return false
+        } else {
+            return true
+        }
     }
 }
 
