@@ -16,7 +16,6 @@ struct ListGrid: View {
     var shape = RoundedRectangle(cornerRadius: 20, style: .continuous)
     var body: some View {
         ZStack {
-            //Color("Data-foreground").edgesIgnoringSafeArea(.all)
             ScrollView {
                 
                 
@@ -88,8 +87,3 @@ struct ListGrid: View {
     }
 }
 
-//struct ListGrid_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListGrid()
-//    }
-//}

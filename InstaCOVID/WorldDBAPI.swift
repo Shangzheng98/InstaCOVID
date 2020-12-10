@@ -73,7 +73,7 @@ public func getTotalWorldStatFromAPI () {
  
         // Process input parameter 'error'
         guard error == nil else {
-            // countryFound will have the initial values set as above
+            // worldStatInfo will have the initial values set as above
             semaphore.signal()
             return
         }
@@ -94,7 +94,7 @@ public func getTotalWorldStatFromAPI () {
  
         // Process input parameter 'data'. Unwrap Optional 'data' if it has a value.
         guard let jsonDataFromApi = data else {
-            // countryFound will have the initial values set as above
+            // worldStatInfo will have the initial values set as above
             semaphore.signal()
             return
         }
@@ -142,7 +142,7 @@ public func getTotalWorldStatFromAPI () {
             
  
         } catch {
-            // countryFound will have the initial values set as above
+            // worldStatInfo will have the initial values set as above
             semaphore.signal()
             return
         }
@@ -264,7 +264,10 @@ public func getEveryContriesDataFromAPISortByCases(){
     
 }
  
- 
+/*
+ https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
+ Data from Worldometers
+ */
 public func getEveryContriesDataFromAPISortByNewCases(){
     
     orderedSearchableWorldDataListNewCases = [String]()
@@ -356,6 +359,10 @@ public func getEveryContriesDataFromAPISortByNewCases(){
     }
 }
 
+/*
+ https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
+ Data from Worldometers
+ */
 public func getEveryContriesDataFromAPISortByDeaths(){
     
     orderedSearchableWorldDataListDeaths = [String]()
@@ -447,7 +454,11 @@ public func getEveryContriesDataFromAPISortByDeaths(){
     }
 }
 
-
+/*
+ https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
+ Data from Worldometers
+ get the data from API sorted by New Deaths
+ */
 public func getEveryContriesDataFromAPISortByNewDeaths(){
     
     orderedSearchableWorldDataListNewDeaths = [String]()
@@ -537,7 +548,10 @@ public func getEveryContriesDataFromAPISortByNewDeaths(){
         return
     }
 }
-
+/*
+ https://documenter.getpostman.com/view/11144369/Szf6Z9B3?version=latest#ad1d0096-3390-462d-896c-5817101a7adf
+ Data from Worldometers
+ */
 public func getEveryContriesDataFromAPISortByRecovered(){
     
     orderedSearchableWorldDataListRecovered = [String]()
@@ -618,6 +632,9 @@ public func getEveryContriesDataFromAPISortByRecovered(){
                 let entry = WorldDataStruct(id: id, countryName: countryName, cases: totalCases, deaths: totalDeaths, totalRecovered: totalrecovered, newDeaths: newDeaths, newCases: newCases, lat: lat, long: long, flagImgURL: flagURL,flagImageName: flagName, following: false)
                 everyContriesDataListRecovered.append(entry)
                 
+                /**
+                 the user can search by countryName, total cases, total deaths, total recovered, new cases, new Deaths.
+                 */
                 let searchableListEntry = "\(id)|\(countryName)|\(totalCases)|\(totalDeaths)|\(totalrecovered)|\(newCases)|\(newDeaths)"
                 orderedSearchableWorldDataListRecovered.append(searchableListEntry)
             }

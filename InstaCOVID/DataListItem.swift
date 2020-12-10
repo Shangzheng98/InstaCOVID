@@ -49,9 +49,6 @@ struct DataListItem: View {
                             .multilineTextAlignment(.leading)
                         
                         HStack {
-//                            Image(systemName: "cross.fill")
-//                                .foregroundColor(.green)
-//                                .imageScale(.small)
                             Text("\(country.totalRecovered)")
                         }
                         

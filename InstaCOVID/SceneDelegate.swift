@@ -60,10 +60,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        
         /*
         *******************************************************
-        Write Countries data files when sceneDidEnterBackground
+        Write all COID-19 data and users reocrds into files when sceneDidEnterBackground
         *******************************************************
         */
-        //writeCountriesDataFiles()
         
         writeFile()
         

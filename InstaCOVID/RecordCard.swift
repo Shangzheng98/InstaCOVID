@@ -10,7 +10,7 @@ import SwiftUI
 
 struct RecordCard: View {
     @EnvironmentObject var userData: UserData
-    //var totalStamps: Int
+    // pamater for the starting piont of animation
     var animatedStamps = 0
     var columns:[GridItem] {
         [GridItem](repeating: GridItem(.flexible(minimum: 10)), count: 7)
@@ -48,11 +48,14 @@ struct RecordCard: View {
 }
 
 extension RecordCard {
+    // the sub struct for a stamp
     struct StampSlot: View {
+        
+        // the enumation of state of stampl
         enum Status {
-            case unstamped
-            case stampedAnimated(delayIndex: Int)
-            case stamped
+            case unstamped // not stamp
+            case stampedAnimated(delayIndex: Int) // stamp with a animation
+            case stamped // has stamped
         }
         
         var status: Status
@@ -84,6 +87,7 @@ extension RecordCard {
                 case .stamped:
                     stamped = true
                 case .stampedAnimated(let delayIndex):
+                    // the delay of  animation will increase as index going up
                     let delay = Double(delayIndex + 1) * 0.2
                     withAnimation(Animation.spring(response: 0.5, dampingFraction: 0.8).delay(delay)) {
                         stamped = true

@@ -380,21 +380,6 @@ public func writeFile() {
         fatalError("Unable to encode followedUpDataList list data!")
     }
     
-    //===============
-    
-    
-//    urlOfJsonFileInDocumentDirectory = documentDirectory.appendingPathComponent("recordNumber")
-//    
-//    encoder = JSONEncoder()
-//    if let encoded = try? encoder.encode(numberOfStampe) {
-//        do {
-//            try encoded.write(to: urlOfJsonFileInDocumentDirectory)
-//        } catch {
-//            fatalError("Unable to write numberOfStampe list data to document directory!")
-//        }
-//    } else {
-//        fatalError("Unable to encode numberOfStampe list data!")
-//    }
     
     //===============
     

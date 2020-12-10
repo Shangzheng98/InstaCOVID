@@ -27,17 +27,6 @@ struct DiagnosisNotAvailable: View {
                             .foregroundColor(.newBlack)
                             .background(Color.newYellow).clipShape(Circle())
                     }
-                    //                }else{
-                    //
-                    //                    Text("Start your self diagnosis record right now!")
-                    //                        .font(headerFont)
-                    //                    NavigationLink(destination: Diagnosis()) {
-                    //                        Image(systemName: "arrowshape.turn.up.forward.circle")
-                    //                            .imageScale(.large)
-                    //                            .font(Font.title.weight(.regular))
-                    //                            .foregroundColor(.blue)
-                    //                    }
-                    //                }
                 }
             }
         }
@@ -46,35 +35,10 @@ struct DiagnosisNotAvailable: View {
 //        .onAppear(perform:{getCustomFontNames()})
         
     }   // End of var
-    
-    
-//        func getCustomFontNames() {
-//            // get each of the font families
-//            for family in UIFont.familyNames.sorted() {
-//                let names = UIFont.fontNames(forFamilyName: family)
-//                // print array of names
-//                print("Family: \(family) Font names: \(names)")
-//            }
-//        }
-    
-    //    /*
-    //     --------------------------------
-    //     MARK: - Check Password Entered
-    //     --------------------------------
-    //     */
-    //    var alreadySignInCheck: Bool {
-    //        let username = UserDefaults.standard.string(forKey: "Username")
-    //        let password = UserDefaults.standard.string(forKey: "Password")
-    //
-    //        if (username == nil && password == nil){
-    //            return true
-    //        }else{
-    //            return false
-    //        }
-    //    }
 }
 
 extension Color{
+    // define new colors in the Color struct
     static let newYellow = Color(red: 221/255, green: 183/255, blue: 2/255)
     static let newBlack = Color(red: 50/255, green: 51/255, blue: 53/255)
     static let newPink = Color(red: 151/255, green: 30/255, blue: 87/255)

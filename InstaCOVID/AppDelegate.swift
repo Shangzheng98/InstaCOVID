@@ -22,8 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dateFormatter.dateFormat = "yyyy-MM-dd"
          
         let currentTime = Date()
+        // to check if app sand box UserDefault has the record date, means it is firt running the app, if not get the data form remote API.
         if let lastTime = UserDefaults.standard.string(forKey: "lastSaveTime") {
             let lastSaveDate = dateFormatter.date(from: lastTime)
+            // the data is updaed in every day, so the data is out of date, it will update the data from the API, if not read the file locally.
             if currentTime <= (lastSaveDate?.addingTimeInterval(60*60*24))! {
                 readAllDataFile()
             }else {
@@ -44,17 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             getEveryContriesDataFromAPISortByNewDeaths()
             
         }
-//        let lastRecordSavedDate = UserDefaults.standard.string(forKey: "lastRecordDate") ?? "2020-12-07"
-//
-//
-//
-//
-//
-//        let date = dateFormatter.date(from: lastRecordSavedDate)
-//
-//        lastRecord = date!
         
+        // To check if the user is using the self-quartine card.
         if let lastRecordSavedDate = UserDefaults.standard.string(forKey: "lastRecordDate") {
+            // if the time intervel is out of 26 hours, the stamped record will become zero. The users need to do it again. The reson we set 26 hours instead of 24 is that we want to set the tolerence for user to use.
             let date = dateFormatter.date(from: lastRecordSavedDate)
             if currentTime > (date?.addingTimeInterval(26*60*60))! {
                 numberOfStampe = 0

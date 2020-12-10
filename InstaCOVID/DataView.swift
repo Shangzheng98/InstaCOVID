@@ -18,7 +18,6 @@ struct DataView: View {
     let styleList = ["list.bullet","square.grid.3x3.fill"]
     var body: some View {
         ZStack {
-//            Color.gray.opacity(0.1).edgesIgnoringSafeArea(.all)
             NavigationView {
                 VStack {
                     SearchBar(searchItem: $searchItem, placeholder: "Search")
@@ -33,7 +32,6 @@ struct DataView: View {
                                 }
 
                             }
-    //                        .frame(width: 260.0)
                             .pickerStyle(SegmentedPickerStyle())
                             Spacer()
                             Picker(filterlist[filterIndex],selection: $filterIndex) {
