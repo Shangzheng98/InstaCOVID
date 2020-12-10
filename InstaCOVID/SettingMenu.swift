@@ -43,7 +43,7 @@ struct SettingMenu: View {
                                 .imageScale(.medium)
                                 .padding()
                             
-                            Text("Diagnisis Record list")
+                            Text("Diagnosis Record List")
                             
                             
                         }

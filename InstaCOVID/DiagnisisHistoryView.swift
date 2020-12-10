@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-//It will disokat the list of the saved diagnisis data
+//It will disokat the list of the saved diagnosis data
 struct DiagnisisHistoryView: View {
     @EnvironmentObject var userData:UserData
     var body: some View {
